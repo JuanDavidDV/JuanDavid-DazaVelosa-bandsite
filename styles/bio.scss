@@ -1,5 +1,46 @@
 @use './partials/global' as *;
+@use './partials/media-query' as *;
+@use './partials/variables' as *;
 
 .page-header {
-    font-family: avenir-bold;
+    font-family: avenir-regular;
+    background-color: $BandSite-Black;
+    color: $White;
+    width: 100%;
+    position: relative;
+
+        &__title { /*HOW TO MAKE TITLE NOT EXCEED 20PX OF HEIGH IS FONT SIZE IS 32PX?*/
+            @include mobile {
+                padding: 0.5em;
+                font-size: 2rem;    /*customed size to match Mock doc*/
+                line-height: 2rem; /*WHAT UNITS SHOULD I USE FOR LINE-HEIGHT? REM OR EM*/
+                text-align: center;
+                color: $White;
+                font-weight: 300; /*ASK IF CORRECT WEIGHT*/
+            } 
+        }
+
+        &__nav {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 1em;
+            font-size: 1rem;        /*customed size to match Mock doc*/
+            border-bottom: 0.2rem solid red; /*ASK ABOUT WIDTH OF LINE*/
+            
+
+                &__link {
+                    text-decoration: none;
+                    color: $Mercury;
+
+                        &--current { /*Curent active link*/
+                            text-decoration: none;
+                            color: $White;
+                            
+                        }
+                }
+
+                &--box {
+                    display: inline-block;
+                }
+        }
 }

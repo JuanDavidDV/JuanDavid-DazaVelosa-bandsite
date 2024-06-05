@@ -1,3 +1,4 @@
+/*ASK IF THIS IS CORRECT WAY TO IMPORT FONTS IN BANDSITE*/
 @font-face {
     font-family: "avenir-regular";
     src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
@@ -11,6 +12,13 @@
 @font-face {
     font-family: "avenir-bold";
     src: url("../../assets/Font/AvenirNextLTPro-Bold.otf")
+}
+
+/*Removes margin, padding, and applies border-box to wbesite*/
+* { 
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
 }
 
 body {
