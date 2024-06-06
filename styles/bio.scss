@@ -7,40 +7,65 @@
     background-color: $BandSite-Black;
     color: $White;
     width: 100%;
-    position: relative;
 
-        &__title { /*HOW TO MAKE TITLE NOT EXCEED 20PX OF HEIGH IS FONT SIZE IS 32PX?*/
+        &__title {
             @include mobile {
-                padding: 0.5em;
-                font-size: 2rem;    /*customed size to match Mock doc*/
-                line-height: 2rem; /*WHAT UNITS SHOULD I USE FOR LINE-HEIGHT? REM OR EM*/
-                text-align: center;
-                color: $White;
-                font-weight: 300; /*ASK IF CORRECT WEIGHT*/
+               display: block;
+               margin: auto;
+               padding-top: 1.75em;
+
             } 
         }
 
         &__nav {
             display: flex;
             justify-content: space-around;
-            padding-bottom: 1em;
             font-size: 1rem;        /*customed size to match Mock doc*/
-            border-bottom: 0.2rem solid red; /*ASK ABOUT WIDTH OF LINE*/
-            
+            padding-top: 1.25em;
+        
+            &--box {
+                display: inline-block;
+                text-align: center;
+                width: 50%;
+                
+                    &--current {
+                        display: inline-block;
+                        text-align: center;
+                        width: 50%;
+                        padding-bottom: 0.75em;
+                        border-bottom: 0.2rem solid $White; /*ASK ABOUT MIN WIDTH OF THE UNDERLINE WILL BE 1 GRID COLUMN UNIT*/
+                    }
+            }   
 
-                &__link {
-                    text-decoration: none;
-                    color: $Mercury;
+            &__link {
+                 /*Applied to let bottom border line have the lenght of the container block instead of the actual link*/
+                text-decoration: none;
+                color: $Mercury;
+                padding-bottom: 0.75em;
+                border-bottom: 0.2rem solid $BandSite-Black;
+                
+                    &:hover {
+                        border-bottom: 0.2rem solid $White; 
+                        color: $White;
+                        display: block; /*converted to block to enable bottom border but full size when hovering*/
+                        width: 100%;
+                    }
 
-                        &--current { /*Curent active link*/
-                            text-decoration: none;
-                            color: $White;
-                            
-                        }
-                }
-
-                &--box {
-                    display: inline-block;
-                }
+                    &--current { /*Curent active link*/
+                        text-decoration: none;
+                        color: $White; 
+                        font-family: avenir-bold; /*Applies bold font family*/
+                    }
+            }
         }
+}
+
+.hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    width: 100%;
+    height: 15rem;
+    background-position: center;
+    background-size: cover;
+
+
 }
