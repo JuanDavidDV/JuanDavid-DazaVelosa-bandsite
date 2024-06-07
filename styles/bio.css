@@ -34,12 +34,10 @@ body {
   color: #FFFFFF;
   width: 100%;
 }
-@media (min-width: 320px) {
-  .page-header__title {
-    display: block;
-    margin: auto;
-    padding-top: 1.75em;
-  }
+.page-header__title {
+  display: block;
+  margin: auto;
+  padding-top: 1.75em;
 }
 .page-header__nav {
   display: flex;
@@ -80,8 +78,54 @@ body {
 
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
+  position: relative; /*Used to apply 50% overlay Bandsite-black over image, by making it relative*/
   width: 100%;
   height: 15rem;
   background-position: center;
   background-size: cover;
+  display: flex;
+}
+.hero__image--overlay {
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.hero__title {
+  align-self: center; /*Aligns title in the middle of the background image*/
+  font-family: avenir-bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #FFFFFF;
+  padding-left: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  position: absolute; /*Makes title be over the image overlay*/
+}
+
+.about-musicians {
+  padding: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+}
+.about-musicians__title {
+  color: #323232;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: avenir-bold;
+  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+  padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
+}
+.about-musicians__image {
+  height: 12rem;
+  width: 100%;
+  padding-bottom: 1em;
+}
+.about-musicians__subheader--one {
+  font-family: avenir-demi;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+}
+.about-musicians__subheader--two {
+  font-family: avenir-demi;
+  font-size: 0.875rem;
+  line-height: 2rem; /*Customized line height to match mock document*/
+  color: #323232;
 }/*# sourceMappingURL=bio.css.map */

@@ -60,10 +60,60 @@
 
 .hero {
     background-image: url("../assets/images/hero-bio.jpg");
+    position: relative; /*Used to apply 50% overlay Bandsite-black over image, by making it relative*/
     width: 100%;
     height: 15rem;
     background-position: center;
     background-size: cover;
+    display: flex;
 
+        &__image--overlay {
+            background-color: rgba($BandSite-Black, 0.5);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }   
 
+        &__title {
+            align-self: center; /*Aligns title in the middle of the background image*/
+            font-family: avenir-bold; 
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: $White;
+            padding-left: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+            position: absolute; /*Makes title be over the image overlay*/
+        }
+}
+
+.about-musicians {
+    padding: 1rem;  /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+
+    &__title {
+        color: $BandSite-Black;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-family: avenir-bold;
+        padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+        padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
+    }
+
+    &__image {
+        height: 12rem;
+        width: 100%;
+        padding-bottom: 1em;
+    }
+
+    &__subheader--one {
+        font-family: avenir-demi;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        color: $BandSite-Black;
+    }
+
+    &__subheader--two {
+        font-family: avenir-demi;
+        font-size: 0.875rem;
+        line-height: 2rem;  /*Customized line height to match mock document*/
+        color: $BandSite-Black;
+    }
 }
