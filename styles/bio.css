@@ -95,7 +95,7 @@ body {
   align-self: center; /*Aligns title in the middle of the background image*/
   font-family: avenir-bold;
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 2rem; /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
   color: #FFFFFF;
   padding-left: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
   position: absolute; /*Makes title be over the image overlay*/
@@ -106,14 +106,14 @@ body {
 }
 .about-musicians__title {
   color: #323232;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /*ASK ABOUT TITLE SIZE*/
   line-height: 2rem;
   font-family: avenir-bold;
   padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
   padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
 }
 .about-musicians__image {
-  height: 12rem;
+  height: 14rem;
   width: 100%;
   padding-bottom: 1em;
 }
@@ -128,4 +128,17 @@ body {
   font-size: 0.875rem;
   line-height: 2rem; /*Customized line height to match mock document*/
   color: #323232;
+  padding-bottom: 1.7143em; /*equals 24px of bottom padding, this to match style doc instructions*/
+}
+.about-musicians__subheader-title {
+  font-family: avenir-demi;
+  color: black;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  padding-bottom: 1.14284em;
+}
+.about-musicians__text {
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }/*# sourceMappingURL=bio.css.map */
