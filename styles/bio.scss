@@ -9,13 +9,11 @@
     width: 100%;
 
         &__title {
-            @include mobile {
                display: block;
                margin: auto;
                padding-top: 1.75em;
 
             } 
-        }
 
         &__nav {
             display: flex;
