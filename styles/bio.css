@@ -43,13 +43,13 @@ body {
 .page-header__title {
   display: block;
   margin: auto;
-  padding-top: 1.75em;
+  padding-top: 1em;
 }
 .page-header__nav {
   display: flex;
   justify-content: space-around;
   font-size: 1rem; /*customed size to match Mock doc*/
-  padding-top: 1.25em;
+  padding-top: 1em;
 }
 .page-header__nav--box {
   display: inline-block;
@@ -99,7 +99,7 @@ body {
 }
 .hero__title {
   align-self: center; /*Aligns title in the middle of the background image*/
-  font-family: avenir-bold;
+  font-family: avenir-demi;
   font-size: 1.5rem;
   line-height: 2rem; /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
   color: #FFFFFF;
@@ -151,7 +151,7 @@ body {
 }
 
 .photo-gallery {
-  padding: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  padding: 1rem 1rem 0rem 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
   background-color: #FAFAFA;
 }
 .photo-gallery__title {
