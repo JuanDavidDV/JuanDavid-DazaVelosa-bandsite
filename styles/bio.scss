@@ -128,7 +128,7 @@
 
     &__subheader-title {
         font-family: avenir-demi;
-        color: black;
+        color: $BandSite-DarkBlack;
         font-size: 0.875rem;
         line-height: 2rem;
         padding-bottom: 1.14284em /*equals 16px of bottom padding, this to match style doc instructions*/
@@ -154,7 +154,7 @@
             font-size: 1.5rem;
             line-height: 2rem;
             color: $BandSite-Black;
-            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin between hero section and "about musician" section*/
+            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
             padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
         }
 
@@ -166,5 +166,35 @@
                     width: 100%;
                     padding-bottom: 1em;
                 }
+        }
+}
+
+.footer-page {
+    background-color: $BandSite-Black;
+    padding: 1em;
+
+        &__title {
+            font-family: avenir-bold;
+            font-size: 1.5rem;
+            line-height: 2rem;  /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
+            color: $White;
+            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
+        }
+
+        &__socials {
+            padding: 1em 0em;
+
+            &__link {
+                text-decoration: none;
+            }
+
+            &--icons {
+                height: 1.5rem;
+                padding: 0em 0.75em;
+
+                    &--alignment {
+                        padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media logo as Mock document*/
+                    }
+            }
         }
 }

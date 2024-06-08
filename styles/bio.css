@@ -138,7 +138,7 @@ body {
 }
 .about-musicians__subheader-title {
   font-family: avenir-demi;
-  color: black;
+  color: #000000;
   font-size: 0.875rem;
   line-height: 2rem;
   padding-bottom: 1.14284em;
@@ -159,7 +159,7 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   color: #323232;
-  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin between hero section and "about musician" section*/
+  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
   padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
 }
 .photo-gallery__container {
@@ -169,4 +169,29 @@ body {
 .photo-gallery__container--image {
   width: 100%;
   padding-bottom: 1em;
+}
+
+.footer-page {
+  background-color: #323232;
+  padding: 1em;
+}
+.footer-page__title {
+  font-family: avenir-bold;
+  font-size: 1.5rem;
+  line-height: 2rem; /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
+  color: #FFFFFF;
+  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
+}
+.footer-page__socials {
+  padding: 1em 0em;
+}
+.footer-page__socials__link {
+  text-decoration: none;
+}
+.footer-page__socials--icons {
+  height: 1.5rem;
+  padding: 0em 0.75em;
+}
+.footer-page__socials--icons--alignment {
+  padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media logo as Mock document*/
 }/*# sourceMappingURL=bio.css.map */
