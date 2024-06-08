@@ -194,4 +194,16 @@ body {
 }
 .footer-page__socials--icons--alignment {
   padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media logo as Mock document*/
+}
+.footer-page__subheader {
+  font-family: avenir-demi;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #FFFFFF;
+}
+.footer-page__paragraph {
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+  color: #FFFFFF;
+  padding: 1.2308em 0em;
 }/*# sourceMappingURL=bio.css.map */

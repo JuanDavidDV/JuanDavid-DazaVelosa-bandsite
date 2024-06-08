@@ -197,4 +197,19 @@
                     }
             }
         }
+
+        &__subheader {
+            font-family: avenir-demi;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            color: $White;
+        }
+
+        &__paragraph {
+            font-size: 0.8125rem;
+            line-height: 1.375rem;
+            color: $White;
+            padding: 1.2308em 0em;
+
+        }
 }
