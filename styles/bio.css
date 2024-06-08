@@ -28,6 +28,12 @@ body {
 /*Primary Colors*/
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
+.about-musicians__text, .about-musicians__text--alignment {
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
 .page-header {
   font-family: avenir-regular;
   background-color: #323232;
@@ -103,17 +109,17 @@ body {
 
 .about-musicians {
   padding: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  background-color: #FFFFFF;
 }
 .about-musicians__title {
   color: #323232;
   font-size: 1.5rem; /*ASK ABOUT TITLE SIZE*/
   line-height: 2rem;
   font-family: avenir-bold;
-  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
   padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
 }
 .about-musicians__image {
-  height: 14rem;
   width: 100%;
   padding-bottom: 1em;
 }
@@ -137,8 +143,30 @@ body {
   line-height: 2rem;
   padding-bottom: 1.14284em;
 }
-.about-musicians__text {
+.about-musicians__text, .about-musicians__text--alignment {
+  padding-bottom: 1.2308em; /*equals 16px of bottom padding, this to match style doc instructions*/
+}
+.about-musicians__text--alignment {
+  padding-bottom: 0em;
+}
+
+.photo-gallery {
+  padding: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  background-color: #FAFAFA;
+}
+.photo-gallery__title {
+  font-family: avenir-bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
   color: #323232;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin between hero section and "about musician" section*/
+  padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
+}
+.photo-gallery__container {
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__container--image {
+  width: 100%;
+  padding-bottom: 1em;
 }/*# sourceMappingURL=bio.css.map */

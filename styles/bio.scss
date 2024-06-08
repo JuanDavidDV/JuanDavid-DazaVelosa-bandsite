@@ -2,6 +2,14 @@
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
 
+
+//Extends
+.about-musicians__text {
+    color: $BandSite-Black;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
 .page-header {
     font-family: avenir-regular;
     background-color: $BandSite-Black;
@@ -87,18 +95,18 @@
 
 .about-musicians {
     padding: 1rem;  /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+    background-color: $White;
 
     &__title {
         color: $BandSite-Black;
         font-size: 1.5rem;  /*ASK ABOUT TITLE SIZE*/
         line-height: 2rem;
         font-family: avenir-bold;
-        padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+        padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
         padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
     }
 
     &__image {
-        height: 14rem;
         width: 100%;
         padding-bottom: 1em;
     }
@@ -127,8 +135,36 @@
     }
 
     &__text {
-        color: $BandSite-Black;
-        font-size: 0.8125rem;
-        line-height: 1.125rem;
+        @extend .about-musicians__text;
+        padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
+
+            &--alignment {
+                @extend .about-musicians__text;
+                padding-bottom: 0em;        
+            }
     }
+}
+
+.photo-gallery {
+    padding: 1rem;  /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+    background-color: $Alabaster;
+
+        &__title {
+            font-family: avenir-bold;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: $BandSite-Black;
+            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin between hero section and "about musician" section*/
+            padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
+        }
+
+        &__container {
+            display: flex; 
+            flex-direction: column;
+
+                &--image {
+                    width: 100%;
+                    padding-bottom: 1em;
+                }
+        }
 }
