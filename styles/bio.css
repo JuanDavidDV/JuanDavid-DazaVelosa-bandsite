@@ -1,4 +1,3 @@
-/*ASK IF THIS IS CORRECT WAY TO IMPORT FONTS IN BANDSITE*/
 @font-face {
   font-family: "avenir-regular";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
@@ -40,7 +39,7 @@ body {
   color: #FFFFFF;
   width: 100%;
 }
-.page-header__title {
+.page-header__logo {
   display: block;
   margin: auto;
   padding-top: 1em;
@@ -108,7 +107,7 @@ body {
 }
 
 .about-musicians {
-  padding: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  padding: 1em;
   background-color: #FFFFFF;
 }
 .about-musicians__title {
@@ -151,7 +150,7 @@ body {
 }
 
 .photo-gallery {
-  padding: 1rem 1rem 0rem 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+  padding: 1em 1em 0em 1em;
   background-color: #FAFAFA;
 }
 .photo-gallery__title {
@@ -183,7 +182,7 @@ body {
   padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
 }
 .footer-page__socials {
-  padding: 1em 0em;
+  padding-top: 1em;
 }
 .footer-page__socials__link {
   text-decoration: none;
@@ -200,10 +199,26 @@ body {
   font-size: 0.875rem;
   line-height: 1.375rem;
   color: #FFFFFF;
+  padding-top: 1.14283em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 .footer-page__paragraph {
   font-size: 0.8125rem;
   line-height: 1.375rem;
   color: #FFFFFF;
-  padding: 1.2308em 0em;
+  padding: 1.2308em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px */
+}
+.footer-page__paragraph--copy-right {
+  font-size: 0.7rem; /*customized font size to match mock doc*/
+  line-height: 1.375rem;
+  color: #FFFFFF;
+  padding: 1.4286em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px */
+}
+.footer-page__email {
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+  color: #FFFFFF;
+  padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as required on the Mock document */
+}
+.footer-page__logo {
+  padding-top: 1.5em;
 }/*# sourceMappingURL=bio.css.map */

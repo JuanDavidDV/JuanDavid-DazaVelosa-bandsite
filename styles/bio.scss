@@ -16,7 +16,7 @@
     color: $White;
     width: 100%;
 
-        &__title {
+        &__logo {
                display: block;
                margin: auto;
                padding-top: 1em;
@@ -94,7 +94,7 @@
 }
 
 .about-musicians {
-    padding: 1rem;  /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+    padding: 1em;
     background-color: $White;
 
     &__title {
@@ -146,7 +146,7 @@
 }
 
 .photo-gallery {
-    padding: 1rem 1rem 0rem 1rem;  /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+    padding: 1em 1em 0em 1em; 
     background-color: $Alabaster;
 
         &__title {
@@ -182,7 +182,7 @@
         }
 
         &__socials {
-            padding: 1em 0em;
+            padding-top: 1em;
 
             &__link {
                 text-decoration: none;
@@ -203,13 +203,31 @@
             font-size: 0.875rem;
             line-height: 1.375rem;
             color: $White;
+            padding-top: 1.14283em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
         }
 
         &__paragraph {
             font-size: 0.8125rem;
             line-height: 1.375rem;
             color: $White;
-            padding: 1.2308em 0em;
+            padding: 1.2308em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+        
+                &--copy-right {
+                    font-size: 0.7rem;  /*customized font size to match mock doc*/
+                    line-height: 1.375rem;
+                    color: $White;
+                    padding: 1.4286em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                }
+        }
 
+        &__email {
+            font-size: 0.8125rem;
+            line-height: 1.375rem;
+            color: $White;
+            padding-bottom: 0.6154em;   /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as required on the Mock document */
+        }
+
+        &__logo {
+            padding-top: 1.5em;
         }
 }
