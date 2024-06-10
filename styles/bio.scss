@@ -96,6 +96,8 @@
 .about-musicians {
     padding: 1em;
     background-color: $White;
+    display: flex;
+    flex-direction: column;
 
     &__title {
         color: $BandSite-Black;
@@ -123,7 +125,7 @@
         font-size: 0.875rem;
         line-height: 2rem;  /*Customized line height to match mock document*/
         color: $BandSite-Black;
-        padding-bottom: 1.7143em; /*equals 24px of bottom padding, this to match style doc instructions*/
+        padding-bottom: 1.14284em; /*equals 16px of bottom padding, this to match style doc instructions*/
     }
 
     &__subheader-title {

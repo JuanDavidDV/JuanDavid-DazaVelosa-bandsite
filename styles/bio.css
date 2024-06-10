@@ -109,6 +109,8 @@ body {
 .about-musicians {
   padding: 1em;
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
 }
 .about-musicians__title {
   color: #323232;
@@ -133,7 +135,7 @@ body {
   font-size: 0.875rem;
   line-height: 2rem; /*Customized line height to match mock document*/
   color: #323232;
-  padding-bottom: 1.7143em; /*equals 24px of bottom padding, this to match style doc instructions*/
+  padding-bottom: 1.14284em; /*equals 16px of bottom padding, this to match style doc instructions*/
 }
 .about-musicians__subheader-title {
   font-family: avenir-demi;
