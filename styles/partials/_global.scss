@@ -1,23 +1,4 @@
-@font-face {
-    font-family: "avenir-regular";
-    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), /*Forces to apply font family*/
-         url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "avenir-demi";
-    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),   /*Forces to apply font family*/
-         url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: "avenir-bold";
-    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),   /*Forces to apply font family*/
-         url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
-    font-weight: 700;
-}
+@use './fonts' as *;
 
 /*Removes margin, padding, and applies border-box to wbesite*/
 * { 
@@ -28,4 +9,33 @@
 
 body {
     font-family: avenir-regular;
+}
+/*SHOW THAT FONT WEIGHT IS NOT APPLIYING IN GOOGLE INSPECTOR!!!!*/
+h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: avenir-bold;
+    padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+    padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
+}
+
+h2 {
+    font-family: avenir-demi;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+}
+
+h3 {
+    font-size: 0.7rem;  /*customized font size to match mock doc*/
+    line-height: 1.375rem;
+}
+
+p {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
+a {
+    text-decoration: none;
 }

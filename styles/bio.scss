@@ -1,21 +1,23 @@
 @use './partials/global' as *;
+@use './partials/fonts' as *;
+@use './partials/mixins' as *;
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
 
-.page-header {
+.page-header {  /*SHOULD I MOVE HEADER AND FOOTER TO GLOBAL FOR SPRINT 1, IF NOT WILL THAT DECREASE MY GRADE?*/
     background-color: $BandSite-Black;
     width: 100%;
 
         &__logo {
                display: block;
                margin: auto;    /*Centers logo*/
-               padding-top: 1em;
+               padding-top: $mobile-padding;
             } 
 
         &__nav {
             display: flex;
             font-size: 0.875rem;   
-            padding-top: 1em;
+            padding-top: $mobile-padding;
         
             &--box {
                 display: inline-block;
@@ -23,16 +25,11 @@
                 width: 50%;
                 
                     &--current {
-                        display: inline-block;
-                        text-align: center;
-                        width: 50%;
-                        padding-bottom: 0.75em;
-                        border-bottom: 0.2rem solid $White;
+                        @include current-site;
                     }
             }   
 
             &__link {
-                text-decoration: none;
                 color: $Mercury;
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
                 
@@ -43,7 +40,6 @@
                     }
 
                     &--current { /*Curent active link*/
-                        text-decoration: none;
                         color: $White; 
                         font-family: avenir-bold; /*Applies bold font family*/
                     }
@@ -52,12 +48,9 @@
 }
 
 .hero {
-    background-image: url("../assets/images/hero-bio.jpg");
+    @include background-image ($hero-bio);
     position: relative; /*Used to apply 50% overlay Bandsite-black over image*/
-    width: 100%;
     height: 11.5rem; /*Customized height to match Mock doc*/
-    background-position: center;
-    background-size: cover;
     display: flex;
 
         &__image--overlay {
@@ -68,65 +61,46 @@
 
         &__title {
             align-self: center; /*Aligns title in the middle of the background image*/
-            font-family: avenir-demi; /*Applied this style to match mock doc*/
-            font-size: 1.5rem;
-            line-height: 2rem;
             color: $White;
-            padding-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
+            padding: 0em 0em 0em 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
             position: absolute; /*Makes title be over the image overlay*/
         }
 }
 
 .about-musicians {
-    padding: 1em;
+    padding: $mobile-padding;
     background-color: $White;
     display: flex;
     flex-direction: column;
 
     &__title {
         color: $BandSite-Black;
-        font-size: 1.5rem;  
-        line-height: 2rem;
-        font-family: avenir-bold;   /*SHOW THAT FONT WEIGHT IS NOT APPLIYING IN GOOGLE INSPECTOR!!!!*/
-        padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
-        padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
-    }
+   }
 
     &__image {
         width: 100%;
-        padding-bottom: 1em;
+        padding-bottom: $mobile-padding;
     }
 
     &__subheader--one {
-        font-family: avenir-demi;
-        font-size: 0.875rem;
-        line-height: 1.375rem;
         color: $BandSite-Black;
+        padding-bottom: 0em;
     }
 
     &__subheader--two {
-        font-family: avenir-demi;
-        font-size: 0.875rem;
         line-height: 2rem;  /*Customized line height to match mock document*/
         color: $BandSite-Black;
-        padding-bottom: 1.14284em; /*equals 16px of bottom padding, this to match style doc instructions*/
     }
 
     &__subheader-title {
-        font-family: avenir-demi;
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        padding-bottom: 1.14284em /*equals 16px of bottom padding, this to match style doc instructions*/
+        color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
     }
 
     &__text {
         color: $BandSite-Black;
-        font-size: 0.8125rem;
-        line-height: 1.125rem;
         padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
             &--alignment {
-                @extend .about-musicians__text;
                 padding-bottom: 0em;        
             }
     }
@@ -137,12 +111,7 @@
     background-color: $Alabaster;
 
         &__title {
-            font-family: avenir-bold;
-            font-size: 1.5rem;
-            line-height: 2rem;
             color: $BandSite-Black;
-            padding-top: 0.33332em;     /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
-            padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
         }
 
         &__container {
@@ -151,27 +120,22 @@
 
                 &--image {
                     width: 100%;
-                    padding-bottom: 1em;
+                    padding-bottom: $mobile-padding;
                 }
         }
 }
 
 .footer-page {
     background-color: $BandSite-Black;
-    padding: 1em;
+    padding: $mobile-padding;
 
         &__title {
-            font-family: avenir-bold;
-            font-size: 1.5rem;
-            line-height: 2rem;
             color: $White;
-            padding-top: 0.33332em;  /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
         }
 
         &__socials {
-            padding-top: 1em;
 
-            &__link {
+            &__link { /*IF YES REMOVE*/
                 text-decoration: none;
             }
 
@@ -186,35 +150,27 @@
         }
 
         &__subheader {
-            font-family: avenir-demi;
-            font-size: 0.875rem;
-            line-height: 1.375rem;
             color: $White;
             padding-top: 1.14283em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+            padding-bottom: 0em;
         }
 
         &__paragraph {
-            font-size: 0.8125rem;
-            line-height: 1.125rem;
             color: $White;
             padding: 1.2308em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
-        
-                &--copy-right {
-                    font-size: 0.7rem;  /*customized font size to match mock doc*/
-                    line-height: 1.375rem;
-                    color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
-                    padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
-                }
         }
 
         &__email {
-            font-size: 0.8125rem;
-            line-height: 1.125rem;
             color: $White;
             padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
         }
 
         &__logo {
-            padding-top: 3em;
+            padding-top: 2.5em; /*customized padding to match Mock document*/
+        }
+          
+        &--copy-right {
+            color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
+            padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
         }
 }
