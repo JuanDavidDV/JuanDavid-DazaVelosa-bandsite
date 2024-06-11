@@ -49,8 +49,8 @@
 
 .hero {
     @include background-image ($hero-bio);
-    position: relative; /*Used to apply 50% overlay Bandsite-black over image*/
-    height: 11.5rem; /*Customized height to match Mock doc*/
+    position: relative;
+    height: 12rem; /*Customized height to match Mock doc*/
     display: flex;
 
         &__image--overlay {
