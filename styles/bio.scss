@@ -2,31 +2,19 @@
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
 
-
-//Extends
-.about-musicians__text {
-    color: $BandSite-Black;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-}
-
 .page-header {
-    font-family: avenir-regular;
     background-color: $BandSite-Black;
-    color: $White;
     width: 100%;
 
         &__logo {
                display: block;
-               margin: auto;
+               margin: auto;    /*Centers logo*/
                padding-top: 1em;
-
             } 
 
         &__nav {
             display: flex;
-            justify-content: space-around;
-            font-size: 1rem;        /*customed size to match Mock doc*/
+            font-size: 0.875rem;   
             padding-top: 1em;
         
             &--box {
@@ -39,22 +27,19 @@
                         text-align: center;
                         width: 50%;
                         padding-bottom: 0.75em;
-                        border-bottom: 0.2rem solid $White; /*ASK ABOUT MIN WIDTH OF THE UNDERLINE WILL BE 1 GRID COLUMN UNIT*/
+                        border-bottom: 0.2rem solid $White;
                     }
             }   
 
             &__link {
-                 /*Applied to let bottom border line have the lenght of the container block instead of the actual link*/
                 text-decoration: none;
                 color: $Mercury;
-                padding-bottom: 0.75em;
-                border-bottom: 0.2rem solid $BandSite-Black;
+                padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
                 
                     &:hover {
                         border-bottom: 0.2rem solid $White; 
                         color: $White;
-                        display: block; /*converted to block to enable bottom border but full size when hovering*/
-                        width: 100%;
+                        display: block; /*converted to block to enable bottom border line be full size when hovering*/
                     }
 
                     &--current { /*Curent active link*/
@@ -68,27 +53,26 @@
 
 .hero {
     background-image: url("../assets/images/hero-bio.jpg");
-    position: relative; /*Used to apply 50% overlay Bandsite-black over image, by making it relative*/
+    position: relative; /*Used to apply 50% overlay Bandsite-black over image*/
     width: 100%;
-    height: 15rem;
+    height: 11.5rem; /*Customized height to match Mock doc*/
     background-position: center;
     background-size: cover;
     display: flex;
 
         &__image--overlay {
             background-color: rgba($BandSite-Black, 0.5);
-            position: absolute;
             height: 100%;
             width: 100%;
         }   
 
         &__title {
             align-self: center; /*Aligns title in the middle of the background image*/
-            font-family: avenir-demi; 
+            font-family: avenir-demi; /*Applied this style to match mock doc*/
             font-size: 1.5rem;
-            line-height: 2rem; /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
+            line-height: 2rem;
             color: $White;
-            padding-left: 1rem; /*CAN I USE REM UNITS FOR PADDING FOR THE LAYOUT GRID???*/
+            padding-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
             position: absolute; /*Makes title be over the image overlay*/
         }
 }
@@ -101,10 +85,10 @@
 
     &__title {
         color: $BandSite-Black;
-        font-size: 1.5rem;  /*ASK ABOUT TITLE SIZE*/
+        font-size: 1.5rem;  
         line-height: 2rem;
-        font-family: avenir-bold;
-        padding-top: 0.33332em; /*Customed padding to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
+        font-family: avenir-bold;   /*SHOW THAT FONT WEIGHT IS NOT APPLIYING IN GOOGLE INSPECTOR!!!!*/
+        padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section "about-musician, 8px+16px=24px), of top margin between hero section and "about musician" section*/
         padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
     }
 
@@ -130,14 +114,15 @@
 
     &__subheader-title {
         font-family: avenir-demi;
-        color: $BandSite-DarkBlack;
         font-size: 0.875rem;
-        line-height: 2rem;
+        line-height: 1.375rem;
         padding-bottom: 1.14284em /*equals 16px of bottom padding, this to match style doc instructions*/
     }
 
     &__text {
-        @extend .about-musicians__text;
+        color: $BandSite-Black;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
         padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
             &--alignment {
@@ -156,7 +141,7 @@
             font-size: 1.5rem;
             line-height: 2rem;
             color: $BandSite-Black;
-            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
+            padding-top: 0.33332em;     /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
             padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
         }
 
@@ -178,9 +163,9 @@
         &__title {
             font-family: avenir-bold;
             font-size: 1.5rem;
-            line-height: 2rem;  /*SHOULD I USE REM AS A UNIT FOR THE LINE-HEIGHT*/
+            line-height: 2rem;
             color: $White;
-            padding-top: 0.33332em;     /*Customed padding to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
+            padding-top: 0.33332em;  /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section 8px+16px=24px), of top margin*/
         }
 
         &__socials {
@@ -195,7 +180,7 @@
                 padding: 0em 0.75em;
 
                     &--alignment {
-                        padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media logo as Mock document*/
+                        padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
                     }
             }
         }
@@ -210,26 +195,26 @@
 
         &__paragraph {
             font-size: 0.8125rem;
-            line-height: 1.375rem;
+            line-height: 1.125rem;
             color: $White;
             padding: 1.2308em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
         
                 &--copy-right {
                     font-size: 0.7rem;  /*customized font size to match mock doc*/
                     line-height: 1.375rem;
-                    color: $White;
-                    padding: 1.4286em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                    color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
+                    padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
                 }
         }
 
         &__email {
             font-size: 0.8125rem;
-            line-height: 1.375rem;
+            line-height: 1.125rem;
             color: $White;
-            padding-bottom: 0.6154em;   /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as required on the Mock document */
+            padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
         }
 
         &__logo {
-            padding-top: 1.5em;
+            padding-top: 3em;
         }
 }
