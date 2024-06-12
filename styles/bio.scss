@@ -7,41 +7,78 @@
 .page-header {  /*SHOULD I MOVE HEADER AND FOOTER TO GLOBAL FOR SPRINT 1, IF NOT WILL THAT DECREASE MY GRADE?*/
     background-color: $BandSite-Black;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
-        &__logo {
-               display: block;
-               margin: auto;    /*Centers logo*/
-               padding-top: $mobile-padding;
+    @include tablet {
+        display: flex;
+        padding: 2.25em 2.25em 0em 2.25em;
+    }
+
+        &__logo-link {
+            align-self: center;
+            margin-top: 1.25em; /*customized margin to match Mock document*/
+
+               @include tablet { 
+                margin: 0em 3.5em 0em 1.5em;
+                padding-top: 0em;
+               }
             } 
 
         &__nav {
             display: flex;
-            font-size: 0.875rem;   
-            padding-top: $mobile-padding;
-        
+            font-size: 0.875rem; 
+            padding-top: 0.75em;  /*customized padding to match Mock document*/
+
+            @include tablet {
+                padding-top: 0em;
+            }
+
             &--box {
                 display: inline-block;
                 text-align: center;
                 width: 50%;
-                
+              
                     &--current {
                         @include current-site;
+
+                        @include tablet {
+                            width: 40%; /*Used to setup the width of the white underline of current page*/
+                            padding-bottom: 2.20em; /*cutomized bottom padding to match mock document*/
+                            
+                        }
                     }
             }   
 
             &__link {
                 color: $Mercury;
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
-                
+                font-size: 0.875rem;   
+
+                @include tablet {
+                    font-size: 0.9375rem;
+                    margin: 0em 2.5em;
+                    padding-bottom: 0em;
+                }
+
                     &:hover {
                         border-bottom: 0.2rem solid $White; 
                         color: $White;
                         display: block; /*converted to block to enable bottom border line be full size when hovering*/
+
+                            @include tablet {
+                                width: 45%;
+                            }
                     }
 
                     &--current { /*Curent active link*/
+                        font-size: 0.875rem; 
                         color: $White; 
                         font-family: avenir-bold; /*Applies bold font family*/
+
+                            @include tablet {
+                                font-size: 0.9375rem;
+                            }
                     }
             }
         }
@@ -68,7 +105,7 @@
 }
 
 .about-musicians {
-    padding: $mobile-padding;
+    padding: $default-padding;
     background-color: $White;
     display: flex;
     flex-direction: column;
@@ -79,7 +116,7 @@
 
     &__image {
         width: 100%;
-        padding-bottom: $mobile-padding;
+        padding-bottom: $default-padding;
     }
 
     &__subheader--one {
@@ -101,6 +138,7 @@
         padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
             &--alignment {
+                color: $BandSite-Black;
                 padding-bottom: 0em;        
             }
     }
@@ -120,14 +158,14 @@
 
                 &--image {
                     width: 100%;
-                    padding-bottom: $mobile-padding;
+                    padding-bottom: $default-padding;
                 }
         }
 }
 
 .footer-page {
     background-color: $BandSite-Black;
-    padding: $mobile-padding;
+    padding: $default-padding;
 
         &__title {
             color: $White;
