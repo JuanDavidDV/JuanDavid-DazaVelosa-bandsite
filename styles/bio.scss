@@ -20,7 +20,7 @@
             margin-top: 1.25em; /*customized margin to match Mock document*/
 
                @include tablet { 
-                    margin: 0em 5em 1.5em 0em;                    
+                    margin: 0em 4em 1em 0em;                    
                }
             } 
 
@@ -31,7 +31,6 @@
 
             @include tablet {
                 padding-top: 0.8em; /*customized padding top to match Mock document*/
-
             }
 
             &--box {
@@ -43,9 +42,8 @@
                         @include current-site;
 
                         @include tablet {
-                            width: 40%; /*Used to setup the width of the white underline of current page*/
-                            padding-bottom: 2em; /*cutomized bottom padding to match mock document*/
-                            
+                            width: 35%; /*Used to setup the width of the white underline of current page*/
+                            padding-bottom: 1.7143em; /*cutomized bottom padding to match mock document*/    
                         }
                     }
             }   
@@ -57,17 +55,17 @@
 
                 @include tablet {
                     font-size: 0.9375rem;
-                    margin: 0em 2.5em;
-                    padding-bottom: 1.87em; /*defines padding between link and bottom header container for white underline when link is hover*/
+                    margin: 0em 3.75em;
+                    padding-bottom: 1.6em; /*defines padding between link and bottom header container for white underline when link is hover*/
                 }
 
-                    &:hover {
+                    &:hover {   /*SHOW HOVERING UNDER WORD "SHOW"*/
                         border-bottom: 0.2rem solid $White; 
                         color: $White;
                         display: block; /*converted to block to enable bottom border line be full size when hovering*/
 
                             @include tablet {
-                                width: 45%;
+                                width: 38%;
                             }
                     }
 
@@ -91,7 +89,7 @@
     display: flex;
 
         @include tablet {
-            height: 20vmax;
+            height: 25rem;
         }
 
         &__image--overlay {
@@ -105,6 +103,10 @@
             color: $White;
             padding: 0em 0em 0em 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
             position: absolute; /*Makes title be over the image overlay*/
+
+            @include tablet {
+                
+            }
         }
 }
 
@@ -193,8 +195,8 @@
 
         &__subheader {
             color: $White;
-            padding-top: 1.14283em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
-            padding-bottom: 0em;
+            font-family: avenir-demi;
+            padding: 1.2308em 0em 0em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
         }
 
         &__paragraph {
@@ -212,6 +214,7 @@
         }
           
         &--copy-right {
+            font-size: 0.7rem;  /*customized font size to match mock doc*/
             color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
             padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
         }
