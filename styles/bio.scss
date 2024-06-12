@@ -11,8 +11,8 @@
     flex-direction: column;
 
     @include tablet {
-        display: flex;
-        padding: 2.25em 2.25em 0em 2.25em;
+        flex-direction: row;
+        padding: 1.5em 2.25em 0em 2.25em;
     }
 
         &__logo-link {
@@ -20,8 +20,7 @@
             margin-top: 1.25em; /*customized margin to match Mock document*/
 
                @include tablet { 
-                margin: 0em 3.5em 0em 1.5em;
-                padding-top: 0em;
+                    margin: 0em 5em 1.5em 0em;                    
                }
             } 
 
@@ -31,7 +30,8 @@
             padding-top: 0.75em;  /*customized padding to match Mock document*/
 
             @include tablet {
-                padding-top: 0em;
+                padding-top: 0.8em; /*customized padding top to match Mock document*/
+
             }
 
             &--box {
@@ -44,7 +44,7 @@
 
                         @include tablet {
                             width: 40%; /*Used to setup the width of the white underline of current page*/
-                            padding-bottom: 2.20em; /*cutomized bottom padding to match mock document*/
+                            padding-bottom: 2em; /*cutomized bottom padding to match mock document*/
                             
                         }
                     }
@@ -58,7 +58,7 @@
                 @include tablet {
                     font-size: 0.9375rem;
                     margin: 0em 2.5em;
-                    padding-bottom: 0em;
+                    padding-bottom: 1.87em; /*defines padding between link and bottom header container for white underline when link is hover*/
                 }
 
                     &:hover {
@@ -89,6 +89,10 @@
     position: relative;
     height: 12rem; /*Customized height to match Mock doc*/
     display: flex;
+
+        @include tablet {
+            height: 20vmax;
+        }
 
         &__image--overlay {
             background-color: rgba($BandSite-Black, 0.5);
