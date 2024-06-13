@@ -113,8 +113,6 @@
 .about-musicians {
     padding: 1em;
     background-color: $White;
-    display: flex;
-    flex-direction: column;
 
     @include tablet {
         padding: 2.25em;
@@ -124,12 +122,18 @@
         color: $BandSite-Black;
    }
 
+   &__container--tablet-desktop {    /*cutomized padding to match Mock document for tablet and desktop view*/
+        @include tablet {
+            padding: 0 3.75em;
+        }
+    }
+
     &__image {
         width: 100%;
         padding-bottom: 1em;
 
         @include tablet {
-            padding: 0 3.75em 1em 3.75em;   /*cutomized padding to match Mock document*/
+            padding-bottom: 2.25em;
         }
     }
 
@@ -139,18 +143,38 @@
     }
 
     &__subheader--two {
+        @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay*/
         line-height: 2rem;  /*Customized line height to match mock document*/
         color: $BandSite-Black;
+
+        @include tablet {
+            font-size: 1rem;    /*selected font size to match Mock document*/
+            padding: 0.75em 0 2.25em 0;   /*customized padding to match Mock document*/
+        }
     }
 
     &__subheader-title {
         color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
+
+            @include tablet {
+                padding-bottom: 1em;
+            }
+    }
+
+    &__text-container--tablet-desktop {
+        @include tablet {
+            display: flex;
+        }
     }
 
     &__text {
         color: $BandSite-Black;
         padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
+        @include tablet {
+            padding: 0 0.75em 0 0;
+
+        }
             &--alignment {
                 color: $BandSite-Black;
                 padding-bottom: 0em;        

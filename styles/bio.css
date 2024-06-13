@@ -60,18 +60,30 @@ h2 {
 }
 
 /*Subheader*/
-h3 {
+h3, .about-musicians__subheader--two {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: avenir-demi;
   font-weight: 600;
   padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
+@media (min-width: 768px) {
+  h3, .about-musicians__subheader--two {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
 
 /*Page body and footer*/
 p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 a {
@@ -194,8 +206,6 @@ a {
 .about-musicians {
   padding: 1em;
   background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
 }
 @media (min-width: 768px) {
   .about-musicians {
@@ -205,13 +215,19 @@ a {
 .about-musicians__title {
   color: #323232;
 }
+.about-musicians__container--tablet-desktop { /*cutomized padding to match Mock document for tablet and desktop view*/ }
+@media (min-width: 768px) {
+  .about-musicians__container--tablet-desktop {
+    padding: 0 3.75em;
+  }
+}
 .about-musicians__image {
   width: 100%;
   padding-bottom: 1em;
 }
 @media (min-width: 768px) {
   .about-musicians__image {
-    padding: 0 3.75em 1em 3.75em; /*cutomized padding to match Mock document*/
+    padding-bottom: 2.25em;
   }
 }
 .about-musicians__subheader--one {
@@ -219,15 +235,37 @@ a {
   padding-bottom: 0em;
 }
 .about-musicians__subheader--two {
+  /*applies subheader in order to match Mock document and Style guide for mobile layout diplay*/
   line-height: 2rem; /*Customized line height to match mock document*/
   color: #323232;
+}
+@media (min-width: 768px) {
+  .about-musicians__subheader--two {
+    font-size: 1rem; /*selected font size to match Mock document*/
+    padding: 0.75em 0 2.25em 0; /*customized padding to match Mock document*/
+  }
 }
 .about-musicians__subheader-title {
   color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
 }
+@media (min-width: 768px) {
+  .about-musicians__subheader-title {
+    padding-bottom: 1em;
+  }
+}
+@media (min-width: 768px) {
+  .about-musicians__text-container--tablet-desktop {
+    display: flex;
+  }
+}
 .about-musicians__text {
   color: #323232;
   padding-bottom: 1.2308em; /*equals 16px of bottom padding, this to match style doc instructions*/
+}
+@media (min-width: 768px) {
+  .about-musicians__text {
+    padding: 0 0.75em 0 0;
+  }
 }
 .about-musicians__text--alignment {
   color: #323232;
