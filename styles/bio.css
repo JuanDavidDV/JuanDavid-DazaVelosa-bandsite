@@ -13,6 +13,10 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+/*Primary Colors*/
+/*Secundary Colors*/
+/*Responsive Design Breakpoints*/
+/*Background Image*/
 /*Removes margin, padding, and applies border-box to wbesite*/
 * {
   margin: 0rem;
@@ -30,8 +34,13 @@ h1 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: avenir-bold;
-  padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
-  padding-bottom: 0.66668em; /*Customed padding to match mobile layout as in the Style guide of 16px */
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
 }
 
 /*Section Header*/
@@ -39,8 +48,15 @@ h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: avenir-bold;
+  font-weight: 700;
   padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
   padding-bottom: 0.66668em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
 }
 
 /*Subheader*/
@@ -48,6 +64,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: avenir-demi;
+  font-weight: 600;
   padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 
@@ -61,12 +78,7 @@ a {
   text-decoration: none;
 }
 
-/*Primary Colors*/
-/*Secundary Colors*/
-/*Responsive Design Breakpoints*/
-/*Responsive Design Padding*/
-/*Background Image*/
-.page-header { /*SHOULD I MOVE HEADER AND FOOTER TO GLOBAL FOR SPRINT 1, IF NOT WILL THAT DECREASE MY GRADE?*/
+.page-header {
   background-color: #323232;
   width: 100%;
   display: flex;
@@ -75,7 +87,7 @@ a {
 @media (min-width: 768px) {
   .page-header {
     flex-direction: row;
-    padding: 1.5em 2.25em 0em 2.25em;
+    padding: 1.5em 2.25em 0 2.25em;
   }
 }
 .page-header__logo-link {
@@ -84,17 +96,17 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__logo-link {
-    margin: 0em 4em 1em 0em;
+    margin: 0em 4em 1em 0;
   }
 }
 .page-header__nav {
   display: flex;
   font-size: 0.875rem;
-  padding-top: 0.75em; /*customized padding to match Mock document*/
+  margin-top: 0.75em; /*customized padding to match Mock document*/
 }
 @media (min-width: 768px) {
   .page-header__nav {
-    padding-top: 0.8em; /*customized padding top to match Mock document*/
+    margin-top: 0.8em; /*customized padding top to match Mock document*/
   }
 }
 .page-header__nav--box {
@@ -118,33 +130,33 @@ a {
 .page-header__nav__link {
   color: #E1E1E1;
   padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
-  font-size: 0.875rem;
+  font-size: 0.875rem; /*cusomized size to match Mock document*/
 }
 @media (min-width: 768px) {
   .page-header__nav__link {
-    font-size: 0.9375rem;
+    font-size: 0.9375rem; /*cusomized size to match Mock document*/
     margin: 0em 3.75em;
     padding-bottom: 1.6em; /*defines padding between link and bottom header container for white underline when link is hover*/
   }
 }
-.page-header__nav__link:hover { /*SHOW HOVERING UNDER WORD "SHOW"*/
+.page-header__nav__link:hover {
   border-bottom: 0.2rem solid #FFFFFF;
   color: #FFFFFF;
   display: block; /*converted to block to enable bottom border line be full size when hovering*/
 }
 @media (min-width: 768px) {
   .page-header__nav__link:hover {
-    width: 38%;
+    width: 38%; /*used to size the lenght of the underline when "Show" is hovered*/
   }
 }
 .page-header__nav__link--current { /*Curent active link*/
-  font-size: 0.875rem;
+  font-size: 0.875rem; /*cusomized size to match Mock document*/
   color: #FFFFFF;
-  font-family: avenir-bold; /*Applies bold font family*/
+  font-family: avenir-bold;
 }
 @media (min-width: 768px) {
   .page-header__nav__link--current {
-    font-size: 0.9375rem;
+    font-size: 0.9375rem; /*cusomized size to match Mock document*/
   }
 }
 
@@ -170,14 +182,25 @@ a {
 .hero__title {
   align-self: center; /*Aligns title in the middle of the background image*/
   color: #FFFFFF;
-  padding: 0em 0em 0em 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
+  margin-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
   position: absolute; /*Makes title be over the image overlay*/
 }
+@media (min-width: 768px) {
+  .hero__title {
+    margin-left: 0.6em; /*adds margin of 36px to match Mock document layout*/
+  }
+}
+
 .about-musicians {
   padding: 1em;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 768px) {
+  .about-musicians {
+    padding: 2.25em;
+  }
 }
 .about-musicians__title {
   color: #323232;
@@ -185,6 +208,11 @@ a {
 .about-musicians__image {
   width: 100%;
   padding-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .about-musicians__image {
+    padding: 0 3.75em 1em 3.75em; /*cutomized padding to match Mock document*/
+  }
 }
 .about-musicians__subheader--one {
   color: #323232;
@@ -229,9 +257,6 @@ a {
 .footer-page__title {
   color: #FFFFFF;
 }
-.footer-page__socials__link { /*IF YES REMOVE*/
-  text-decoration: none;
-}
 .footer-page__socials--icons {
   height: 1.5rem;
   padding: 0em 0.75em;
@@ -253,7 +278,7 @@ a {
   padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
 }
 .footer-page__logo {
-  padding-top: 2.5em; /*customized padding to match Mock document*/
+  margin-top: 2.5em; /*customized padding to match Mock document*/
 }
 .footer-page--copy-right {
   font-size: 0.7rem; /*customized font size to match mock doc*/

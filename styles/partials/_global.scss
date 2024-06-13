@@ -1,4 +1,5 @@
 @use './fonts' as *;
+@use './media-query' as *;
 
 /*Removes margin, padding, and applies border-box to wbesite*/
 * { 
@@ -16,8 +17,11 @@ h1 {
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: avenir-bold;
-    padding-top: 0.33332em;  /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
-    padding-bottom: 0.66668em;  /*Customed padding to match mobile layout as in the Style guide of 16px */
+    font-weight: 700;
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
 }
 
 /*Section Header*/
@@ -25,8 +29,14 @@ h2 {
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: avenir-bold;
+    font-weight: 700;
     padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
     padding-bottom: 0.66668em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
 }
 
 /*Subheader*/
@@ -34,6 +44,7 @@ h3 {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-family: avenir-demi;
+    font-weight: 600;
     padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 

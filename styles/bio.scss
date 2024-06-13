@@ -4,7 +4,7 @@
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
 
-.page-header {  /*SHOULD I MOVE HEADER AND FOOTER TO GLOBAL FOR SPRINT 1, IF NOT WILL THAT DECREASE MY GRADE?*/
+.page-header {  
     background-color: $BandSite-Black;
     width: 100%;
     display: flex;
@@ -12,7 +12,7 @@
 
     @include tablet {
         flex-direction: row;
-        padding: 1.5em 2.25em 0em 2.25em;
+        padding: 1.5em 2.25em 0 2.25em;
     }
 
         &__logo-link {
@@ -20,17 +20,17 @@
             margin-top: 1.25em; /*customized margin to match Mock document*/
 
                @include tablet { 
-                    margin: 0em 4em 1em 0em;                    
+                    margin: 0em 4em 1em 0;                    
                }
             } 
 
         &__nav {
             display: flex;
             font-size: 0.875rem; 
-            padding-top: 0.75em;  /*customized padding to match Mock document*/
+            margin-top: 0.75em;  /*customized padding to match Mock document*/
 
             @include tablet {
-                padding-top: 0.8em; /*customized padding top to match Mock document*/
+                margin-top: 0.8em; /*customized padding top to match Mock document*/
             }
 
             &--box {
@@ -51,31 +51,31 @@
             &__link {
                 color: $Mercury;
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
-                font-size: 0.875rem;   
+                font-size: 0.875rem;   /*cusomized size to match Mock document*/
 
                 @include tablet {
-                    font-size: 0.9375rem;
+                    font-size: 0.9375rem;   /*cusomized size to match Mock document*/
                     margin: 0em 3.75em;
                     padding-bottom: 1.6em; /*defines padding between link and bottom header container for white underline when link is hover*/
                 }
 
-                    &:hover {   /*SHOW HOVERING UNDER WORD "SHOW"*/
+                    &:hover { 
                         border-bottom: 0.2rem solid $White; 
                         color: $White;
                         display: block; /*converted to block to enable bottom border line be full size when hovering*/
 
                             @include tablet {
-                                width: 38%;
+                                width: 38%; /*used to size the lenght of the underline when "Show" is hovered*/
                             }
                     }
 
                     &--current { /*Curent active link*/
-                        font-size: 0.875rem; 
+                        font-size: 0.875rem;    /*cusomized size to match Mock document*/
                         color: $White; 
-                        font-family: avenir-bold; /*Applies bold font family*/
+                        font-family: avenir-bold;
 
                             @include tablet {
-                                font-size: 0.9375rem;
+                                font-size: 0.9375rem;   /*cusomized size to match Mock document*/
                             }
                     }
             }
@@ -88,9 +88,9 @@
     height: 12rem; /*Customized height to match Mock doc*/
     display: flex;
 
-        @include tablet {
-            height: 25rem;
-        }
+    @include tablet {
+        height: 25rem;
+    }
 
         &__image--overlay {
             background-color: rgba($BandSite-Black, 0.5);
@@ -101,20 +101,24 @@
         &__title {
             align-self: center; /*Aligns title in the middle of the background image*/
             color: $White;
-            padding: 0em 0em 0em 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
+            margin-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
             position: absolute; /*Makes title be over the image overlay*/
 
             @include tablet {
-                
+                margin-left: 0.6em;    /*adds margin of 36px to match Mock document layout*/
             }
         }
 }
 
 .about-musicians {
-    padding: $default-padding;
+    padding: 1em;
     background-color: $White;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+        padding: 2.25em;
+    }
 
     &__title {
         color: $BandSite-Black;
@@ -122,7 +126,11 @@
 
     &__image {
         width: 100%;
-        padding-bottom: $default-padding;
+        padding-bottom: 1em;
+
+        @include tablet {
+            padding: 0 3.75em 1em 3.75em;   /*cutomized padding to match Mock document*/
+        }
     }
 
     &__subheader--one {
@@ -164,24 +172,20 @@
 
                 &--image {
                     width: 100%;
-                    padding-bottom: $default-padding;
+                    padding-bottom: 1em;
                 }
         }
 }
 
 .footer-page {
     background-color: $BandSite-Black;
-    padding: $default-padding;
+    padding: 1em;
 
         &__title {
             color: $White;
         }
 
         &__socials {
-
-            &__link { /*IF YES REMOVE*/
-                text-decoration: none;
-            }
 
             &--icons {
                 height: 1.5rem;
@@ -210,7 +214,7 @@
         }
 
         &__logo {
-            padding-top: 2.5em; /*customized padding to match Mock document*/
+            margin-top: 2.5em; /*customized padding to match Mock document*/
         }
           
         &--copy-right {
