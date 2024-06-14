@@ -142,7 +142,6 @@
             padding-bottom: 0em;
         }
 
-        
         &__subheader--two {
             @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
             line-height: 2rem;  /*Customized line height to match mock document*/
@@ -154,8 +153,6 @@
             }
         }
 
-
-        
         &__subheader-title {
             color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
 
@@ -209,7 +206,6 @@
             @include tablet {
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-between;
             }
 
                 &__image {
@@ -237,45 +233,134 @@
     background-color: $BandSite-Black;
     padding: 1em;
 
-        &__title {
-            color: $White;
+    @include tablet {
+        padding: 2.25em;
+    }
+
+        &__top-container {
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            
+            
+            &__title {
+                color: $White;
+
+                @include tablet {
+                    width: 33.33%;
+                }
+            }
+
+            &__socials {
+                @include tablet {
+                    width: 33.33%;
+                }
+                
+
+                &--icons {
+                    height: 1.75rem;
+                    padding: 0em 0.75em;
+
+                        &--alignment {
+                            padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
+                        }
+                }
+            }
+
+            &__subcontainer-logo {
+                @include tablet {
+                    display: flex;
+                    width: 33.33%;
+                    justify-content: flex-end;
+                }    
+
+                &--tablet-desktop {
+                    display: none;
+    
+                    @include tablet {
+                        display: inline;    /*inline used to prevent link inherits the parent width, so that link only work on the  logo area and not outside*/    
+                        
+                    }
+                }
+            }
+
+
         }
 
-        &__socials {
+        &__container {
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            &__box {
+                @include tablet {
+                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows*/
+                }
 
-            &--icons {
-                height: 1.5rem;
-                padding: 0em 0.75em;
+                &__subheader {
+                    color: $White;
+                    font-family: avenir-demi;
+                    padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
-                    &--alignment {
-                        padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
+                    @include tablet {
+                        padding-top: 1.7143em;  /*Customized padding to match tablet layout as in the Style guide of 24px, in order to have a total of padding of 48px between this subheader and the current section header (24px+24px)*/
+
                     }
+                }
+
+                &__paragraph {
+                    color: $White;
+                    padding: 1.2308em 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                
+                    @include tablet {
+                        padding: 1.7143em 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+                    }
+                }
+
+                &__email {
+                    color: $White;
+                    padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
+                
+                    @include tablet {
+                        padding-bottom: 0em;
+                    }
+                }
+
             }
         }
+        
+        &__logo { 
 
-        &__subheader {
-            color: $White;
-            font-family: avenir-demi;
-            padding: 1.2308em 0em 0em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
-        }
-
-        &__paragraph {
-            color: $White;
-            padding: 1.2308em 0em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
-        }
-
-        &__email {
-            color: $White;
-            padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
-        }
-
-        &__logo {
+            &--mobile {
             margin-top: 2.5em; /*customized padding to match Mock document*/
+            
+            @include tablet {
+                display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
+            }
+        
+        }
+
+            &--tablet-desktop {
+                margin-top: 2.5em;
+                display: none;  /*hides logo when mobile breakpoint is met, this to match Mock document*/
+
+                @include tablet {
+                    display: block;
+                }
+            }
         }
           
         &--copy-right {
             font-size: 0.7rem;  /*customized font size to match mock doc*/
             color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
             padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+
+            @include tablet {
+                font-size: 0.875rem;
+                padding-top: 3.4286em;  
+            }
         }
 }

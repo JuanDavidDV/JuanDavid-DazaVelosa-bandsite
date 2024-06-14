@@ -298,7 +298,6 @@ a {
   .photo-gallery__container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 }
 .photo-gallery__container__image, .photo-gallery__container__image--alignment {
@@ -322,34 +321,117 @@ a {
   background-color: #323232;
   padding: 1em;
 }
-.footer-page__title {
+@media (min-width: 768px) {
+  .footer-page {
+    padding: 2.25em;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+.footer-page__top-container__title {
   color: #FFFFFF;
 }
-.footer-page__socials--icons {
-  height: 1.5rem;
+@media (min-width: 768px) {
+  .footer-page__top-container__title {
+    width: 33.33%;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__top-container__socials {
+    width: 33.33%;
+  }
+}
+.footer-page__top-container__socials--icons {
+  height: 1.75rem;
   padding: 0em 0.75em;
 }
-.footer-page__socials--icons--alignment {
+.footer-page__top-container__socials--icons--alignment {
   padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
 }
-.footer-page__subheader {
+@media (min-width: 768px) {
+  .footer-page__top-container__subcontainer-logo {
+    display: flex;
+    width: 33.33%;
+    justify-content: flex-end;
+  }
+}
+.footer-page__top-container__subcontainer-logo--tablet-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-page__top-container__subcontainer-logo--tablet-desktop {
+    display: inline; /*inline used to prevent link inherits the parent width, so that link only work on the  logo area and not outside*/
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__box {
+    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows*/
+  }
+}
+.footer-page__container__box__subheader {
   color: #FFFFFF;
   font-family: avenir-demi;
-  padding: 1.2308em 0em 0em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
-.footer-page__paragraph {
+@media (min-width: 768px) {
+  .footer-page__container__box__subheader {
+    padding-top: 1.7143em; /*Customized padding to match tablet layout as in the Style guide of 24px, in order to have a total of padding of 48px between this subheader and the current section header (24px+24px)*/
+  }
+}
+.footer-page__container__box__paragraph {
   color: #FFFFFF;
-  padding: 1.2308em 0em; /*Customized padding to match mobile layout as in the Style guide of 16px */
+  padding: 1.2308em 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
-.footer-page__email {
+@media (min-width: 768px) {
+  .footer-page__container__box__paragraph {
+    padding: 1.7143em 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+  }
+}
+.footer-page__container__box__email {
   color: #FFFFFF;
   padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
 }
-.footer-page__logo {
+@media (min-width: 768px) {
+  .footer-page__container__box__email {
+    padding-bottom: 0em;
+  }
+}
+.footer-page__logo--mobile {
   margin-top: 2.5em; /*customized padding to match Mock document*/
+}
+@media (min-width: 768px) {
+  .footer-page__logo--mobile {
+    display: none; /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
+  }
+}
+.footer-page__logo--tablet-desktop {
+  margin-top: 2.5em;
+  display: none; /*hides logo when mobile breakpoint is met, this to match Mock document*/
+}
+@media (min-width: 768px) {
+  .footer-page__logo--tablet-desktop {
+    display: block;
+  }
 }
 .footer-page--copy-right {
   font-size: 0.7rem; /*customized font size to match mock doc*/
   color: #FAFAFA; /*Mock document seems to have Alabaster color for the copyright*/
   padding-top: 1.4286em; /*Customized padding to match mobile layout as in the Style guide of 16px */
+}
+@media (min-width: 768px) {
+  .footer-page--copy-right {
+    font-size: 0.875rem;
+    padding-top: 3.4286em;
+  }
 }/*# sourceMappingURL=bio.css.map */
