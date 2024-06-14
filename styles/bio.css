@@ -16,6 +16,7 @@
 /*Primary Colors*/
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
+/*Responsive Layout Grid*/
 /*Background Image*/
 /*Removes margin, padding, and applies border-box to wbesite*/
 * {
@@ -60,7 +61,7 @@ h2 {
 }
 
 /*Subheader*/
-h3, .about-musicians__subheader--two {
+h3, .about-musicians__container__subheader--two {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: avenir-demi;
@@ -68,7 +69,7 @@ h3, .about-musicians__subheader--two {
   padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 @media (min-width: 768px) {
-  h3, .about-musicians__subheader--two {
+  h3, .about-musicians__container__subheader--two {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -90,6 +91,7 @@ a {
   text-decoration: none;
 }
 
+/*ASK ABOUT PADDING UNITS*/
 .page-header {
   background-color: #323232;
   width: 100%;
@@ -215,66 +217,75 @@ a {
 .about-musicians__title {
   color: #323232;
 }
-.about-musicians__container--tablet-desktop { /*cutomized padding to match Mock document for tablet and desktop view*/ }
 @media (min-width: 768px) {
-  .about-musicians__container--tablet-desktop {
-    padding: 0 3.75em;
+  .about-musicians__container {
+    padding: 0 3.75em; /*cutomized padding to match Mock document for tablet and desktop view*/
   }
 }
-.about-musicians__image {
+.about-musicians__container__image {
   width: 100%;
   padding-bottom: 1em;
 }
 @media (min-width: 768px) {
-  .about-musicians__image {
+  .about-musicians__container__image {
     padding-bottom: 2.25em;
   }
 }
-.about-musicians__subheader--one {
+.about-musicians__container__subheader--one {
   color: #323232;
   padding-bottom: 0em;
 }
-.about-musicians__subheader--two {
-  /*applies subheader in order to match Mock document and Style guide for mobile layout diplay*/
+.about-musicians__container__subheader--two {
+  /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
   line-height: 2rem; /*Customized line height to match mock document*/
   color: #323232;
 }
 @media (min-width: 768px) {
-  .about-musicians__subheader--two {
+  .about-musicians__container__subheader--two {
     font-size: 1rem; /*selected font size to match Mock document*/
     padding: 0.75em 0 2.25em 0; /*customized padding to match Mock document*/
   }
 }
-.about-musicians__subheader-title {
+.about-musicians__container__subheader-title {
   color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
 }
 @media (min-width: 768px) {
-  .about-musicians__subheader-title {
+  .about-musicians__container__subheader-title {
     padding-bottom: 1em;
   }
 }
 @media (min-width: 768px) {
-  .about-musicians__text-container--tablet-desktop {
+  .about-musicians__container__paragraph-box {
     display: flex;
   }
 }
-.about-musicians__text {
+.about-musicians__container__paragraph-box__text {
   color: #323232;
   padding-bottom: 1.2308em; /*equals 16px of bottom padding, this to match style doc instructions*/
 }
 @media (min-width: 768px) {
-  .about-musicians__text {
-    padding: 0 0.75em 0 0;
+  .about-musicians__container__paragraph-box__text {
+    padding: 0 0.85712em 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
   }
 }
-.about-musicians__text--alignment {
+.about-musicians__container__paragraph-box__text--alignment {
   color: #323232;
   padding-bottom: 0em;
 }
+@media (min-width: 768px) {
+  .about-musicians__container__paragraph-box__text--alignment {
+    padding: 0 0 0 0.85712em; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+  }
+}
 
 .photo-gallery {
-  padding: 1em 1em 0em 1em;
+  padding: 1em 1em 0 1em;
   background-color: #FAFAFA;
+}
+@media (min-width: 768px) {
+  .photo-gallery {
+    padding: 2.25em 2.25em 0.75em 2.25em; /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 26px to match Mock document*/
+  }
 }
 .photo-gallery__title {
   color: #323232;
@@ -283,9 +294,28 @@ a {
   display: flex;
   flex-direction: column;
 }
-.photo-gallery__container--image {
+@media (min-width: 768px) {
+  .photo-gallery__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.photo-gallery__container__image, .photo-gallery__container__image--alignment {
   width: 100%;
   padding-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .photo-gallery__container__image, .photo-gallery__container__image--alignment {
+    width: 33.33%;
+    padding-bottom: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+@media (min-width: 768px) {
+  .photo-gallery__container__image--alignment {
+    padding-right: 0; /*removes unwanted padding from the images located om the right of the site, this to match mock document*/
+  }
 }
 
 .footer-page {

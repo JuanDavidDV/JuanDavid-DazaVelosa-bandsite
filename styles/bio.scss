@@ -3,7 +3,7 @@
 @use './partials/mixins' as *;
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
-
+/*ASK ABOUT PADDING UNITS*/
 .page-header {  
     background-color: $BandSite-Black;
     width: 100%;
@@ -122,69 +122,81 @@
         color: $BandSite-Black;
    }
 
-   &__container--tablet-desktop {    /*cutomized padding to match Mock document for tablet and desktop view*/
-        @include tablet {
-            padding: 0 3.75em;
-        }
+   &__container {
+
+    @include tablet {
+        padding: 0 3.75em;  /*cutomized padding to match Mock document for tablet and desktop view*/
     }
 
-    &__image {
-        width: 100%;
-        padding-bottom: 1em;
-
-        @include tablet {
-            padding-bottom: 2.25em;
-        }
-    }
-
-    &__subheader--one {
-        color: $BandSite-Black;
-        padding-bottom: 0em;
-    }
-
-    &__subheader--two {
-        @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay*/
-        line-height: 2rem;  /*Customized line height to match mock document*/
-        color: $BandSite-Black;
-
-        @include tablet {
-            font-size: 1rem;    /*selected font size to match Mock document*/
-            padding: 0.75em 0 2.25em 0;   /*customized padding to match Mock document*/
-        }
-    }
-
-    &__subheader-title {
-        color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
+        &__image {
+            width: 100%;
+            padding-bottom: 1em;
 
             @include tablet {
-                padding-bottom: 1em;
+                padding-bottom: 2.25em;
             }
-    }
-
-    &__text-container--tablet-desktop {
-        @include tablet {
-            display: flex;
         }
-    }
 
-    &__text {
-        color: $BandSite-Black;
-        padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
-
-        @include tablet {
-            padding: 0 0.75em 0 0;
-
+        &__subheader--one {
+            color: $BandSite-Black;
+            padding-bottom: 0em;
         }
-            &--alignment {
-                color: $BandSite-Black;
-                padding-bottom: 0em;        
+
+        
+        &__subheader--two {
+            @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
+            line-height: 2rem;  /*Customized line height to match mock document*/
+            color: $BandSite-Black;
+
+            @include tablet {
+                font-size: 1rem;    /*selected font size to match Mock document*/
+                padding: 0.75em 0 2.25em 0;   /*customized padding to match Mock document*/
             }
-    }
+        }
+
+
+        
+        &__subheader-title {
+            color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
+
+                @include tablet {
+                    padding-bottom: 1em;
+                }
+        }
+
+        &__paragraph-box {
+            @include tablet {
+                display: flex;
+            }
+
+                &__text {
+                    color: $BandSite-Black;
+                    padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
+
+                    @include tablet {
+                        padding: 0 0.85712em 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                    }
+
+                        &--alignment {
+                            color: $BandSite-Black;
+                            padding-bottom: 0em; 
+                            
+                            @include tablet {
+                                padding: 0 0 0 0.85712em;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                            }
+                        }
+                }
+        }
+   }
 }
 
 .photo-gallery {
-    padding: 1em 1em 0em 1em; 
+    padding: 1em 1em 0 1em; 
     background-color: $Alabaster;
+
+    @include tablet {
+        padding: 2.25em 2.25em 0.75em 2.25em;   /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 26px to match Mock document*/
+    }
 
         &__title {
             color: $BandSite-Black;
@@ -194,9 +206,29 @@
             display: flex; 
             flex-direction: column;
 
-                &--image {
+            @include tablet {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+                &__image {
                     width: 100%;
                     padding-bottom: 1em;
+
+                    @include tablet {
+                        width: 33.33%;
+                        padding-bottom: $gutters-tablet;
+                        padding-right: $gutters-tablet;
+                    }
+
+                        &--alignment {
+                            @extend .photo-gallery__container__image;
+
+                            @include tablet {
+                                padding-right: 0; /*removes unwanted padding from the images located om the right of the site, this to match mock document*/
+                            }
+                        }
                 }
         }
 }
