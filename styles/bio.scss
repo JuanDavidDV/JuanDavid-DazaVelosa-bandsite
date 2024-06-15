@@ -249,18 +249,18 @@
                 color: $White;
 
                 @include tablet {
-                    width: 33.33%;
+                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
                 }
             }
 
             &__socials {
                 @include tablet {
-                    width: 33.33%;
+                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
                 }
                 
 
                 &--icons {
-                    height: 1.75rem;
+                    height: 1.5rem;
                     padding: 0em 0.75em;
 
                         &--alignment {
@@ -272,7 +272,7 @@
             &__subcontainer-logo {
                 @include tablet {
                     display: flex;
-                    width: 33.33%;
+                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
                     justify-content: flex-end;
                 }    
 
@@ -297,7 +297,7 @@
             
             &__box {
                 @include tablet {
-                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows*/
+                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
                 }
 
                 &__subheader {
@@ -306,7 +306,7 @@
                     padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
                     @include tablet {
-                        padding-top: 1.7143em;  /*Customized padding to match tablet layout as in the Style guide of 24px, in order to have a total of padding of 48px between this subheader and the current section header (24px+24px)*/
+                        padding-top: 0.85712em;  /*Customized padding to match tablet layout as in the Style guide of 12px, in order to have a total of padding of 36px between this subheader and the current section header (12px+24px)*/
 
                     }
                 }

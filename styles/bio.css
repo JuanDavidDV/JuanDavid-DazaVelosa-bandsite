@@ -338,16 +338,16 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__top-container__title {
-    width: 33.33%;
+    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
   }
 }
 @media (min-width: 768px) {
   .footer-page__top-container__socials {
-    width: 33.33%;
+    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
   }
 }
 .footer-page__top-container__socials--icons {
-  height: 1.75rem;
+  height: 1.5rem;
   padding: 0em 0.75em;
 }
 .footer-page__top-container__socials--icons--alignment {
@@ -356,7 +356,7 @@ a {
 @media (min-width: 768px) {
   .footer-page__top-container__subcontainer-logo {
     display: flex;
-    width: 33.33%;
+    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
     justify-content: flex-end;
   }
 }
@@ -376,7 +376,7 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__container__box {
-    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows*/
+    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
   }
 }
 .footer-page__container__box__subheader {
@@ -386,7 +386,7 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__container__box__subheader {
-    padding-top: 1.7143em; /*Customized padding to match tablet layout as in the Style guide of 24px, in order to have a total of padding of 48px between this subheader and the current section header (24px+24px)*/
+    padding-top: 0.85712em; /*Customized padding to match tablet layout as in the Style guide of 12px, in order to have a total of padding of 36px between this subheader and the current section header (12px+24px)*/
   }
 }
 .footer-page__container__box__paragraph {
