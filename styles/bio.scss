@@ -26,12 +26,8 @@
 
         &__nav {
             display: flex;
-            font-size: 0.875rem; 
+            font-size: 0.875rem; /*customized font to match mock document*/
             margin-top: 0.75em;  /*customized padding to match Mock document*/
-
-            @include tablet {
-                margin-top: 0.8em; /*customized padding top to match Mock document*/
-            }
 
             &--box {
                 display: inline-block;
@@ -51,7 +47,6 @@
             &__link {
                 color: $Mercury;
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
-                font-size: 0.875rem;   /*cusomized size to match Mock document*/
 
                 @include tablet {
                     font-size: 0.9375rem;   /*cusomized size to match Mock document*/
@@ -69,8 +64,7 @@
                             }
                     }
 
-                    &--current { /*Curent active link*/
-                        font-size: 0.875rem;    /*cusomized size to match Mock document*/
+                    &--current { /*Current active link*/
                         color: $White; 
                         font-family: avenir-bold;
 
@@ -125,11 +119,11 @@
    &__container {
 
     @include tablet {
-        padding: 0 3.75em;  /*cutomized padding to match Mock document for tablet and desktop view*/
+        padding: 0 3.75em;  /*cutomized padding to match Mock document for tablet breakout points*/
     }
 
         &__image {
-            width: 100%;
+            width: 100%;    /*DO I NEED TO PROVIDE A SPECIFIC HEGIGH? OR JUST BY 100% WIDTH IS GOOD ENOUGH?*/
             padding-bottom: 1em;
 
             @include tablet {
@@ -148,8 +142,8 @@
             color: $BandSite-Black;
 
             @include tablet {
-                font-size: 1rem;    /*selected font size to match Mock document*/
-                padding: 0.75em 0 2.25em 0;   /*customized padding to match Mock document*/
+                font-size: 1rem;    /*Customized font size to match Mock document*/
+                padding: 0.75em 0 3em 0;   /*customized padding to match Mock document*/
             }
         }
 
@@ -157,7 +151,7 @@
             color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
 
                 @include tablet {
-                    padding-bottom: 1em;
+                    padding-bottom: 1em; /*Customized bottom padding of 24px applied to match Mock document*/
                 }
         }
 
@@ -187,7 +181,7 @@
    }
 }
 
-.photo-gallery {
+.photo-gallery {/*ASK IF SPACES BETWEEN IMAGES SHOULD BE 24PX? WHERE TO APPLY 24PX OF GUTTER*/
     padding: 1em 1em 0 1em; 
     background-color: $Alabaster;
 
@@ -306,7 +300,7 @@
                     padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
                     @include tablet {
-                        padding-top: 0.85712em;  /*Customized padding to match tablet layout as in the Style guide of 12px, in order to have a total of padding of 36px between this subheader and the current section header (12px+24px)*/
+                        padding-top: 0em;
 
                     }
                 }
@@ -328,7 +322,6 @@
                         padding-bottom: 0em;
                     }
                 }
-
             }
         }
         

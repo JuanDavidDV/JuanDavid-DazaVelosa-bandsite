@@ -50,13 +50,14 @@ h2 {
   line-height: 2rem;
   font-family: avenir-bold;
   font-weight: 700;
-  padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
+  padding-top: 0.33333em; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
   padding-bottom: 0.66668em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 @media (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    padding-bottom: 1em;
   }
 }
 
@@ -115,13 +116,8 @@ a {
 }
 .page-header__nav {
   display: flex;
-  font-size: 0.875rem;
+  font-size: 0.875rem; /*customized font to match mock document*/
   margin-top: 0.75em; /*customized padding to match Mock document*/
-}
-@media (min-width: 768px) {
-  .page-header__nav {
-    margin-top: 0.8em; /*customized padding top to match Mock document*/
-  }
 }
 .page-header__nav--box {
   display: inline-block;
@@ -144,7 +140,6 @@ a {
 .page-header__nav__link {
   color: #E1E1E1;
   padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
-  font-size: 0.875rem; /*cusomized size to match Mock document*/
 }
 @media (min-width: 768px) {
   .page-header__nav__link {
@@ -163,8 +158,7 @@ a {
     width: 38%; /*used to size the lenght of the underline when "Show" is hovered*/
   }
 }
-.page-header__nav__link--current { /*Curent active link*/
-  font-size: 0.875rem; /*cusomized size to match Mock document*/
+.page-header__nav__link--current { /*Current active link*/
   color: #FFFFFF;
   font-family: avenir-bold;
 }
@@ -219,11 +213,11 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container {
-    padding: 0 3.75em; /*cutomized padding to match Mock document for tablet and desktop view*/
+    padding: 0 3.75em; /*cutomized padding to match Mock document for tablet breakout points*/
   }
 }
 .about-musicians__container__image {
-  width: 100%;
+  width: 100%; /*DO I NEED TO PROVIDE A SPECIFIC HEGIGH? OR JUST BY 100% WIDTH IS GOOD ENOUGH?*/
   padding-bottom: 1em;
 }
 @media (min-width: 768px) {
@@ -242,8 +236,8 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__subheader--two {
-    font-size: 1rem; /*selected font size to match Mock document*/
-    padding: 0.75em 0 2.25em 0; /*customized padding to match Mock document*/
+    font-size: 1rem; /*Customized font size to match Mock document*/
+    padding: 0.75em 0 3em 0; /*customized padding to match Mock document*/
   }
 }
 .about-musicians__container__subheader-title {
@@ -251,7 +245,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__subheader-title {
-    padding-bottom: 1em;
+    padding-bottom: 1em; /*Customized bottom padding of 24px applied to match Mock document*/
   }
 }
 @media (min-width: 768px) {
@@ -278,7 +272,7 @@ a {
   }
 }
 
-.photo-gallery {
+.photo-gallery { /*ASK IF SPACES BETWEEN IMAGES SHOULD BE 24PX? WHERE TO APPLY 24PX OF GUTTER*/
   padding: 1em 1em 0 1em;
   background-color: #FAFAFA;
 }
@@ -386,7 +380,7 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__container__box__subheader {
-    padding-top: 0.85712em; /*Customized padding to match tablet layout as in the Style guide of 12px, in order to have a total of padding of 36px between this subheader and the current section header (12px+24px)*/
+    padding-top: 0em;
   }
 }
 .footer-page__container__box__paragraph {

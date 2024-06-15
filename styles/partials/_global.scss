@@ -30,12 +30,13 @@ h2 {
     line-height: 2rem;
     font-family: avenir-bold;
     font-weight: 700;
-    padding-top: 0.33332em; /*Customed padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of top tp match Mock document layout*/
+    padding-top: 0.33333em; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
     padding-bottom: 0.66668em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
     @include tablet {
         font-size: 2.25rem;
         line-height: 2.75rem;
+        padding-bottom: 1em;
     }
 }
 
