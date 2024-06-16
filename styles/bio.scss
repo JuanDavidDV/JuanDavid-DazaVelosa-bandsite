@@ -17,7 +17,7 @@
 
         &__logo-link {
             align-self: center;
-            margin-top: 1.25em; /*customized margin to match Mock document*/
+            margin-top: 1.25em;
 
                @include tablet { 
                     margin: 0em 4em 1em 0;                    
@@ -26,8 +26,8 @@
 
         &__nav {
             display: flex;
-            font-size: 0.875rem; /*customized font to match mock document*/
-            margin-top: 0.75em;  /*customized padding to match Mock document*/
+            font-size: 1rem; /*customized font to match mock document*/
+            margin-top: 0.75em;
 
             &--box {
                 display: inline-block;
@@ -35,11 +35,15 @@
                 width: 50%;
               
                     &--current {
-                        @include current-site;
+                        display: inline-block;
+                        text-align: center;
+                        width: 50%;
+                        padding-bottom: 0.75em;
+                        border-bottom: 0.2rem solid $White;
 
                         @include tablet {
                             width: 35%; /*Used to setup the width of the white underline of current page*/
-                            padding-bottom: 1.5rem; /*customized bottom padding to match mock document*/    
+                            padding-bottom: 1.5rem;  
                         }
                     }
             }   
@@ -49,7 +53,6 @@
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
 
                 @include tablet {
-                    font-size: 0.9375rem;   /*customized size to match Mock document*/
                     margin: 0em 3.75em;
                     padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
                 }
@@ -68,10 +71,6 @@
                     &--current { /*Current active link*/
                         color: $White; 
                         font-family: avenir-bold;
-
-                            @include tablet {
-                                font-size: 0.9375rem;   /*cusomized size to match Mock document*/
-                            }
                     }
             }
         }
@@ -124,7 +123,7 @@
     }
 
         &__image {
-            width: 100%;    /*DO I NEED TO PROVIDE A SPECIFIC HEGIGH? OR JUST BY 100% WIDTH IS GOOD ENOUGH?*/
+            width: 100%; 
             padding-bottom: 1em;
 
             @include tablet {
@@ -182,7 +181,7 @@
    }
 }
 
-.photo-gallery {/*ASK IF SPACES BETWEEN IMAGES SHOULD BE 24PX? WHERE TO APPLY 24PX OF GUTTER*/
+.photo-gallery {
     padding: 1em 1em 0 1em; 
     background-color: $Alabaster;
 

@@ -6,11 +6,3 @@
     background-size: cover;
     width: 100%;
 }
-
-@mixin current-site {
-    display: inline-block;
-    text-align: center;
-    width: 50%;
-    padding-bottom: 0.75em;
-    border-bottom: 0.2rem solid $White;
-}

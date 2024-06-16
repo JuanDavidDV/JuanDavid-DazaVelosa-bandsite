@@ -30,12 +30,13 @@ h2 {
     line-height: 2rem;
     font-family: avenir-bold;
     font-weight: 700;
-    padding-top: 0.33333em; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
-    padding-bottom: 0.66668em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+    padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
+    padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
     @include tablet {
         font-size: 2.25rem;
         line-height: 2.75rem;
+        padding-top: 0.75rem;   /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
         padding-bottom: 1em;
     }
 }
@@ -46,7 +47,7 @@ h3 {
     line-height: 1.375rem;
     font-family: avenir-demi;
     font-weight: 600;
-    padding-bottom: 1.14284em; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+    padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
     @include tablet {
         font-size: 1.5rem;
