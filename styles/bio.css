@@ -29,7 +29,6 @@ body {
   font-family: avenir-regular;
 }
 
-/*SHOW THAT FONT WEIGHT IS NOT APPLIYING IN GOOGLE INSPECTOR!!!!*/
 /*Page Header*/
 h1 {
   font-size: 1.5rem;
@@ -92,7 +91,6 @@ a {
   text-decoration: none;
 }
 
-/*ASK ABOUT PADDING UNITS*/
 .page-header {
   background-color: #323232;
   width: 100%;
@@ -134,7 +132,7 @@ a {
 @media (min-width: 768px) {
   .page-header__nav--box--current {
     width: 35%; /*Used to setup the width of the white underline of current page*/
-    padding-bottom: 1.7143em; /*cutomized bottom padding to match mock document*/
+    padding-bottom: 1.5rem; /*customized bottom padding to match mock document*/
   }
 }
 .page-header__nav__link {
@@ -143,9 +141,9 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__nav__link {
-    font-size: 0.9375rem; /*cusomized size to match Mock document*/
+    font-size: 0.9375rem; /*customized size to match Mock document*/
     margin: 0em 3.75em;
-    padding-bottom: 1.6em; /*defines padding between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
   }
 }
 .page-header__nav__link:hover {
@@ -155,7 +153,7 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__nav__link:hover {
-    width: 38%; /*used to size the lenght of the underline when "Show" is hovered*/
+    display: inline;
   }
 }
 .page-header__nav__link--current { /*Current active link*/
@@ -190,12 +188,12 @@ a {
 .hero__title {
   align-self: center; /*Aligns title in the middle of the background image*/
   color: #FFFFFF;
-  margin-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
+  margin-left: 1rem; /*Equals to 16px leftpadding to match style document requirements*/
   position: absolute; /*Makes title be over the image overlay*/
 }
 @media (min-width: 768px) {
   .hero__title {
-    margin-left: 0.6em; /*adds margin of 36px to match Mock document layout*/
+    margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
   }
 }
 
@@ -255,11 +253,11 @@ a {
 }
 .about-musicians__container__paragraph-box__text {
   color: #323232;
-  padding-bottom: 1.2308em; /*equals 16px of bottom padding, this to match style doc instructions*/
+  padding-bottom: 1rem; /*equals 16px of bottom padding, this to match style doc instructions*/
 }
 @media (min-width: 768px) {
   .about-musicians__container__paragraph-box__text {
-    padding: 0 0.85712em 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+    padding: 0 0.75rem 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
   }
 }
 .about-musicians__container__paragraph-box__text--alignment {
@@ -268,7 +266,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__paragraph-box__text--alignment {
-    padding: 0 0 0 0.85712em; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+    padding: 0 0 0 0.75rem; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
   }
 }
 

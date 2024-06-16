@@ -3,7 +3,7 @@
 @use './partials/mixins' as *;
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
-/*ASK ABOUT PADDING UNITS*/
+
 .page-header {  
     background-color: $BandSite-Black;
     width: 100%;
@@ -39,7 +39,7 @@
 
                         @include tablet {
                             width: 35%; /*Used to setup the width of the white underline of current page*/
-                            padding-bottom: 1.7143em; /*cutomized bottom padding to match mock document*/    
+                            padding-bottom: 1.5rem; /*customized bottom padding to match mock document*/    
                         }
                     }
             }   
@@ -49,9 +49,9 @@
                 padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
 
                 @include tablet {
-                    font-size: 0.9375rem;   /*cusomized size to match Mock document*/
+                    font-size: 0.9375rem;   /*customized size to match Mock document*/
                     margin: 0em 3.75em;
-                    padding-bottom: 1.6em; /*defines padding between link and bottom header container for white underline when link is hover*/
+                    padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
                 }
 
                     &:hover { 
@@ -60,7 +60,8 @@
                         display: block; /*converted to block to enable bottom border line be full size when hovering*/
 
                             @include tablet {
-                                width: 38%; /*used to size the lenght of the underline when "Show" is hovered*/
+                                display: inline;
+
                             }
                     }
 
@@ -95,11 +96,11 @@
         &__title {
             align-self: center; /*Aligns title in the middle of the background image*/
             color: $White;
-            margin-left: 0.66665em; /*Equals to 16px leftpadding to match style document requirements*/
+            margin-left: 1rem; /*Equals to 16px leftpadding to match style document requirements*/
             position: absolute; /*Makes title be over the image overlay*/
 
             @include tablet {
-                margin-left: 0.6em;    /*adds margin of 36px to match Mock document layout*/
+                margin-left: 2.25rem;    /*adds margin of 36px to match Mock document layout*/
             }
         }
 }
@@ -162,10 +163,10 @@
 
                 &__text {
                     color: $BandSite-Black;
-                    padding-bottom: 1.2308em;   /*equals 16px of bottom padding, this to match style doc instructions*/
+                    padding-bottom: 1rem;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
                     @include tablet {
-                        padding: 0 0.85712em 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                        padding: 0 0.75rem 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
                     }
 
                         &--alignment {
@@ -173,7 +174,7 @@
                             padding-bottom: 0em; 
                             
                             @include tablet {
-                                padding: 0 0 0 0.85712em;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                                padding: 0 0 0 0.75rem;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
                             }
                         }
                 }
