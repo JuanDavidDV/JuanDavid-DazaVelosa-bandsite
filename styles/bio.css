@@ -17,6 +17,7 @@
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
 /*Responsive Layout Grid*/
+/*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
 /*Background Image*/
 /*Removes margin, padding, and applies border-box to wbesite*/
 * {
@@ -50,7 +51,7 @@ h2 {
   font-family: avenir-bold;
   font-weight: 700;
   padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
-  padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h2 {
@@ -104,12 +105,16 @@ a {
     padding: 1.5em 2.25em 0 2.25em;
   }
 }
-.page-header__logo-link {
+.page-header__logo, .footer-page__logo-mobile, .footer-page__top-container__logo--tablet-desktop {
+  height: 20px; /*in this way logo should not exceed 20px height as the Style guide mentioned*/
+  width: 120px; /*in this way logo should not exceed 120px width as the Style guide mentioned*/
+}
+.page-header__logo__link {
   align-self: center;
   margin-top: 1.25em;
 }
 @media (min-width: 768px) {
-  .page-header__logo-link {
+  .page-header__logo__link {
     margin: 0em 4em 1em 0;
   }
 }
@@ -238,7 +243,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__subheader-title {
-    padding-bottom: 1em; /*Customized bottom padding of 24px applied to match Mock document*/
+    padding-bottom: 1.5em;
   }
 }
 @media (min-width: 768px) {
@@ -252,7 +257,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__paragraph-box__text {
-    padding: 0 0.75rem 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+    padding: 0 0.75rem 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
   }
 }
 .about-musicians__container__paragraph-box__text--alignment {
@@ -261,7 +266,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__paragraph-box__text--alignment {
-    padding: 0 0 0 0.75rem; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+    padding: 0 0 0 0.75rem; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
   }
 }
 
@@ -293,7 +298,7 @@ a {
 }
 @media (min-width: 768px) {
   .photo-gallery__container__image, .photo-gallery__container__image--alignment {
-    width: 33.33%;
+    width: 33.33%; /*applied to keep consistent 3x3 image display layout when screen size increases*/
     padding-bottom: 1.5em;
     padding-right: 1.5em;
   }
@@ -325,12 +330,12 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__top-container__title {
-    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+    width: 33.33%;
   }
 }
 @media (min-width: 768px) {
   .footer-page__top-container__socials {
-    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+    width: 33.33%;
   }
 }
 .footer-page__top-container__socials--icons {
@@ -340,19 +345,14 @@ a {
 .footer-page__top-container__socials--icons--alignment {
   padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
 }
-@media (min-width: 768px) {
-  .footer-page__top-container__subcontainer-logo {
-    display: flex;
-    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
-    justify-content: flex-end;
-  }
-}
-.footer-page__top-container__subcontainer-logo--tablet-desktop {
+.footer-page__top-container__logo {
   display: none;
 }
 @media (min-width: 768px) {
-  .footer-page__top-container__subcontainer-logo--tablet-desktop {
-    display: inline; /*inline used to prevent link inherits the parent width, so that link only work on the  logo area and not outside*/
+  .footer-page__top-container__logo {
+    display: flex;
+    width: 33.33%;
+    justify-content: flex-end;
   }
 }
 @media (min-width: 768px) {
@@ -363,13 +363,13 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__container__box {
-    width: 33.33%; /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+    width: 33.33%;
   }
 }
 .footer-page__container__box__subheader {
   color: #FFFFFF;
-  font-family: avenir-demi;
-  padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  font-family: avenir-demi; /*font family applied to match Mock document*/
+  padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 @media (min-width: 768px) {
   .footer-page__container__box__subheader {
@@ -378,47 +378,38 @@ a {
 }
 .footer-page__container__box__paragraph {
   color: #FFFFFF;
-  padding: 1.2308em 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
+  padding: 1rem 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
 @media (min-width: 768px) {
   .footer-page__container__box__paragraph {
-    padding: 1.7143em 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+    padding: 1.5rem 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
   }
 }
 .footer-page__container__box__email {
   color: #FFFFFF;
-  padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
+  padding-bottom: 0.5rem; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
 }
 @media (min-width: 768px) {
   .footer-page__container__box__email {
     padding-bottom: 0em;
   }
 }
-.footer-page__logo--mobile {
+.footer-page__logo-mobile {
   margin-top: 2.5em; /*customized padding to match Mock document*/
 }
 @media (min-width: 768px) {
-  .footer-page__logo--mobile {
+  .footer-page__logo-mobile {
     display: none; /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
-  }
-}
-.footer-page__logo--tablet-desktop {
-  margin-top: 2.5em;
-  display: none; /*hides logo when mobile breakpoint is met, this to match Mock document*/
-}
-@media (min-width: 768px) {
-  .footer-page__logo--tablet-desktop {
-    display: block;
   }
 }
 .footer-page--copy-right {
   font-size: 0.7rem; /*customized font size to match mock doc*/
   color: #FAFAFA; /*Mock document seems to have Alabaster color for the copyright*/
-  padding-top: 1.4286em; /*Customized padding to match mobile layout as in the Style guide of 16px */
+  padding-top: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
 @media (min-width: 768px) {
   .footer-page--copy-right {
     font-size: 0.875rem;
-    padding-top: 3.4286em;
+    padding-top: 3rem;
   }
 }/*# sourceMappingURL=bio.css.map */

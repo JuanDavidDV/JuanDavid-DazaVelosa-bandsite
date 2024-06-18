@@ -15,14 +15,20 @@
         padding: 1.5em 2.25em 0 2.25em;
     }
 
-        &__logo-link {
-            align-self: center;
-            margin-top: 1.25em;
+        &__logo {
+            height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
+            width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
+        
 
-               @include tablet { 
-                    margin: 0em 4em 1em 0;                    
-               }
+            &__link {
+                align-self: center;
+                margin-top: 1.25em;
+
+                @include tablet { 
+                        margin: 0em 4em 1em 0;                    
+                }
             } 
+        }
 
         &__nav {
             display: flex;
@@ -151,7 +157,7 @@
             color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
 
                 @include tablet {
-                    padding-bottom: 1em; /*Customized bottom padding of 24px applied to match Mock document*/
+                    padding-bottom: 1.5em;
                 }
         }
 
@@ -165,7 +171,7 @@
                     padding-bottom: 1rem;   /*equals 16px of bottom padding, this to match style doc instructions*/
 
                     @include tablet {
-                        padding: 0 0.75rem 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                        padding: 0 0.75rem 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
                     }
 
                         &--alignment {
@@ -173,7 +179,7 @@
                             padding-bottom: 0em; 
                             
                             @include tablet {
-                                padding: 0 0 0 0.75rem;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs*/
+                                padding: 0 0 0 0.75rem;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
                             }
                         }
                 }
@@ -207,7 +213,7 @@
                     padding-bottom: 1em;
 
                     @include tablet {
-                        width: 33.33%;
+                        width: $footer-layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
                         padding-bottom: $gutters-tablet;
                         padding-right: $gutters-tablet;
                     }
@@ -238,21 +244,19 @@
                 align-items: baseline;
             }
             
-            
             &__title {
                 color: $White;
 
                 @include tablet {
-                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+                    width: $footer-layout-grid; 
                 }
             }
 
             &__socials {
                 @include tablet {
-                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+                    width: $footer-layout-grid;
                 }
                 
-
                 &--icons {
                     height: 1.5rem;
                     padding: 0em 0.75em;
@@ -263,24 +267,19 @@
                 }
             }
 
-            &__subcontainer-logo {
+            &__logo {
+                display: none;
+
                 @include tablet {
                     display: flex;
-                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+                    width: $footer-layout-grid; 
                     justify-content: flex-end;
-                }    
-
-                &--tablet-desktop {
-                    display: none;
-    
-                    @include tablet {
-                        display: inline;    /*inline used to prevent link inherits the parent width, so that link only work on the  logo area and not outside*/    
-                        
+                } 
+                
+                    &--tablet-desktop {
+                        @extend .page-header__logo;
                     }
-                }
             }
-
-
         }
 
         &__container {
@@ -291,13 +290,13 @@
             
             &__box {
                 @include tablet {
-                    width: 33.33%;  /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+                    width: $footer-layout-grid; 
                 }
 
                 &__subheader {
                     color: $White;
-                    font-family: avenir-demi;
-                    padding: 1.2308em 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+                    font-family: avenir-demi;   /*font family applied to match Mock document*/
+                    padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
                     @include tablet {
                         padding-top: 0em;
@@ -307,16 +306,16 @@
 
                 &__paragraph {
                     color: $White;
-                    padding: 1.2308em 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                    padding: 1rem 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
                 
                     @include tablet {
-                        padding: 1.7143em 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+                        padding: 1.5rem 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
                     }
                 }
 
                 &__email {
                     color: $White;
-                    padding-bottom: 0.6154em; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
+                    padding-bottom: 0.5rem; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
                 
                     @include tablet {
                         padding-bottom: 0em;
@@ -325,35 +324,23 @@
             }
         }
         
-        &__logo { 
-
-            &--mobile {
+        &__logo-mobile { 
             margin-top: 2.5em; /*customized padding to match Mock document*/
+            @extend .page-header__logo;
             
             @include tablet {
                 display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
-            }
-        
-        }
-
-            &--tablet-desktop {
-                margin-top: 2.5em;
-                display: none;  /*hides logo when mobile breakpoint is met, this to match Mock document*/
-
-                @include tablet {
-                    display: block;
-                }
-            }
+                }   
         }
           
         &--copy-right {
             font-size: 0.7rem;  /*customized font size to match mock doc*/
             color: $Alabaster; /*Mock document seems to have Alabaster color for the copyright*/
-            padding-top: 1.4286em;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+            padding-top: 1rem;  /*Customized padding to match mobile layout as in the Style guide of 16px */
 
             @include tablet {
                 font-size: 0.875rem;
-                padding-top: 3.4286em;  
+                padding-top: 3rem;  
             }
         }
 }
