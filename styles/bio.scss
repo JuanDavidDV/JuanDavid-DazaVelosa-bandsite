@@ -7,79 +7,90 @@
 .page-header {  
     background-color: $BandSite-Black;
     width: 100%;
-    display: flex;
-    flex-direction: column;
 
-    @include tablet {
-        flex-direction: row;
-        padding: 1.5em 2.25em 0 2.25em;
-    }
+    &__container {
+        display: flex;
+        flex-direction: column;
 
-        &__logo {
-            height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
-            width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
-        
-
-            &__link {
-                align-self: center;
-                margin-top: 1.25em;
-
-                @include tablet { 
-                        margin: 0em 4em 1em 0;                    
-                }
-            } 
+                
+        @include tablet {
+            flex-direction: row;
+            padding-top: 1.5em;
+            margin: 0 2.25em;
         }
 
-        &__nav {
-            display: flex;
-            font-size: 1rem; /*customized font to match mock document*/
-            margin-top: 0.75em;
+        @include desktop {
+            width: 1280px;
+            padding: 1.5em 2.25em 0 2.25em; /*padding added in order to keep header layout, and for auto margin to be consistent on the sides when screen width is > 1279px*/
+            margin: 0 auto;
+        }
 
-            &--box {
-                display: inline-block;
-                text-align: center;
-                width: 50%;
-              
-                    &--current {
-                        display: inline-block;
-                        text-align: center;
-                        width: 50%;
-                        padding-bottom: 0.75em;
-                        border-bottom: 0.2rem solid $White;
+            &__logo {
+                height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
+                width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
+            
 
-                        @include tablet {
-                            width: 35%; /*Used to setup the width of the white underline of current page*/
-                            padding-bottom: 1.5rem;  
-                        }
+                &__link {
+                    align-self: center;
+                    margin-top: 1.25em;
+
+                    @include tablet { 
+                            margin: 0em 4em 1em 0;                    
                     }
-            }   
+                } 
+            }
 
-            &__link {
-                color: $Mercury;
-                padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+            &__nav {
+                display: flex;
+                font-size: 1rem; /*customized font to match mock document*/
+                margin-top: 0.75em;
 
-                @include tablet {
-                    margin: 0em 3.75em;
-                    padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
-                }
-
-                    &:hover { 
-                        border-bottom: 0.2rem solid $White; 
-                        color: $White;
-                        display: block; /*converted to block to enable bottom border line be full size when hovering*/
+                &--box {
+                    display: inline-block;
+                    text-align: center;
+                    width: 50%;
+                
+                        &--current {
+                            display: inline-block;
+                            text-align: center;
+                            width: 50%;
+                            padding-bottom: 0.75em;
+                            border-bottom: 0.2rem solid $White;
 
                             @include tablet {
-                                display: inline;
-
+                                width: 35%; /*Used to setup the width of the white underline of current page*/
+                                padding-bottom: 1.5rem;  
                             }
+                        }
+                }   
+
+                &__link {
+                    color: $Mercury;
+                    padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+
+                    @include tablet {
+                        margin: 0em 3.75em;
+                        padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
                     }
 
-                    &--current { /*Current active link*/
-                        color: $White; 
-                        font-family: avenir-bold;
-                    }
-            }
-        }
+                        &:hover { 
+                            border-bottom: 0.2rem solid $White; 
+                            color: $White;
+                            display: block; /*converted to block to enable bottom border line be full size when hovering*/
+
+                                @include tablet {
+                                    display: inline;
+
+                                }
+                        }
+
+                        &--current { /*Current active link*/
+                            color: $White; 
+                            font-family: avenir-bold;
+                        }
+                }
+            }      
+    }
 }
 
 .hero {
@@ -277,7 +288,7 @@
                 } 
                 
                     &--tablet-desktop {
-                        @extend .page-header__logo;
+                        @extend .page-header__container__logo;
                     }
             }
         }
@@ -326,7 +337,7 @@
         
         &__logo-mobile { 
             margin-top: 2.5em; /*customized padding to match Mock document*/
-            @extend .page-header__logo;
+            @extend .page-header__container__logo;
             
             @include tablet {
                 display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/

@@ -96,39 +96,49 @@ a {
 .page-header {
   background-color: #323232;
   width: 100%;
+}
+.page-header__container {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .page-header {
+  .page-header__container {
     flex-direction: row;
-    padding: 1.5em 2.25em 0 2.25em;
+    padding-top: 1.5em;
+    margin: 0 2.25em;
   }
 }
-.page-header__logo, .footer-page__logo-mobile, .footer-page__top-container__logo--tablet-desktop {
+@media (min-width: 1280px) {
+  .page-header__container {
+    width: 1280px;
+    padding: 1.5em 2.25em 0 2.25em; /*padding added in order to keep header layout, and for auto margin to be consistent on the sides when screen width is > 1279px*/
+    margin: 0 auto;
+  }
+}
+.page-header__container__logo, .footer-page__logo-mobile, .footer-page__top-container__logo--tablet-desktop {
   height: 20px; /*in this way logo should not exceed 20px height as the Style guide mentioned*/
   width: 120px; /*in this way logo should not exceed 120px width as the Style guide mentioned*/
 }
-.page-header__logo__link {
+.page-header__container__logo__link {
   align-self: center;
   margin-top: 1.25em;
 }
 @media (min-width: 768px) {
-  .page-header__logo__link {
+  .page-header__container__logo__link {
     margin: 0em 4em 1em 0;
   }
 }
-.page-header__nav {
+.page-header__container__nav {
   display: flex;
   font-size: 1rem; /*customized font to match mock document*/
   margin-top: 0.75em;
 }
-.page-header__nav--box {
+.page-header__container__nav--box {
   display: inline-block;
   text-align: center;
   width: 50%;
 }
-.page-header__nav--box--current {
+.page-header__container__nav--box--current {
   display: inline-block;
   text-align: center;
   width: 50%;
@@ -136,32 +146,32 @@ a {
   border-bottom: 0.2rem solid #FFFFFF;
 }
 @media (min-width: 768px) {
-  .page-header__nav--box--current {
+  .page-header__container__nav--box--current {
     width: 35%; /*Used to setup the width of the white underline of current page*/
     padding-bottom: 1.5rem;
   }
 }
-.page-header__nav__link {
+.page-header__container__nav__link {
   color: #E1E1E1;
   padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
 }
 @media (min-width: 768px) {
-  .page-header__nav__link {
+  .page-header__container__nav__link {
     margin: 0em 3.75em;
     padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
   }
 }
-.page-header__nav__link:hover {
+.page-header__container__nav__link:hover {
   border-bottom: 0.2rem solid #FFFFFF;
   color: #FFFFFF;
   display: block; /*converted to block to enable bottom border line be full size when hovering*/
 }
 @media (min-width: 768px) {
-  .page-header__nav__link:hover {
+  .page-header__container__nav__link:hover {
     display: inline;
   }
 }
-.page-header__nav__link--current { /*Current active link*/
+.page-header__container__nav__link--current { /*Current active link*/
   color: #FFFFFF;
   font-family: avenir-bold;
 }
