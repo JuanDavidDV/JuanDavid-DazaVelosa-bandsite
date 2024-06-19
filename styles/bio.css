@@ -93,6 +93,7 @@ a {
   text-decoration: none;
 }
 
+/*ASK ABOUT WIDTH APPLIED TO DESKTOP!!*/
 .page-header {
   background-color: #323232;
   width: 100%;
@@ -115,7 +116,7 @@ a {
     margin: 0 auto;
   }
 }
-.page-header__container__logo, .footer-page__logo-mobile, .footer-page__top-container__logo--tablet-desktop {
+.page-header__container__logo, .footer-page__logo-mobile, .footer-page__container__top__logo--tablet-desktop {
   height: 20px; /*in this way logo should not exceed 20px height as the Style guide mentioned*/
   width: 120px; /*in this way logo should not exceed 120px width as the Style guide mentioned*/
 }
@@ -222,7 +223,6 @@ a {
 
 .about-musicians {
   width: 100%;
-  height: 100%;
   background-color: #FFFFFF;
 }
 .about-musicians__container {
@@ -322,16 +322,21 @@ a {
 .photo-gallery {
   background-color: #FAFAFA;
   width: 100%;
-  height: 100%;
 }
 .photo-gallery__container {
-  margin: 1em 1em 0 1em;
+  margin: 1em;
 }
 @media (min-width: 768px) {
   .photo-gallery__container {
-    margin: 2.25em 2.25em 1em 2.25em;
-    padding: 2.25em 0; /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 36px to match Mock document*/
+    padding: 2.25em 0 1em 0; /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
     margin: 0 2.25em;
+  }
+}
+@media (min-width: 1280px) {
+  .photo-gallery__container {
+    width: 1280px;
+    padding: 2.25em 2.25em 1em 2.25em; /*padding added in order to keep section layout, and be consistent on the sides when screen width is > 1279px*/
+    margin: 0 auto;
   }
 }
 .photo-gallery__container__title {
@@ -366,86 +371,127 @@ a {
 
 .footer-page {
   background-color: #323232;
-  padding: 1em;
+  width: 100%;
+  height: 100%;
+}
+.footer-page__container {
+  padding: 1em 0;
+  margin: 0 1em;
 }
 @media (min-width: 768px) {
-  .footer-page {
+  .footer-page__container {
+    padding: 2.25em 0;
+    margin: 0 2.25em;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container {
+    width: 1280px;
     padding: 2.25em;
+    margin: 0 auto;
   }
 }
 @media (min-width: 768px) {
-  .footer-page__top-container {
+  .footer-page__container__top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
 }
-.footer-page__top-container__title {
+@media (min-width: 1280px) {
+  .footer-page__container__top {
+    justify-content: flex-start;
+  }
+}
+.footer-page__container__top__title {
   color: #FFFFFF;
+  /*DO I NEED TO APPLY 24PX BETWWEEN COMPONENTS FOR DESKTOP IN FOOTER???*/
 }
 @media (min-width: 768px) {
-  .footer-page__top-container__title {
+  .footer-page__container__top__title {
     width: 33.33%;
   }
 }
+@media (min-width: 1280px) {
+  .footer-page__container__top__title {
+    width: auto; /*removes unwanted width*/
+    padding-right: 7rem;
+  }
+}
 @media (min-width: 768px) {
-  .footer-page__top-container__socials {
+  .footer-page__container__top__socials {
     width: 33.33%;
   }
 }
-.footer-page__top-container__socials--icons {
+.footer-page__container__top__socials--icons {
   height: 1.5rem;
   padding: 0em 0.75em;
 }
-.footer-page__top-container__socials--icons--alignment {
+.footer-page__container__top__socials--icons--alignment {
   padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
 }
-.footer-page__top-container__logo {
+.footer-page__container__top__logo {
   display: none;
 }
 @media (min-width: 768px) {
-  .footer-page__top-container__logo {
+  .footer-page__container__top__logo {
     display: flex;
     width: 33.33%;
     justify-content: flex-end;
   }
 }
+@media (min-width: 1280px) {
+  .footer-page__container__top__logo {
+    width: 39.59%;
+  }
+}
 @media (min-width: 768px) {
-  .footer-page__container {
+  .footer-page__container__bottom {
     display: flex;
     justify-content: space-between;
   }
 }
+@media (min-width: 1280px) {
+  .footer-page__container__bottom {
+    justify-content: flex-start;
+  }
+}
 @media (min-width: 768px) {
-  .footer-page__container__box {
+  .footer-page__container__bottom__box {
     width: 33.33%;
   }
 }
-.footer-page__container__box__subheader {
+@media (min-width: 1280px) {
+  .footer-page__container__bottom__box {
+    width: auto;
+    padding-right: 8.5rem; /*Customized padding to match desktop footer layout*/
+  }
+}
+.footer-page__container__bottom__box__subheader {
   color: #FFFFFF;
   font-family: avenir-demi; /*font family applied to match Mock document*/
   padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
 @media (min-width: 768px) {
-  .footer-page__container__box__subheader {
+  .footer-page__container__bottom__box__subheader {
     padding-top: 0em;
   }
 }
-.footer-page__container__box__paragraph {
+.footer-page__container__bottom__box__paragraph {
   color: #FFFFFF;
   padding: 1rem 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
 @media (min-width: 768px) {
-  .footer-page__container__box__paragraph {
+  .footer-page__container__bottom__box__paragraph {
     padding: 1.5rem 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
   }
 }
-.footer-page__container__box__email {
+.footer-page__container__bottom__box__email {
   color: #FFFFFF;
   padding-bottom: 0.5rem; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
 }
 @media (min-width: 768px) {
-  .footer-page__container__box__email {
+  .footer-page__container__bottom__box__email {
     padding-bottom: 0em;
   }
 }
@@ -464,7 +510,7 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page--copy-right {
-    font-size: 0.875rem;
+    font-size: 1rem;
     padding-top: 3rem;
   }
 }/*# sourceMappingURL=bio.css.map */
