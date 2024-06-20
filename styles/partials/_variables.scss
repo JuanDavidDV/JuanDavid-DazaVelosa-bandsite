@@ -14,7 +14,8 @@ $desktop: 1280px;
 
 /*Responsive Layout Grid*/
 $gutters-tablet: 1.5em; 
-$footer-layout-grid: 33.33%;    /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+$tablet-padding: 2.25em;
+$layout-grid: 33.33%;    /*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
 
 /*Background Image*/
 $hero-bio: url("../../assets/images/hero-bio.jpg");

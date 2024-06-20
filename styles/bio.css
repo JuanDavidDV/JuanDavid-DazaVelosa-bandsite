@@ -95,6 +95,10 @@ a {
   text-decoration: none;
 }
 
+.page-header, .footer-page {
+  width: 100%;
+  background-color: #323232;
+}
 .page-header__container {
   display: flex;
   flex-direction: column;
@@ -106,11 +110,11 @@ a {
     margin: 0 2.25em;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .page-header__container {
-    width: 1280px;
-    padding: 1.5em 2.25em 0 2.25em; /*padding added in order to keep header layout, and be consistent on the sides when screen width is > 1279px*/
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
+    padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .page-header__container__logo, .footer-page__logo-mobile, .footer-page__container__top__logo--tablet-desktop {
@@ -145,7 +149,7 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__container__nav--box--current {
-    width: 35%; /*Used to setup the width of the white underline of current page*/
+    width: auto; /*Used to setup the width of the white underline of current page*/
     padding-bottom: 1.5rem;
   }
 }
@@ -208,9 +212,9 @@ a {
 }
 @media (min-width: 1280px) {
   .hero__container {
-    width: 1280px;
-    padding-left: 2.25rem; /*padding added in order to keep hero layout, and be consistent on the sides when screen width is > 1279px*/
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
+    padding: 0 0 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .hero__container__title {
@@ -234,33 +238,31 @@ a {
 }
 @media (min-width: 1280px) {
   .about-musicians__container {
-    width: 1280px;
-    padding: 2.25em; /*padding added in order to keep section layout, and be consistent on the sides when screen width is > 1279px*/
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
+    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .about-musicians__container__title {
   color: #323232;
 }
-.about-musicians__container__box {
-  /*CHNAGE FONT SIZE FOR DESKTOP TO MATCH MOCK DOCUMENT*/
-}
 @media (min-width: 768px) {
   .about-musicians__container__box {
-    padding: 0 3.75em; /*cutomized padding to match Mock document for tablet breakout points*/
+    padding: 0 3.75em; /*cutomized padding to match Mock document for tablet screen*/
   }
 }
 @media (min-width: 1280px) {
   .about-musicians__container__box {
-    padding: 0 6em;
+    padding: 0 6em; /*cutomized padding to match Mock document for desktop screen*/
   }
 }
-.about-musicians__container__box__image {
+.about-musicians__container__box__image, .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
   width: 100%;
   padding-bottom: 1em;
 }
 @media (min-width: 768px) {
-  .about-musicians__container__box__image {
+  .about-musicians__container__box__image, .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
     padding-bottom: 2.25em;
   }
 }
@@ -292,13 +294,15 @@ a {
     padding-bottom: 1.5em;
   }
 }
+.about-musicians__container__box__paragraph {
+  color: #323232;
+}
 @media (min-width: 768px) {
   .about-musicians__container__box__paragraph {
     display: flex;
   }
 }
 .about-musicians__container__box__paragraph--content {
-  color: #323232;
   padding-bottom: 1rem; /*equals 16px of bottom padding, this to match style doc instructions*/
 }
 @media (min-width: 768px) {
@@ -306,22 +310,32 @@ a {
     padding: 0 0.75rem 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
   }
 }
+@media (min-width: 1280px) {
+  .about-musicians__container__box__paragraph--content {
+    font-size: 1rem; /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+  }
+}
 .about-musicians__container__box__paragraph--content--alignment {
-  color: #323232;
-  padding-bottom: 0em;
+  padding-bottom: 0em; /*removes unwanted padding*/
 }
 @media (min-width: 768px) {
   .about-musicians__container__box__paragraph--content--alignment {
     padding: 0 0 0 0.75rem; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
   }
 }
+@media (min-width: 1280px) {
+  .about-musicians__container__box__paragraph--content--alignment {
+    font-size: 1rem; /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+  }
+}
 
 .photo-gallery {
-  background-color: #FAFAFA;
   width: 100%;
+  background-color: #FAFAFA;
 }
 .photo-gallery__container {
-  margin: 1em;
+  padding: 1em 0 0.5em 0; /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
+  margin: 0 1em;
 }
 @media (min-width: 768px) {
   .photo-gallery__container {
@@ -331,9 +345,10 @@ a {
 }
 @media (min-width: 1280px) {
   .photo-gallery__container {
-    width: 1280px;
-    padding: 2.25em 2.25em 1em 2.25em; /*padding added in order to keep section layout, and be consistent on the sides when screen width is > 1279px*/
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
+    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding-bottom: 1em;
   }
 }
 .photo-gallery__container__title {
@@ -349,10 +364,6 @@ a {
     flex-wrap: wrap;
   }
 }
-.photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
-  width: 100%;
-  padding-bottom: 1em;
-}
 @media (min-width: 768px) {
   .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
     width: 33.33%; /*applied to keep consistent 3x3 image display layout when screen size increases*/
@@ -366,10 +377,6 @@ a {
   }
 }
 
-.footer-page {
-  background-color: #323232;
-  width: 100%;
-}
 .footer-page__container {
   padding: 1em 0;
   margin: 0 1em;
@@ -382,9 +389,10 @@ a {
 }
 @media (min-width: 1280px) {
   .footer-page__container {
-    width: 1280px;
-    padding: 2.25em;
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
+    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 @media (min-width: 768px) {
@@ -394,14 +402,8 @@ a {
     align-items: baseline;
   }
 }
-@media (min-width: 1280px) {
-  .footer-page__container__top {
-    justify-content: flex-start;
-  }
-}
 .footer-page__container__top__title {
   color: #FFFFFF;
-  /*DO I NEED TO APPLY 24PX BETWWEEN COMPONENTS FOR DESKTOP IN FOOTER???*/
 }
 @media (min-width: 768px) {
   .footer-page__container__top__title {
@@ -438,7 +440,7 @@ a {
 }
 @media (min-width: 1280px) {
   .footer-page__container__top__logo {
-    width: 39.59%;
+    width: 39.59%; /*customized width to match desktop footer Mock document*/
   }
 }
 @media (min-width: 768px) {

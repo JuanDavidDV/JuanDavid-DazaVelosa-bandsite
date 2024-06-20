@@ -1,5 +1,10 @@
 @use './variables' as *;
 
+@mixin section-container ($color) {
+    width: 100%;
+    background-color: $color;
+}
+
 @mixin background-image ($image) {
     background-image: $image;
     background-position: center;
@@ -7,7 +12,28 @@
     width: 100%;
 }
 
-@mixin section-container ($color) {
+@mixin hero-image-opacity {
+    background-color: rgba($BandSite-Black, 0.5);
+    height: 100%;
     width: 100%;
-    color: $color;
+    display: flex;
+}
+
+@mixin current-link-page {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 0.75em;
+    border-bottom: 0.2rem solid $White;
+}
+
+@mixin tablet-layout {
+    padding: 2.25em 0;
+    margin: 0 2.25em;
+}
+
+@mixin desktop-layout ($padding) {
+    width: $desktop; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: $padding;  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
 }
