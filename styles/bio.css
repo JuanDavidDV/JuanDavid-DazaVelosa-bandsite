@@ -24,6 +24,7 @@
   margin: 0rem;
   padding: 0rem;
   box-sizing: border-box;
+  overflow-x: hidden; /*removes horizontal scroll bar that was appearing when width screen size was approximately between 1980px-1990px */
 }
 
 body {
@@ -81,6 +82,7 @@ h3, .about-musicians__container__box__subheader--two {
 p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   p {
@@ -93,11 +95,6 @@ a {
   text-decoration: none;
 }
 
-/*ASK ABOUT WIDTH APPLIED TO DESKTOP!!*/
-.page-header {
-  background-color: #323232;
-  width: 100%;
-}
 .page-header__container {
   display: flex;
   flex-direction: column;
@@ -246,7 +243,7 @@ a {
   color: #323232;
 }
 .about-musicians__container__box {
-  /*HOW TO KEEP OR KNOW THE WIDTH OF THE PARAGRAPH, DO I NEED A SPECIFIC VALUE???*/
+  /*CHNAGE FONT SIZE FOR DESKTOP TO MATCH MOCK DOCUMENT*/
 }
 @media (min-width: 768px) {
   .about-musicians__container__box {
@@ -372,7 +369,6 @@ a {
 .footer-page {
   background-color: #323232;
   width: 100%;
-  height: 100%;
 }
 .footer-page__container {
   padding: 1em 0;
@@ -505,12 +501,12 @@ a {
 }
 .footer-page--copy-right {
   font-size: 0.7rem; /*customized font size to match mock doc*/
-  color: #FAFAFA; /*Mock document seems to have Alabaster color for the copyright*/
+  color: #FFFFFF; /*Mock document seems to have Alabaster color for the copyright*/
   padding-top: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
 @media (min-width: 768px) {
   .footer-page--copy-right {
-    font-size: 1rem;
+    font-size: 0.875rem;
     padding-top: 3rem;
   }
 }/*# sourceMappingURL=bio.css.map */

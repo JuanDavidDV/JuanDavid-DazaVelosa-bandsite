@@ -6,6 +6,7 @@
     margin: 0rem;
     padding: 0rem;
     box-sizing: border-box;
+    overflow-x: hidden; /*removes horizontal scroll bar that was appearing when width screen size was approximately between 1980px-1990px */
 }
 
 body {
@@ -59,6 +60,7 @@ h3 {
 p {
     font-size: 0.8125rem;
     line-height: 1.125rem;
+    font-weight: 400;
 
     @include tablet {
         font-size: 0.875rem;
