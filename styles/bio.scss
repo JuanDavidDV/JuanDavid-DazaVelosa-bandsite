@@ -312,13 +312,17 @@
 
                     @include desktop {
                         width: auto; /*removes unwanted width*/
-                        padding-right: 7rem;
+                        padding-right: 7rem;    /*customized padding to match mock document*/
                     }
                 }
 
                 &__socials {
                     @include tablet {
                         width: $layout-grid;
+                    }
+
+                    @include desktop {
+                        width: 39.33%;  /*customized width to match desktop footer Mock document*/
                     }
                     
                     &--icons {
@@ -339,11 +343,7 @@
                         width: $layout-grid; 
                         justify-content: flex-end;
                     } 
-
-                    @include desktop{
-                        width: 39.59%;  /*customized width to match desktop footer Mock document*/
-                    }
-                    
+                   
                         &--tablet-desktop {
                             @extend .page-header__container__logo;
                         }
@@ -376,7 +376,7 @@
                         padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 
                         @include tablet {
-                            padding-top: 0em;
+                            padding-top: 0rem;
                         }
                     }
 
@@ -391,18 +391,13 @@
 
                     &__email {
                         color: $White;
-                        padding-bottom: 0.5rem; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
-                    
-                        @include tablet {
-                            padding-bottom: 0em;
-                        }
                     }
                 }
             } 
         }
 
     &__logo-mobile { 
-        margin-top: 2.5em; /*customized padding to match Mock document*/
+        margin-top: 3.25em; /*customized padding to match Mock document*/
         @extend .page-header__container__logo;
         
         @include tablet {
@@ -412,7 +407,7 @@
         
     &--copy-right {
         font-size: 0.7rem;  /*customized font size to match mock doc*/
-        color: $White; /*Mock document seems to have Alabaster color for the copyright*/
+        color: $White; 
         padding-top: 1rem;  /*Customized padding to match mobile layout as in the Style guide of 16px */
 
         @include tablet {

@@ -432,12 +432,17 @@ a {
 @media (min-width: 1280px) {
   .footer-page__container__top__title {
     width: auto; /*removes unwanted width*/
-    padding-right: 7rem;
+    padding-right: 7rem; /*customized padding to match mock document*/
   }
 }
 @media (min-width: 768px) {
   .footer-page__container__top__socials {
     width: 33.33%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__top__socials {
+    width: 39.33%; /*customized width to match desktop footer Mock document*/
   }
 }
 .footer-page__container__top__socials--icons {
@@ -455,11 +460,6 @@ a {
     display: flex;
     width: 33.33%;
     justify-content: flex-end;
-  }
-}
-@media (min-width: 1280px) {
-  .footer-page__container__top__logo {
-    width: 39.59%; /*customized width to match desktop footer Mock document*/
   }
 }
 @media (min-width: 768px) {
@@ -491,7 +491,7 @@ a {
 }
 @media (min-width: 768px) {
   .footer-page__container__bottom__box__subheader {
-    padding-top: 0em;
+    padding-top: 0rem;
   }
 }
 .footer-page__container__bottom__box__paragraph {
@@ -505,15 +505,9 @@ a {
 }
 .footer-page__container__bottom__box__email {
   color: #FFFFFF;
-  padding-bottom: 0.5rem; /*Customized padding to match mobile layout as in the Style guide of 8px. This to add total padding of 16px + 8px = 24px as shown on the Mock document */
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box__email {
-    padding-bottom: 0em;
-  }
 }
 .footer-page__logo-mobile {
-  margin-top: 2.5em; /*customized padding to match Mock document*/
+  margin-top: 3.25em; /*customized padding to match Mock document*/
 }
 @media (min-width: 768px) {
   .footer-page__logo-mobile {
@@ -522,7 +516,7 @@ a {
 }
 .footer-page--copy-right {
   font-size: 0.7rem; /*customized font size to match mock doc*/
-  color: #FFFFFF; /*Mock document seems to have Alabaster color for the copyright*/
+  color: #FFFFFF;
   padding-top: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px */
 }
 @media (min-width: 768px) {
