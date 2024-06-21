@@ -13,22 +13,20 @@
                 
         @include tablet {
             flex-direction: row;
+            align-items: center;
             padding-top: 1.5em;
-            margin: 0 2.25em;
+            margin: 0 $tablet-margin;
         }
 
-            @include tablet {
-                @include desktop-layout (1.5em 2.25em 0 2.25em); 
-            }
+        @include desktop {
+            @include desktop-layout (1.5em 2.25em 0 2.25em); 
+            height: 6.5rem; /*increases nav height to match Mock document*/
+        }
     
             &__logo {
                 height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
                 width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
             
-            
-
-
-
                 &__link {
                     align-self: center;
                     margin-top: 1.25em;
@@ -44,17 +42,30 @@
                 font-size: 1rem; /*customized font to match mock document*/
                 margin-top: 0.75em;
 
+                @include desktop {
+                    margin-top: 1.3em; 
+                }
+
                 &--box {
                     display: inline-block;
                     text-align: center;
                     width: 50%;
+
+                    @include tablet {
+                        width: auto;
+                        margin: 0em 3.75em;
+                    }
                 
                         &--current {
                             @include current-link-page;
 
                             @include tablet {
                                 width: auto; /*Used to setup the width of the white underline of current page*/
-                                padding-bottom: 1.5rem;  
+                                padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
+                            }
+
+                            @include desktop {
+                                padding-bottom: 2.30rem;    /*defines padding distance between link and bottom header container for white underline*/
                             }
                         }
                 }   
@@ -64,18 +75,17 @@
                     padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
 
                     @include tablet {
-                        margin: 0em 3.75em;
-                        padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                        padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                    }
+
+                    @include desktop {
+                        padding-bottom: 2.3rem;    /*defines padding distance between link and bottom header container for white underline when link is hover*/
                     }
 
                         &:hover { 
                             border-bottom: 0.2rem solid $White; 
                             color: $White;
                             display: block; /*converted to block to enable bottom border line be full size when hovering*/
-
-                                @include tablet {
-                                    display: inline;
-                                }
                         }
 
                         &--current { /*Current active link*/
@@ -88,16 +98,16 @@
 }
 
 .hero {
-    @include background-image ($hero-bio);
+    @include background-image;
         height: 12rem; /*Customized height to match Mock doc*/
 
-        @include tablet {
-            height: 25rem;
-        }
+    @include tablet {
+        height: 25rem;  /*Customized height to match Mock doc*/
+    }
 
-        @include desktop {
-            height: 40rem;
-        }
+    @include desktop {
+        height: 40rem;  /*Customized height to match Mock doc*/
+    }
 
         &__image--overlay {
             @include hero-image-opacity;
@@ -108,18 +118,17 @@
             margin-left: 1rem; /*Equals to 16px leftpadding to match style document requirements*/
 
             @include tablet {
-                margin-left: 2.25rem;    /*adds margin of 36px to match Mock document layout*/
+                margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
             }
 
             @include desktop {
-                @include desktop-layout (0 0 0 2.25rem);
+                @include desktop-layout (0 0 0 $tablet-margin);
             }
 
-            &__title {
-                align-self: center; /*Aligns title in the middle of the background image*/
-                color: $White;
-                
-            }
+                &__title {
+                    align-self: center; /*Aligns title in the middle of the background image*/
+                    color: $White;
+                }
         }
  }
 
@@ -127,8 +136,7 @@
     @include section-container ($White);
 
     &__container {
-        padding: 1em 0;
-        margin: 0 1em;
+        @include mobile-layout;
 
         @include tablet {
             @include tablet-layout;
@@ -227,18 +235,18 @@
     @include section-container ($Alabaster);
 
         &__container {
-            padding: 1em 0 0.5em 0; /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
-            margin: 0 1em;
+            @include mobile-layout;
+            padding-bottom: 0.5em;  /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
 
-            @include tablet {  
-                padding: 2.25em 0 1em 0;  /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
-                margin: 0 2.25em;
-            }
+        @include tablet {  
+            @include tablet-layout;
+            padding-bottom: 1em;    /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
+        }
 
-            @include desktop {
-                @include desktop-layout ($tablet-padding);
-                padding-bottom: 1em;
-            }
+        @include desktop {
+            @include desktop-layout ($tablet-padding);
+            padding-bottom: 1em;
+        }
 
             &__title {
                 color: $BandSite-Black;
@@ -278,8 +286,7 @@
     @extend .page-header;
     
         &__container {
-            padding: 1em 0;
-            margin: 0 1em;
+            @include mobile-layout;
 
             @include tablet {
                 @include tablet-layout;

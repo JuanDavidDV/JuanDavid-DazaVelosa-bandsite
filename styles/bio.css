@@ -106,15 +106,17 @@ a {
 @media (min-width: 768px) {
   .page-header__container {
     flex-direction: row;
+    align-items: center;
     padding-top: 1.5em;
     margin: 0 2.25em;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .page-header__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
     padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    height: 6.5rem; /*increases nav height to match Mock document*/
   }
 }
 .page-header__container__logo, .footer-page__logo-mobile, .footer-page__container__top__logo--tablet-desktop {
@@ -135,10 +137,21 @@ a {
   font-size: 1rem; /*customized font to match mock document*/
   margin-top: 0.75em;
 }
+@media (min-width: 1280px) {
+  .page-header__container__nav {
+    margin-top: 1.3em;
+  }
+}
 .page-header__container__nav--box {
   display: inline-block;
   text-align: center;
   width: 50%;
+}
+@media (min-width: 768px) {
+  .page-header__container__nav--box {
+    width: auto;
+    margin: 0em 3.75em;
+  }
 }
 .page-header__container__nav--box--current {
   display: inline-block;
@@ -150,7 +163,12 @@ a {
 @media (min-width: 768px) {
   .page-header__container__nav--box--current {
     width: auto; /*Used to setup the width of the white underline of current page*/
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline*/
+  }
+}
+@media (min-width: 1280px) {
+  .page-header__container__nav--box--current {
+    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline*/
   }
 }
 .page-header__container__nav__link {
@@ -159,19 +177,18 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__container__nav__link {
-    margin: 0em 3.75em;
-    padding-bottom: 1.63rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+  }
+}
+@media (min-width: 1280px) {
+  .page-header__container__nav__link {
+    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
   }
 }
 .page-header__container__nav__link:hover {
   border-bottom: 0.2rem solid #FFFFFF;
   color: #FFFFFF;
   display: block; /*converted to block to enable bottom border line be full size when hovering*/
-}
-@media (min-width: 768px) {
-  .page-header__container__nav__link:hover {
-    display: inline;
-  }
 }
 .page-header__container__nav__link--current { /*Current active link*/
   color: #FFFFFF;
@@ -187,12 +204,12 @@ a {
 }
 @media (min-width: 768px) {
   .hero {
-    height: 25rem;
+    height: 25rem; /*Customized height to match Mock doc*/
   }
 }
 @media (min-width: 1280px) {
   .hero {
-    height: 40rem;
+    height: 40rem; /*Customized height to match Mock doc*/
   }
 }
 .hero__image--overlay {
@@ -207,14 +224,14 @@ a {
 }
 @media (min-width: 768px) {
   .hero__container {
-    margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
+    margin-left: 2.25em; /*adds margin of 36px to match Mock document layout*/
   }
 }
 @media (min-width: 1280px) {
   .hero__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 0 0 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 0 0 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .hero__container__title {
@@ -334,13 +351,15 @@ a {
   background-color: #FAFAFA;
 }
 .photo-gallery__container {
-  padding: 1em 0 0.5em 0; /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
+  padding: 1em 0;
   margin: 0 1em;
+  padding-bottom: 0.5em; /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
 }
 @media (min-width: 768px) {
   .photo-gallery__container {
-    padding: 2.25em 0 1em 0; /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
+    padding: 2.25em 0;
     margin: 0 2.25em;
+    padding-bottom: 1em; /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
   }
 }
 @media (min-width: 1280px) {
