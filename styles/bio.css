@@ -528,6 +528,8 @@ a {
   }
 }
 .footer-page__container__bottom__box__email {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   color: #FFFFFF;
 }
 .footer-page__logo-mobile {
