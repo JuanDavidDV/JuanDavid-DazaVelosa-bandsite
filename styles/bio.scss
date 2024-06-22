@@ -146,10 +146,10 @@
     @include section-container ($White);
 
     &__container {
-        @include mobile-layout;
+         @include section-layout ($mobile-padding 0, 0 $mobile-margin);
 
         @include tablet {
-            @include tablet-layout;
+            @include section-layout ($tablet-padding 0, 0 $tablet-margin);
         }
 
         @include desktop {
@@ -245,11 +245,11 @@
     @include section-container ($Alabaster);
 
         &__container {
-            @include mobile-layout;
+            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
             padding-bottom: 0.5em;  /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
 
         @include tablet {  
-            @include tablet-layout;
+            @include section-layout ($tablet-padding 0, 0 $tablet-margin);
             padding-bottom: 1em;    /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
         }
 
@@ -304,10 +304,10 @@
     @extend .page-header;
     
         &__container {
-            @include mobile-layout;
+            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
 
             @include tablet {
-                @include tablet-layout;
+                @include section-layout ($tablet-padding 0, 0 $tablet-margin);
             }
 
             @include desktop {
