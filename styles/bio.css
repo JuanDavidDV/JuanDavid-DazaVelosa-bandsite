@@ -79,13 +79,13 @@ h3, .about-musicians__container__box__subheader--two {
 }
 
 /*Page body and footer*/
-p {
+p, .footer-page__container__bottom__box__email {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  p {
+  p, .footer-page__container__bottom__box__email {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -528,8 +528,6 @@ a {
   }
 }
 .footer-page__container__bottom__box__email {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
   color: #FFFFFF;
 }
 .footer-page__logo-mobile {
