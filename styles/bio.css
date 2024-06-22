@@ -95,6 +95,14 @@ a {
   text-decoration: none;
 }
 
+@keyframes nav-header {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .page-header, .footer-page {
   width: 100%;
   background-color: #323232;
@@ -126,6 +134,9 @@ a {
 .page-header__container__logo__link {
   align-self: center;
   margin-top: 1.25em;
+}
+.page-header__container__logo__link:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
 }
 @media (min-width: 768px) {
   .page-header__container__logo__link {
@@ -160,6 +171,9 @@ a {
   padding-bottom: 0.75em;
   border-bottom: 0.2rem solid #FFFFFF;
 }
+.page-header__container__nav--box--current:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
+}
 @media (min-width: 768px) {
   .page-header__container__nav--box--current {
     width: auto; /*Used to setup the width of the white underline of current page*/
@@ -186,6 +200,7 @@ a {
   }
 }
 .page-header__container__nav__link:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
   border-bottom: 0.2rem solid #FFFFFF;
   color: #FFFFFF;
   display: block; /*converted to block to enable bottom border line be full size when hovering*/
@@ -274,12 +289,12 @@ a {
     padding: 0 6em; /*cutomized padding to match Mock document for desktop screen*/
   }
 }
-.about-musicians__container__box__image, .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
+.about-musicians__container__box__image {
   width: 100%;
   padding-bottom: 1em;
 }
 @media (min-width: 768px) {
-  .about-musicians__container__box__image, .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
+  .about-musicians__container__box__image {
     padding-bottom: 2.25em;
   }
 }
@@ -382,6 +397,15 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+.photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {
+  width: 100%;
+  padding-bottom: 1em;
+  filter: grayscale(1);
+}
+.photo-gallery__container__box__image:hover, .photo-gallery__container__box__image--alignment:hover {
+  filter: grayscale(0);
+  transition: 1s ease-out;
 }
 @media (min-width: 768px) {
   .photo-gallery__container__box__image, .photo-gallery__container__box__image--alignment {

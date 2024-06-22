@@ -3,6 +3,7 @@
 @use './partials/mixins' as *;
 @use './partials/media-query' as *;
 @use './partials/variables' as *;
+@use './partials/animations' as *;
 
 .page-header {  
     @include section-container ($BandSite-Black);
@@ -30,6 +31,10 @@
                 &__link {
                     align-self: center;
                     margin-top: 1.25em;
+
+                    &:hover {
+                        animation: nav-header 1.25s 0.1s ease-out;
+                    }
 
                     @include tablet { 
                             margin: 0em 4em 1em 0;                    
@@ -59,6 +64,10 @@
                         &--current {
                             @include current-link-page;
 
+                            &:hover {
+                                animation: nav-header 1.25s 0.1s ease-out;
+                            }
+
                             @include tablet {
                                 width: auto; /*Used to setup the width of the white underline of current page*/
                                 padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
@@ -83,6 +92,7 @@
                     }
 
                         &:hover { 
+                            animation: nav-header 1.25s 0.1s ease-out;
                             border-bottom: 0.2rem solid $White; 
                             color: $White;
                             display: block; /*converted to block to enable bottom border line be full size when hovering*/
@@ -262,7 +272,15 @@
                 }
 
                     &__image {
-                        @extend .about-musicians__container__box__image;
+                        width: 100%; 
+                        padding-bottom: 1em;
+                        filter: grayscale(1);
+
+                        &:hover {
+                            filter: grayscale(0);
+                            transition: 1s ease-out;
+
+                        }
 
                         @include tablet {
                             width: $layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
