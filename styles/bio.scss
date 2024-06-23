@@ -91,12 +91,12 @@
                         padding-bottom: 2.3rem;    /*defines padding distance between link and bottom header container for white underline when link is hover*/
                     }
 
-                        &:hover { 
-                            animation: nav-header 1.25s 0.1s ease-out;
-                            border-bottom: 0.2rem solid $White; 
-                            color: $White;
-                            display: block; /*converted to block to enable bottom border line be full size when hovering*/
-                        }
+                    &:hover { 
+                        animation: nav-header 1.25s 0.1s ease-out;
+                        border-bottom: 0.2rem solid $White; 
+                        color: $White;
+                        display: block; /*converted to block to enable bottom border line be full size when hovering*/
+                    }
 
                         &--current { /*Current active link*/
                             color: $White; 
@@ -390,6 +390,7 @@
 
                         @include tablet {
                             padding-top: 0rem;
+                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
                         }
 
                             &--alignment {  /*class created to adjust padding and match Mock document layout*/
@@ -407,6 +408,7 @@
                         padding: 1rem 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
                     
                         @include tablet {
+                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
                             padding: 1.5rem 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
                         }
                     }
@@ -414,6 +416,10 @@
                     &__email {
                         @extend p;
                         color: $White;
+
+                        @include tablet {
+                            line-height: 1.25rem;   /*applied to match Style document*/
+                        }
                     }
                 }
             } 
@@ -435,6 +441,7 @@
 
         @include tablet {
             font-size: 0.875rem;
+            line-height: 1.25rem;   /*applied to match Style document*/
             padding-top: 2.25rem;  /*customized padding to match Mock document*/
         }
     }

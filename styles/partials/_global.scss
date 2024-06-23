@@ -1,16 +1,15 @@
 @use './fonts' as *;
 @use './media-query' as *;
 
-/*Removes margin, padding, and applies border-box to wbesite*/
 * { 
     margin: 0rem;
     padding: 0rem;
     box-sizing: border-box;
-    overflow-x: hidden; /*removes horizontal scroll bar that was appearing when width screen size was approximately between 1980px-1990px */
+    overflow-x: hidden; /*removes horizontal scroll bar at the bottom that was appearing when width screen size was approximately between 1980px-1990px */
 }
 
 body {
-    font-family: avenir-next-regular;
+    font-family: avenir-next-regular;   /*applies default/regular font family to the body of the HTML*/
 }
 
 /*Page Header*/
@@ -28,10 +27,7 @@ h1 {
 
 /*Section Header*/
 h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: avenir-next-bold;
-    font-weight: 700;
+    @extend h1;
     padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
     padding-bottom: 1rem;
 
