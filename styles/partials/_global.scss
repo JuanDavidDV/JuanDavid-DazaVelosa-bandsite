@@ -10,15 +10,16 @@
 }
 
 body {
-    font-family: avenir-regular;
+    font-family: avenir-next-regular;
 }
 
 /*Page Header*/
 h1 {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-family: avenir-bold;
+    font-family: avenir-next-bold;
     font-weight: 700;
+
     @include tablet {
         font-size: 3.75rem;
         line-height: 4.25rem;
@@ -29,7 +30,7 @@ h1 {
 h2 {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-family: avenir-bold;
+    font-family: avenir-next-bold;
     font-weight: 700;
     padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
     padding-bottom: 1rem;
@@ -38,7 +39,7 @@ h2 {
         font-size: 2.25rem;
         line-height: 2.75rem;
         padding-top: 0.75rem;   /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
-        padding-bottom: 1em;
+        padding-bottom: 2.25rem;
     }
 }
 
@@ -46,7 +47,7 @@ h2 {
 h3 {
     font-size: 0.875rem;
     line-height: 1.375rem;
-    font-family: avenir-demi;
+    font-family: avenir-next-demi;
     font-weight: 600;
     padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 

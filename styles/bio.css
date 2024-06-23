@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "avenir-regular";
+  font-family: "avenir-next-regular";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
-  font-family: "avenir-demi";
+  font-family: "avenir-next-demi";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
-  font-family: "avenir-bold";
+  font-family: "avenir-next-bold";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
@@ -17,7 +17,7 @@
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
 /*Responsive Layout Grid*/
-/*applied to match footer grid layout of the footer as the Mock doc shows to keep design consistent until 1280px breakpoint*/
+/*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
 /*Background Image*/
 /*Removes margin, padding, and applies border-box to wbesite*/
 * {
@@ -28,14 +28,14 @@
 }
 
 body {
-  font-family: avenir-regular;
+  font-family: avenir-next-regular;
 }
 
 /*Page Header*/
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: avenir-bold;
+  font-family: avenir-next-bold;
   font-weight: 700;
 }
 @media (min-width: 768px) {
@@ -49,7 +49,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: avenir-bold;
+  font-family: avenir-next-bold;
   font-weight: 700;
   padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
   padding-bottom: 1rem;
@@ -59,7 +59,7 @@ h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding-top: 0.75rem; /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
-    padding-bottom: 1em;
+    padding-bottom: 2.25rem;
   }
 }
 
@@ -67,7 +67,7 @@ h2 {
 h3, .about-musicians__container__box__subheader--two {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-family: avenir-demi;
+  font-family: avenir-next-demi;
   font-weight: 600;
   padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
 }
@@ -207,7 +207,7 @@ a {
 }
 .page-header__container__nav__link--current { /*Current active link*/
   color: #FFFFFF;
-  font-family: avenir-bold;
+  font-family: avenir-next-bold;
 }
 
 .hero {
@@ -374,7 +374,7 @@ a {
   .photo-gallery__container {
     padding: 2.25em 0;
     margin: 0 2.25em;
-    padding-bottom: 1em; /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
+    padding-bottom: 0.75em; /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 36px to match Mock document*/
   }
 }
 @media (min-width: 1280px) {
@@ -453,12 +453,6 @@ a {
     width: 33.33%;
   }
 }
-@media (min-width: 1280px) {
-  .footer-page__container__top__title {
-    width: auto; /*removes unwanted width*/
-    padding-right: 7rem; /*customized padding to match mock document*/
-  }
-}
 @media (min-width: 768px) {
   .footer-page__container__top__socials {
     width: 33.33%;
@@ -466,7 +460,7 @@ a {
 }
 @media (min-width: 1280px) {
   .footer-page__container__top__socials {
-    width: 39.33%; /*customized width to match desktop footer Mock document*/
+    width: 60%; /*customized width to match desktop footer Mock document*/
   }
 }
 .footer-page__container__top__socials--icons {
@@ -504,17 +498,25 @@ a {
 }
 @media (min-width: 1280px) {
   .footer-page__container__bottom__box {
-    width: auto;
-    padding-right: 8.5rem; /*Customized padding to match desktop footer layout*/
+    width: 26.25%; /*Customized width to match desktop footer layout*/
   }
 }
-.footer-page__container__bottom__box__subheader {
+.footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
   color: #FFFFFF;
-  font-family: avenir-demi; /*font family applied to match Mock document*/
-  padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  font-family: avenir-next-demi; /*font family applied to match Mock document*/
+  font-weight: 600; /*font weight applied to match Mock document*/
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
-  .footer-page__container__bottom__box__subheader {
+  .footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
+    padding-top: 0rem;
+  }
+}
+.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
+  padding-top: 1.5rem; /*customized padding to match Mock mobile document*/
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__subheader--alignment {
     padding-top: 0rem;
   }
 }
@@ -546,6 +548,6 @@ a {
 @media (min-width: 768px) {
   .footer-page--copy-right {
     font-size: 0.875rem;
-    padding-top: 3rem;
+    padding-top: 2.25rem; /*customized padding to match Mock document*/
   }
 }/*# sourceMappingURL=bio.css.map */

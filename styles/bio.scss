@@ -100,7 +100,7 @@
 
                         &--current { /*Current active link*/
                             color: $White; 
-                            font-family: avenir-bold;
+                            font-family: avenir-next-bold;
                         }
                 }
             }      
@@ -190,7 +190,7 @@
             &__subheader--two {
                 @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
                 line-height: 2rem;  /*Customized line height to match mock document*/
-                color: $BandSite-Black;
+                color: $BandSite-Black; 
 
                 @include tablet {
                     font-size: 1rem;    /*Customized font size to match Mock document*/
@@ -250,7 +250,7 @@
 
         @include tablet {  
             @include section-layout ($tablet-padding 0, 0 $tablet-margin);
-            padding-bottom: 1em;    /*padding bottom was set to 1em (16px) to add the image bottom padding 1.5em (24px). 24px+16px = 40px to match Mock document*/
+            padding-bottom: 0.75em;    /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 36px to match Mock document*/
         }
 
         @include desktop {
@@ -283,9 +283,9 @@
                         }
 
                         @include tablet {
-                            width: $layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
-                            padding-bottom: $gutters-tablet;
-                            padding-right: $gutters-tablet;
+                            width: $tablet-layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
+                            padding-bottom: $tablet-gutters;
+                            padding-right: $tablet-gutters;
                         }
 
                             &--alignment {
@@ -302,7 +302,7 @@
 
 .footer-page {
     @extend .page-header;
-    
+
         &__container {
             @include section-layout ($mobile-padding 0, 0 $mobile-margin);
 
@@ -325,22 +325,17 @@
                     color: $White;
 
                     @include tablet {
-                        width: $layout-grid; 
-                    }
-
-                    @include desktop {
-                        width: auto; /*removes unwanted width*/
-                        padding-right: 7rem;    /*customized padding to match mock document*/
+                        width: $tablet-layout-grid; 
                     }
                 }
 
                 &__socials {
                     @include tablet {
-                        width: $layout-grid;
+                        width: $tablet-layout-grid;
                     }
 
                     @include desktop {
-                        width: 39.33%;  /*customized width to match desktop footer Mock document*/
+                        width: 60%;  /*customized width to match desktop footer Mock document*/
                     }
                     
                     &--icons {
@@ -358,7 +353,7 @@
 
                     @include tablet {
                         display: flex;
-                        width: $layout-grid; 
+                        width: $tablet-layout-grid; 
                         justify-content: flex-end;
                     } 
                    
@@ -368,7 +363,7 @@
                 }
             }
 
-            &__bottom {
+            &__bottom { 
                 @include tablet {
                     display: flex;
                     justify-content: space-between;
@@ -378,24 +373,33 @@
                     justify-content: flex-start;
                 }
                 
-                &__box {
+                &__box {                   
                     @include tablet {
-                        width: $layout-grid; 
+                        width: $tablet-layout-grid; 
                     }
 
                     @include desktop {
-                        width: auto;
-                        padding-right: 8.5rem;  /*Customized padding to match desktop footer layout*/
+                        width: 26.25%;  /*Customized width to match desktop footer layout*/
                     }
 
                     &__subheader {
                         color: $White;
-                        font-family: avenir-demi;   /*font family applied to match Mock document*/
-                        padding: 1rem 0 0 0; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+                        font-family: avenir-next-demi;   /*font family applied to match Mock document*/
+                        font-weight: 600;   /*font weight applied to match Mock document*/
+                        padding-top: 1rem;
 
                         @include tablet {
                             padding-top: 0rem;
                         }
+
+                            &--alignment {  /*class created to adjust padding and match Mock document layout*/
+                                @extend .footer-page__container__bottom__box__subheader;
+                                padding-top: 1.5rem;    /*customized padding to match Mock mobile document*/
+                            
+                                @include tablet {
+                                    padding-top: 0rem;
+                                }
+                            }
                     }
 
                     &__paragraph {
@@ -431,7 +435,7 @@
 
         @include tablet {
             font-size: 0.875rem;
-            padding-top: 3rem;  
+            padding-top: 2.25rem;  /*customized padding to match Mock document*/
         }
     }
 }
