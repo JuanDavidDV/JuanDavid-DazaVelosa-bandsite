@@ -120,6 +120,7 @@ a {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
     padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     height: 6.5rem; /*increases nav height to match Mock document*/
   }
 }
@@ -149,35 +150,35 @@ a {
     margin-top: 1.3em;
   }
 }
-.page-header__container__nav--box {
+.page-header__container__nav__box {
   display: inline-block;
   text-align: center;
   width: 50%;
 }
 @media (min-width: 768px) {
-  .page-header__container__nav--box {
+  .page-header__container__nav__box {
     width: auto;
     margin: 0em 3.75em;
   }
 }
-.page-header__container__nav--box--current {
+.page-header__container__nav__box--current {
   display: inline-block;
   text-align: center;
   width: 50%;
   padding-bottom: 0.75em;
   border-bottom: 0.2rem solid #FFFFFF;
 }
-.page-header__container__nav--box--current:hover {
+.page-header__container__nav__box--current:hover {
   animation: nav-header 1.25s 0.1s ease-out;
 }
 @media (min-width: 768px) {
-  .page-header__container__nav--box--current {
+  .page-header__container__nav__box--current {
     width: auto; /*Used to setup the width of the white underline of current page*/
     padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline*/
   }
 }
 @media (min-width: 1280px) {
-  .page-header__container__nav--box--current {
+  .page-header__container__nav__box--current {
     padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline*/
   }
 }

@@ -20,7 +20,7 @@
         }
 
         @include desktop {
-            @include desktop-layout (1.5em 2.25em 0 2.25em); 
+            @include desktop-layout (1.5em 2.25em 0 2.25em); /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
             height: 6.5rem; /*increases nav height to match Mock document*/
         }
     
@@ -51,7 +51,7 @@
                     margin-top: 1.3em; 
                 }
 
-                &--box {
+                &__box {
                     display: inline-block;
                     text-align: center;
                     width: 50%;
