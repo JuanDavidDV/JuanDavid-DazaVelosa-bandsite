@@ -282,7 +282,7 @@
                         }
 
                         @include tablet {
-                            width: calc(33.33% - 16px);  /*applied to keep consistent 3x3 image display layout when screen size increases*/
+                            width: calc($tablet-layout-grid - 16px);  /*applied to keep consistent 3x3 image display layout when screen size increases*/
                         }
                     }
             }
