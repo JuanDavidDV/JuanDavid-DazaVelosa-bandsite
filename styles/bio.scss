@@ -268,7 +268,6 @@
                     flex-direction: row;
                     flex-wrap: wrap;
                     gap: 1.5rem;    /*provides 24px for gutter between photos, this to follow Style guide document*/
-                    padding-bottom: 0.75em; /*padding bottom was set to 0.75em (12px) to add the image bottom padding 2.25em (36px). 36px+12px = 48px to match Mock document*/
                 }
 
                     &__image {
@@ -281,7 +280,7 @@
                         }
 
                         @include tablet {
-                            width: calc($tablet-layout-grid - 16px);  /*applied to keep consistent 3x3 image display layout when screen size increases*/
+                            width: $tablet-layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
                         }
                     }
             }
@@ -323,7 +322,7 @@
                     }
 
                     @include desktop {
-                        width: 60%;  /*customized width to match desktop footer Mock document*/
+                        width: 57%;  /*customized width to match desktop footer Mock document*/
                     }
                     
                     &--icons {
@@ -337,7 +336,7 @@
                 }
 
                 &__logo {
-                    display: none;
+                    display: none;  /*hides logo when Mobile breakout points occur*/
 
                     @include tablet {
                         display: flex;
@@ -367,7 +366,7 @@
                     }
 
                     @include desktop {
-                        width: 26.25%;  /*Customized width to match desktop footer layout*/
+                        width: 26.5%;  /*Customized width to match desktop footer layout*/
                     }
 
                     &__subheader {
@@ -419,7 +418,7 @@
         
         @include tablet {
             display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
-            }   
+        }   
     }
         
     &--copy-right {

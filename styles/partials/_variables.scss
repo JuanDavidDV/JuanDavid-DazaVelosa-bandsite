@@ -18,7 +18,7 @@ $mobile-margin: 1em;
 $tablet-padding: 2.25em;
 $tablet-margin: 2.25em;
 $tablet-gutters: 1.5em; 
-$tablet-layout-grid: 33.33%;    /*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
+$tablet-layout-grid: calc(33.33% - 16px);    /*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
 $tablet-footer-line-height: 1.25rem;    /*applied to match Style document*/
 
 /*Background Image*/
