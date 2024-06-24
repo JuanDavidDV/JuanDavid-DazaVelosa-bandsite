@@ -1,0 +1,435 @@
+@use './partials/global' as *;
+@use './partials/fonts' as *;
+@use './partials/mixins' as *;
+@use './partials/media-query' as *;
+@use './partials/variables' as *;
+@use './partials/animations' as *;
+
+.page-header {  
+    @include section-container ($BandSite-Black);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+                
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            padding-top: 1.5em;
+            margin: 0 $tablet-margin;
+        }
+
+        @include desktop {
+            @include desktop-layout (1.5em 2.25em 0 2.25em); /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+            height: 6.5rem; /*increases nav height to match Mock document*/
+        }
+    
+            &__logo {
+                height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
+                width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
+            
+                &__link {
+                    align-self: center;
+                    margin-top: 1.25em;
+
+                    &:hover {
+                        animation: nav-header 1.25s 0.1s ease-out;
+                    }
+
+                    @include tablet { 
+                            margin: 0em 4em 1em 0;                    
+                    }
+                } 
+            }
+
+            &__nav {
+                display: flex;
+                font-size: 1rem; /*customized font to match mock document*/
+                margin-top: 0.75em;
+
+                @include desktop {
+                    margin-top: 1.3em; 
+                }
+
+                &__box {
+                    display: inline-block;
+                    text-align: center;
+                    width: 50%;
+
+                    @include tablet {
+                        width: auto;
+                        margin: 0em 3.75em;
+                    }
+                
+                        &--current {
+                            @include current-link-page;
+
+                            &:hover {
+                                animation: nav-header 1.25s 0.1s ease-out;
+                            }
+
+                            @include tablet {
+                                width: auto; /*Used to setup the width of the white underline of current page*/
+                                padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
+                            }
+
+                            @include desktop {
+                                padding-bottom: 2.30rem;    /*defines padding distance between link and bottom header container for white underline*/
+                            }
+                        }
+                }   
+
+                &__link {
+                    color: $Mercury;
+                    padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+
+                    @include tablet {
+                        padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                    }
+
+                    @include desktop {
+                        padding-bottom: 2.3rem;    /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                    }
+
+                    &:hover { 
+                        animation: nav-header 1.25s 0.1s ease-out;
+                        border-bottom: 0.2rem solid $White; 
+                        color: $White;
+                        display: block; /*converted to block to enable bottom border line be full size when hovering*/
+                    }
+
+                        &--current { /*Current active link*/
+                            color: $White; 
+                            font-family: avenir-next-bold;
+                        }
+                }
+            }      
+    }
+}
+
+.hero {
+    @include background-image;
+        height: 12rem; /*Customized height to match Mock doc*/
+
+    @include tablet {
+        height: 25rem;  /*Customized height to match Mock doc*/
+    }
+
+    @include desktop {
+        height: 40rem;  /*Customized height to match Mock doc*/
+    }
+
+        &__image--overlay {
+            @include hero-image-opacity;
+        }   
+
+        &__container {
+            display: flex;
+            margin-left: 1rem; /*Equals to 16px left-padding to match style document requirements*/
+
+            @include tablet {
+                margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
+            }
+
+            @include desktop {
+                @include desktop-layout (0 0 0 $tablet-margin); /*for this particular case it was used the tablet margin, this to have consistency on the sides when screen width is > 1279px*/
+            }
+
+                &__title {
+                    align-self: center; 
+                    color: $White;
+                }
+        }
+ }
+
+.about-musicians {
+    @include section-container ($White);
+
+    &__container {
+         @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+
+        @include tablet {
+            @include section-layout ($tablet-padding 0, 0 $tablet-margin);
+        }
+
+        @include desktop {
+            @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+        }
+
+        &__title {
+            color: $BandSite-Black;
+        }
+
+        &__box {
+            @include tablet {
+                padding: 0 3.75em;  /*cutomized padding to match Mock document for tablet screen*/
+            }
+
+            @include desktop {
+                padding: 0 6em;     /*cutomized padding to match Mock document for desktop screen*/
+            }
+
+            &__image {
+                width: 100%; 
+                padding-bottom: 1em;
+
+                @include tablet {
+                    padding-bottom: $tablet-padding;
+                }
+            }
+
+            &__subheader--one {
+                color: $BandSite-Black;
+                padding-bottom: 0em;
+
+                @include desktop {
+                    width: 70%;
+                }
+            }
+
+            &__subheader--two {
+                @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
+                line-height: 2rem;  /*Customized line height to match mock document*/
+                color: $BandSite-Black; 
+
+                @include tablet {
+                    font-size: 1rem;    /*Customized font size to match Mock document*/
+                    padding: 0.75em 0 3em 0;   /*customized padding to match Mock document*/
+                }
+            }
+
+            &__subheader-title {
+                color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
+
+                    @include tablet {
+                        padding-bottom: 1.5em;
+                    }
+            }
+
+            &__paragraph {
+                color: $BandSite-Black;
+
+                @include tablet {
+                    display: flex;
+                }
+
+                    &--content {
+                        padding-bottom: 1rem;   /*equals 16px of bottom padding, this to match style doc instructions*/
+
+                        @include tablet {
+                            padding: 0 0.75rem 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
+                        }
+
+                        @include desktop {
+                            font-size: 1rem;    /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+                        }
+
+                            &--alignment {
+                                padding-bottom: 0em; /*removes unwanted padding*/
+                                
+                                @include tablet {
+                                    padding: 0 0 0 0.75rem;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
+                                }
+
+                                @include desktop {
+                                    font-size: 1rem;    /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+                                }
+                            }
+                    }
+            }
+        }
+    }
+}
+
+.photo-gallery {
+    @include section-container ($Alabaster);
+
+        &__container {
+            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+
+        @include tablet {  
+            @include section-layout ($tablet-padding 0, 0 $tablet-margin);
+        }
+
+        @include desktop {
+            @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+        }
+
+            &__title {
+                color: $BandSite-Black;
+            }
+
+            &__box {
+                display: flex; 
+                flex-direction: column;
+                gap: 1rem;  /*provides 16px for gutter between photos, this to follow Style guide document*/
+
+                @include tablet {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 1.5rem;    /*provides 24px for gutter between photos, this to follow Style guide document*/
+                }
+
+                    &__image {
+                        width: 100%; 
+                        filter: grayscale(1);
+
+                        &:hover {
+                            filter: grayscale(0);
+                            transition: 1s ease-out;
+                        }
+
+                        @include tablet {
+                            width: $tablet-layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
+                        }
+                    }
+            }
+        }
+}
+
+.footer-page {
+    @extend .page-header;
+
+        &__container {
+            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+
+            @include tablet {
+                @include section-layout ($tablet-padding 0, 0 $tablet-margin);
+            }
+
+            @include desktop {
+                @include desktop-layout ($tablet-padding);   /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+            }
+        
+            &__top {
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                }
+                
+                &__title {
+                    color: $White;
+
+                    @include tablet {
+                        width: $tablet-layout-grid; 
+                    }
+                }
+
+                &__socials {
+                    @include tablet {
+                        width: $tablet-layout-grid;
+                    }
+
+                    @include desktop {
+                        width: 57%;  /*customized width to match desktop footer Mock document*/
+                    }
+                    
+                    &--icons {
+                        height: 1.5rem;
+                        padding: 0em 0.75em;
+
+                            &--alignment {
+                                padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
+                            }
+                    }
+                }
+
+                &__logo {
+                    display: none;  /*hides logo when Mobile breakout points occur*/
+
+                    @include tablet {
+                        display: flex;
+                        width: $tablet-layout-grid; 
+                        justify-content: flex-end;
+                    } 
+                   
+                        &--tablet-desktop {
+                            @extend .page-header__container__logo;
+                        }
+                }
+            }
+
+            &__bottom { 
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                @include desktop {
+                    justify-content: flex-start;
+                }
+                
+                &__box {                   
+                    @include tablet {
+                        width: $tablet-layout-grid; 
+                    }
+
+                    @include desktop {
+                        width: 26.5%;  /*Customized width to match desktop footer layout*/
+                    }
+
+                    &__subheader {
+                        color: $White;
+                        font-family: avenir-next-demi;   /*font family applied to match Mock document*/
+                        font-weight: 600;   /*font weight applied to match Mock document*/
+                        padding-top: 1rem;
+
+                        @include tablet {
+                            padding-top: 0rem;
+                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
+                        }
+
+                            &--alignment {  /*class created to adjust padding and match Mock document layout*/
+                                @extend .footer-page__container__bottom__box__subheader;
+                                padding-top: 1.5rem;    /*customized padding to match Mock mobile document*/
+                            
+                                @include tablet {
+                                    padding-top: 0rem;
+                                }
+                            }
+                    }
+
+                    &__paragraph {
+                        color: $White;
+                        padding: 1rem 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                    
+                        @include tablet {
+                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
+                            padding: 1.5rem 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+                        }
+                    }
+
+                    &__email {
+                        @extend p;
+                        color: $White;
+
+                        @include tablet {
+                            line-height: 1.25rem;   /*applied to match Style document*/
+                        }
+                    }
+                }
+            } 
+        }
+
+    &__logo-mobile { 
+        margin-top: 3.25em; /*customized padding to match Mock document*/
+        @extend .page-header__container__logo;
+        
+        @include tablet {
+            display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
+        }   
+    }
+        
+    &--copy-right {
+        font-size: 0.7rem;  /*customized font size to match mock doc*/
+        color: $White; 
+        padding-top: 1rem;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.25rem;   /*applied to match Style document*/
+            padding-top: 2.25rem;  /*customized padding to match Mock document*/
+        }
+    }
+}

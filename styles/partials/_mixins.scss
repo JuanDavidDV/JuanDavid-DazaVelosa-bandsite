@@ -1,0 +1,39 @@
+@use './variables' as *;
+
+@mixin section-container ($color) {
+    width: 100%;
+    background-color: $color;
+}
+
+@mixin background-image {
+    background-image: $hero-bio;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+@mixin hero-image-opacity {
+    background-color: rgba($BandSite-Black, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+@mixin current-link-page {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 0.75em;
+    border-bottom: 0.2rem solid $White;
+}
+
+@mixin section-layout ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin desktop-layout ($padding) {
+    width: $desktop; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: $padding;  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+}
