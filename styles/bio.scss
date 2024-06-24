@@ -125,18 +125,18 @@
 
         &__container {
             display: flex;
-            margin-left: 1rem; /*Equals to 16px leftpadding to match style document requirements*/
+            margin-left: 1rem; /*Equals to 16px left-padding to match style document requirements*/
 
             @include tablet {
                 margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
             }
 
             @include desktop {
-                @include desktop-layout (0 0 0 $tablet-margin);
+                @include desktop-layout (0 0 0 $tablet-margin); /*for this particular case it was used the tablet margin, this to have consistency on the sides when screen width is > 1279px*/
             }
 
                 &__title {
-                    align-self: center; /*Aligns title in the middle of the background image*/
+                    align-self: center; 
                     color: $White;
                 }
         }
@@ -245,17 +245,14 @@
     @include section-container ($Alabaster);
 
         &__container {
-            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
-            padding-bottom: 0.5em;  /*padding bottom was set to 0.5em (8px) to add the image bottom padding 1em (16px). 16px+8px = 24px to match Mock document*/
+            @include section-layout ($mobile-padding  0, 0 $mobile-margin);
 
         @include tablet {  
             @include section-layout ($tablet-padding 0, 0 $tablet-margin);
-            padding-bottom: 0.75em;    /*padding bottom was set to 0.75em (12px) to add the image bottom padding 1.5em (24px). 24px+12px = 36px to match Mock document*/
         }
 
         @include desktop {
-            @include desktop-layout ($tablet-padding);
-            padding-bottom: 1em;
+            @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
         }
 
             &__title {
@@ -265,36 +262,28 @@
             &__box {
                 display: flex; 
                 flex-direction: column;
+                gap: 1rem;  /*provides 16px for gutter between photos, this to follow Style guide document*/
+
 
                 @include tablet {
                     flex-direction: row;
                     flex-wrap: wrap;
+                    gap: 1.5rem;    /*provides 24px for gutter between photos, this to follow Style guide document*/
+                    padding-bottom: 0.75em; /*padding bottom was set to 0.75em (12px) to add the image bottom padding 2.25em (36px). 36px+12px = 48px to match Mock document*/
                 }
 
                     &__image {
                         width: 100%; 
-                        padding-bottom: 1em;
                         filter: grayscale(1);
 
                         &:hover {
                             filter: grayscale(0);
                             transition: 1s ease-out;
-
                         }
 
                         @include tablet {
-                            width: $tablet-layout-grid;  /*applied to keep consistent 3x3 image display layout when screen size increases*/
-                            padding-bottom: $tablet-gutters;
-                            padding-right: $tablet-gutters;
+                            width: calc(33.33% - 16px);  /*applied to keep consistent 3x3 image display layout when screen size increases*/
                         }
-
-                            &--alignment {
-                                @extend .photo-gallery__container__box__image;
-
-                                @include tablet {
-                                    padding-right: 0; /*removes unwanted padding from the images located om the right of the site, this to match mock document*/
-                                }
-                            }
                     }
             }
         }
