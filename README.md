@@ -1,1 +1,7 @@
-This is the Sprint-1 respository, which will be maily used to build the website layout, design, and responsiveness for different screens. Once completed, it will be merged to the "main" repository.
+BrainStation Bandsite:
+
+This website is designed for a music band. It is developed in 3 different parts:
+
+1. Layout interface, making website responisve for mobiles, tablets and deskopt by using HTML, CSS, and SASS.
+
+Next parts descriptions will be provided and updated as the project moves forward...
