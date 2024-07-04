@@ -292,6 +292,22 @@
 
     &__container {
         @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+    
+        &__title {
+            color: $BandSite-Black;
+        }
+
+        &__new-comment {
+            display: flex;
+
+            &--avatar {
+                @include avatar;
+            }
+
+            &__user-info {
+                display: inline-block;
+            }
+        }
     }
 }
 

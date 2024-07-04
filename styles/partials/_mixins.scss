@@ -37,3 +37,11 @@
     margin: 0 auto;
     padding: $padding;  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
 }
+
+@mixin avatar {
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+    object-fit: cover; /*used to match avatar picture exactly as mock document*/
+    object-position: 20%;   /*applied to move avatar face to the rigth by 20% to match mock document*/
+}
