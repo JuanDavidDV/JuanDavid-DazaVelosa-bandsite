@@ -410,6 +410,15 @@ a {
   }
 }
 
+.comments {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.comments__container {
+  padding: 1em 0;
+  margin: 0 1em;
+}
+
 .footer-page__container {
   padding: 1em 0;
   margin: 0 1em;

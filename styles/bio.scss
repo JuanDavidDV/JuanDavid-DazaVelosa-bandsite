@@ -111,13 +111,13 @@
     @include background-image;
         height: 12rem; /*Customized height to match Mock doc*/
 
-    @include tablet {
-        height: 25rem;  /*Customized height to match Mock doc*/
-    }
+        @include tablet {
+            height: 25rem;  /*Customized height to match Mock doc*/
+        }
 
-    @include desktop {
-        height: 40rem;  /*Customized height to match Mock doc*/
-    }
+        @include desktop {
+            height: 40rem;  /*Customized height to match Mock doc*/
+        }
 
         &__image--overlay {
             @include hero-image-opacity;
@@ -146,7 +146,7 @@
     @include section-container ($White);
 
     &__container {
-         @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+        @include section-layout ($mobile-padding 0, 0 $mobile-margin);
 
         @include tablet {
             @include section-layout ($tablet-padding 0, 0 $tablet-margin);
@@ -247,13 +247,13 @@
         &__container {
             @include section-layout ($mobile-padding 0, 0 $mobile-margin);
 
-        @include tablet {  
-            @include section-layout ($tablet-padding 0, 0 $tablet-margin);
-        }
+            @include tablet {  
+                @include section-layout ($tablet-padding 0, 0 $tablet-margin);
+            }
 
-        @include desktop {
-            @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-        }
+            @include desktop {
+                @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+            }
 
             &__title {
                 color: $BandSite-Black;
@@ -285,6 +285,14 @@
                     }
             }
         }
+}
+
+.comments {
+    @include section-container ($White);
+
+    &__container {
+        @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+    }
 }
 
 .footer-page {
