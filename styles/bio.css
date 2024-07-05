@@ -424,7 +424,7 @@ a {
 .comments__container__new-comment {
   display: flex;
 }
-.comments__container__new-comment--avatar, .comments__container__comment-section__avatar {
+.comments__container__new-comment--avatar {
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
@@ -485,8 +485,17 @@ a {
   border-bottom: 0.0625rem solid #E1E1E1;
 }
 .comments__container__comment-section__avatar {
+  border-radius: 50%;
+  height: 2.25rem;
+  width: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover; /*used to match avatar picture exactly as mock document*/
+  -o-object-position: 20%;
+     object-position: 20%; /*applied to move avatar face to the rigth by 20% to match mock document*/
+  flex-shrink: 0; /*Prevents image to shrink*/
+  margin-top: 1.5rem;
   background-color: #E1E1E1;
-  border-color: #E1E1E1;
+  margin-top: 0;
 }
 
 .footer-page__container {

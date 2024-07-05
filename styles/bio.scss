@@ -367,10 +367,10 @@
         }
 
         &__comment-section {
-            &__avatar {
-                @extend .comments__container__new-comment--avatar;
+            &__avatar { 
+                @include avatar;
                 background-color: $Mercury;
-                border-color: $Mercury;
+                margin-top: 0;
             }
         }
 
