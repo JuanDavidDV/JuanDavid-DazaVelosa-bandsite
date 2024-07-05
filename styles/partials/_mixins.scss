@@ -44,4 +44,10 @@
     width: 2.25rem;
     object-fit: cover; /*used to match avatar picture exactly as mock document*/
     object-position: 20%;   /*applied to move avatar face to the rigth by 20% to match mock document*/
+    flex-shrink: 0; /*Prevents image to shrink*/
+    margin-top: 1.50rem;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
 }

@@ -75,13 +75,13 @@ h3, .about-musicians__container__box__subheader--two {
 }
 
 /*Page body and footer*/
-p, .footer-page__container__bottom__box__email {
+p, .comments__container__new-comment__user-info--name::-webkit-input-placeholder, .comments__container__new-comment__user-info--comment::-webkit-input-placeholder, .footer-page__container__bottom__box__email {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  p, .footer-page__container__bottom__box__email {
+  p, .comments__container__new-comment__user-info--name::-webkit-input-placeholder, .comments__container__new-comment__user-info--comment::-webkit-input-placeholder, .footer-page__container__bottom__box__email {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -317,7 +317,7 @@ a {
   }
 }
 .about-musicians__container__box__subheader-title {
-  color: black; /*Color black used given that Mock document uses black color for this particular subheader*/
+  color: #000000; /*Color black used given that Mock document uses black color for this particular subheader*/
 }
 @media (min-width: 768px) {
   .about-musicians__container__box__subheader-title {
@@ -432,9 +432,36 @@ a {
      object-fit: cover; /*used to match avatar picture exactly as mock document*/
   -o-object-position: 20%;
      object-position: 20%; /*applied to move avatar face to the rigth by 20% to match mock document*/
+  flex-shrink: 0; /*Prevents image to shrink*/
+  margin-top: 1.5rem;
 }
 .comments__container__new-comment__user-info {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0.75rem;
+}
+.comments__container__new-comment__user-info__label, .comments__container__new-comment__user-info__label--comment {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
+}
+.comments__container__new-comment__user-info__label--comment {
+  padding-top: 1.25rem; /*customized padding to match Mock document*/
+}
+.comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment {
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  border: 0.0625rem solid #E1E1E1;
+}
+.comments__container__new-comment__user-info--name::-webkit-input-placeholder, .comments__container__new-comment__user-info--comment::-webkit-input-placeholder {
+  color: #323232;
+}
+.comments__container__new-comment__user-info--comment {
+  height: 6rem;
 }
 
 .footer-page__container {
