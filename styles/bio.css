@@ -424,7 +424,7 @@ a {
 .comments__container__new-comment {
   display: flex;
 }
-.comments__container__new-comment--avatar {
+.comments__container__new-comment--avatar, .comments__container__comment-section__avatar {
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
@@ -456,12 +456,37 @@ a {
   border-radius: 0.25rem;
   padding: 0.75rem;
   border: 0.0625rem solid #E1E1E1;
+  white-space: normal;
 }
 .comments__container__new-comment__user-info--name::-webkit-input-placeholder, .comments__container__new-comment__user-info--comment::-webkit-input-placeholder {
   color: #323232;
 }
 .comments__container__new-comment__user-info--comment {
   height: 6rem;
+  margin-bottom: 0.5rem;
+}
+.comments__container__new-comment__user-info__button {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  background-color: #323232;
+  color: #FFFFFF;
+  height: 2.5rem;
+  border: 0.0625rem solid #323232;
+  border-radius: 0.25rem;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.comments__container__new-comment__user-info__button:hover {
+  background-color: #000000;
+}
+.comments__container--divider {
+  padding-top: 1em;
+  margin-bottom: 1em;
+  border-bottom: 0.0625rem solid #E1E1E1;
+}
+.comments__container__comment-section__avatar {
+  background-color: #E1E1E1;
+  border-color: #E1E1E1;
 }
 
 .footer-page__container {

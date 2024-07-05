@@ -328,6 +328,7 @@
                     border-radius: 0.25rem;
                     padding: 0.75rem;
                     border: 0.0625rem solid $Mercury;
+                    white-space: normal;
 
                     @include placeholder {
                         color: $BandSite-Black;
@@ -338,10 +339,42 @@
                 &--comment {
                     @extend .comments__container__new-comment__user-info--name;
                     height: 6rem;
+                    margin-bottom: 0.5rem;
                 }
-            }
 
+                &__button {
+                    font-weight: 700;
+                    font-size: 0.9375rem;
+                    background-color: $BandSite-Black;
+                    color: $White;
+                    height: 2.5rem;
+                    border: 0.0625rem solid $BandSite-Black;
+                    border-radius: 0.25rem;
+                    margin-top: $mobile-margin;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $BandSite-DarkBlack;
+                    }
+                }
+            }       
         }
+
+        &--divider {
+            padding-top: $mobile-padding;
+            margin-bottom: $mobile-padding;
+            border-bottom: 0.0625rem solid $Mercury;
+        }
+
+        &__comment-section {
+            &__avatar {
+                @extend .comments__container__new-comment--avatar;
+                background-color: $Mercury;
+                border-color: $Mercury;
+            }
+        }
+
+
     }
 }
 
