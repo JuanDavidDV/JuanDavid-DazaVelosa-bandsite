@@ -129,14 +129,15 @@
         display: flex;
         flex-direction: column;
         margin: 0 $mobile-margin;
+        height: 100%;
 
         @include tablet {
             margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
+            justify-content: center;
         }
 
         @include desktop {
             @include desktop-layout (0 $tablet-margin);
-            
         }
         
 
@@ -147,28 +148,46 @@
             
             @include tablet {
                 font-size: 1.5rem;
-                padding-top: 3rem;
+                padding-top: 0;
             }
         }
 
-        &__title {
-            color: $White;
-            width: 14rem;   /*Customized width to match layout of music title to match Mock document*/
-            padding: $mobile-padding 0;
-
-            @include tablet {
-                width: 10em;
-                padding: $tablet-padding 0;
+        &__box {
+            @include desktop {
+            display: flex;
+            justify-content: space-between;
             }
-        }
+            
+            &__title {
+                color: $White;
+                width: 14rem;   /*Customized width to match layout of music title to match Mock document*/
+                padding: $mobile-padding 0;
+    
+                @include tablet {
+                    width: 10em;
+                }
+                
+                @include desktop {
+                    width: 8.5em;
+                    padding-bottom: 0;
+                }
+            }
+    
+            &__song {
+                width: 100%; 
+                box-sizing:content-box;
+                height: 9.375rem; 
+                padding-top: 1.5em;
+                border-radius: 0.25rem;
+    
+                @include tablet {
+                    width: 27rem;
+                }
 
-        &__song {
-            width: 100%; 
-            height: 9.375rem; 
-            border-radius: 0.25rem;
-
-            @include tablet {
-                width: 27rem;
+                @include desktop {
+                    padding-top: 0;
+                    align-self: flex-end;
+                }
             }
         }
     }
