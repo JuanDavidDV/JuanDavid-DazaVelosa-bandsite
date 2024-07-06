@@ -24,3 +24,13 @@ let currentComment = (userComment) => {
 
 currentComment(0);
 
+let fullName = document.querySelector(".comments__container__comment-section__full-name");
+fullName.innerText = comments[0].userName;
+
+let timeStamp = document.querySelector(".comments__container__comment-section__time-stamp");
+timeStamp.innerText = comments[0].timeStamp;
+
+let content = document.querySelector(".comments__container__comment-section__content");
+content.innerText = comments[0].content;
+
+
