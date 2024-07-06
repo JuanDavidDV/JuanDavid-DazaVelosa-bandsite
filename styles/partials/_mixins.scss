@@ -5,8 +5,8 @@
     background-color: $color;
 }
 
-@mixin background-image {
-    background-image: $hero-bio;
+@mixin background-image ($image) {
+    background-image: $image;
     background-position: center;
     background-size: cover;
     width: 100%;

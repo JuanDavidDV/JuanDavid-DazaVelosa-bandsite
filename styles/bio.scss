@@ -108,7 +108,7 @@
 }
 
 .hero {
-    @include background-image;
+    @include background-image ($hero-bio);
         height: 12rem; /*Customized height to match Mock doc*/
 
         @include tablet {
@@ -125,7 +125,7 @@
 
         &__container {
             display: flex;
-            margin-left: 1rem; /*Equals to 16px left-padding to match style document requirements*/
+            margin-left: $mobile-margin; /*Equals to 16px left-padding to match style document requirements*/
 
             @include tablet {
                 margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/

@@ -1,1 +1,410 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "avenir-next-regular";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "avenir-next-demi";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "avenir-next-bold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+/*Primary Colors*/
+/*Secundary Colors*/
+/*Responsive Design Breakpoints*/
+/*Responsive Layout Grid*/
+/*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
+/*applied to match Style document*/
+/*Background Image*/
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+  overflow-x: hidden; /*removes horizontal scroll bar at the bottom that was appearing when width screen size was approximately between 1980px-1990px */
+}
+
+body {
+  font-family: avenir-next-regular; /*applies default/regular font family to the body of the HTML*/
+}
+
+/*Page Header*/
+h1, h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: avenir-next-bold;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1, h2 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+/*Section Header*/
+h2 {
+  padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 0.75rem; /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
+    padding-bottom: 2.25rem;
+  }
+}
+
+/*Subheader*/
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: avenir-next-demi;
+  font-weight: 600;
+  padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/*Page body and footer*/
+p, .footer-page__container__bottom__box__email {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p, .footer-page__container__bottom__box__email {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes nav-header {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.page-header, .footer-page {
+  width: 100%;
+  background-color: #323232;
+}
+.page-header__container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .page-header__container {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1.5em;
+    margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-header__container {
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    height: 6.5rem; /*increases nav height to match Mock document*/
+  }
+}
+.page-header__container__logo, .footer-page__logo-mobile, .footer-page__container__top__logo--tablet-desktop {
+  height: 20px; /*in this way logo should not exceed 20px height as the Style guide mentioned*/
+  width: 120px; /*in this way logo should not exceed 120px width as the Style guide mentioned*/
+}
+.page-header__container__logo__link {
+  align-self: center;
+  margin-top: 1.25em;
+}
+.page-header__container__logo__link:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
+}
+@media (min-width: 768px) {
+  .page-header__container__logo__link {
+    margin: 0em 4em 1em 0;
+  }
+}
+.page-header__container__nav {
+  display: flex;
+  font-size: 1rem; /*customized font to match mock document*/
+  margin-top: 0.75em;
+}
+@media (min-width: 1280px) {
+  .page-header__container__nav {
+    margin-top: 1.3em;
+  }
+}
+.page-header__container__nav__box {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .page-header__container__nav__box {
+    width: auto;
+    margin: 0em 3.75em;
+  }
+}
+.page-header__container__nav__box--current {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  padding-bottom: 0.75em;
+  border-bottom: 0.2rem solid #FFFFFF;
+}
+.page-header__container__nav__box--current:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
+}
+@media (min-width: 768px) {
+  .page-header__container__nav__box--current {
+    width: auto; /*Used to setup the width of the white underline of current page*/
+    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline*/
+  }
+}
+@media (min-width: 1280px) {
+  .page-header__container__nav__box--current {
+    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline*/
+  }
+}
+.page-header__container__nav__link {
+  color: #E1E1E1;
+  padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+}
+@media (min-width: 768px) {
+  .page-header__container__nav__link {
+    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+  }
+}
+@media (min-width: 1280px) {
+  .page-header__container__nav__link {
+    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+  }
+}
+.page-header__container__nav__link:hover {
+  animation: nav-header 1.25s 0.1s ease-out;
+  border-bottom: 0.2rem solid #FFFFFF;
+  color: #FFFFFF;
+  display: block; /*converted to block to enable bottom border line be full size when hovering*/
+}
+.page-header__container__nav__link--current { /*Current active link*/
+  color: #FFFFFF;
+  font-family: avenir-next-bold;
+}
+
+.hero {
+  background-image: url("../../assets/images/hero-shows.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 23rem; /*Customized height to match Mock doc*/
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 33.5rem;
+  }
+}
+.hero__image--overlay {
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: block;
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .hero__container {
+    margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
+  }
+}
+.hero__container__subtitle {
+  padding: 2.5rem 0 0 0; /*Customized padding to match Mock document*/
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__container__subtitle {
+    font-size: 1.5rem;
+    padding-top: 3rem;
+  }
+}
+.hero__container__title {
+  color: #FFFFFF;
+  width: 14rem; /*Customized width to match layout of music title to match Mock document*/
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .hero__container__title {
+    width: 10em;
+    padding: 2.25rem 0;
+  }
+}
+.hero__container__song {
+  width: 100%;
+  height: 9.375rem;
+  border-radius: 0.25rem;
+}
+@media (min-width: 768px) {
+  .hero__container__song {
+    width: 27rem;
+  }
+}
+
+.footer-page__container {
+  padding: 1rem 0;
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .footer-page__container {
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container {
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+.footer-page__container__top__title {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__title {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__socials {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__top__socials {
+    width: 57%; /*customized width to match desktop footer Mock document*/
+  }
+}
+.footer-page__container__top__socials--icons {
+  height: 1.5rem;
+  padding: 0em 0.75em;
+}
+.footer-page__container__top__socials--icons--alignment {
+  padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
+}
+.footer-page__container__top__logo {
+  display: none; /*hides logo when Mobile breakout points occur*/
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__logo {
+    display: flex;
+    width: calc(33.33% - 16px);
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__bottom {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__bottom__box {
+    width: 26.5%; /*Customized width to match desktop footer layout*/
+  }
+}
+.footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
+  color: #FFFFFF;
+  font-family: avenir-next-demi; /*font family applied to match Mock document*/
+  font-weight: 600; /*font weight applied to match Mock document*/
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
+    padding-top: 0rem;
+    line-height: 1.25rem; /*applied to match Style document*/
+  }
+}
+.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
+  padding-top: 1.5rem; /*customized padding to match Mock mobile document*/
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__subheader--alignment {
+    padding-top: 0rem;
+  }
+}
+.footer-page__container__bottom__box__paragraph {
+  color: #FFFFFF;
+  padding: 1rem 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__paragraph {
+    line-height: 1.25rem; /*applied to match Style document*/
+    padding: 1.5rem 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+  }
+}
+.footer-page__container__bottom__box__email {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__email {
+    line-height: 1.25rem; /*applied to match Style document*/
+  }
+}
+.footer-page__logo-mobile {
+  margin-top: 3.25em; /*customized padding to match Mock document*/
+}
+@media (min-width: 768px) {
+  .footer-page__logo-mobile {
+    display: none; /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
+  }
+}
+.footer-page--copy-right {
+  font-size: 0.7rem; /*customized font size to match mock doc*/
+  color: #FFFFFF;
+  padding-top: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px */
+}
+@media (min-width: 768px) {
+  .footer-page--copy-right {
+    font-size: 0.875rem;
+    line-height: 1.25rem; /*applied to match Style document*/
+    padding-top: 2.25rem; /*customized padding to match Mock document*/
+  }
+}/*# sourceMappingURL=shows.css.map */

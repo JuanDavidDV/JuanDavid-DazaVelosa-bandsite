@@ -112,7 +112,7 @@ a {
     flex-direction: row;
     align-items: center;
     padding-top: 1.5em;
-    margin: 0 2.25em;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -236,14 +236,14 @@ a {
 }
 @media (min-width: 768px) {
   .hero__container {
-    margin-left: 2.25em; /*adds margin of 36px to match Mock document layout*/
+    margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
   }
 }
 @media (min-width: 1280px) {
   .hero__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 0 0 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 0 0 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     /*for this particular case it was used the tablet margin, this to have consistency on the sides when screen width is > 1279px*/
   }
 }
@@ -257,20 +257,20 @@ a {
   background-color: #FFFFFF;
 }
 .about-musicians__container {
-  padding: 1em 0;
-  margin: 0 1em;
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .about-musicians__container {
-    padding: 2.25em 0;
-    margin: 0 2.25em;
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .about-musicians__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
@@ -293,7 +293,7 @@ a {
 }
 @media (min-width: 768px) {
   .about-musicians__container__box__image {
-    padding-bottom: 2.25em;
+    padding-bottom: 2.25rem;
   }
 }
 .about-musicians__container__box__subheader--one {
@@ -364,20 +364,20 @@ a {
   background-color: #FAFAFA;
 }
 .photo-gallery__container {
-  padding: 1em 0;
-  margin: 0 1em;
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .photo-gallery__container {
-    padding: 2.25em 0;
-    margin: 0 2.25em;
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .photo-gallery__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
@@ -415,8 +415,8 @@ a {
   background-color: #FFFFFF;
 }
 .comments__container {
-  padding: 1em 0;
-  margin: 0 1em;
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 .comments__container__title {
   color: #323232;
@@ -473,15 +473,15 @@ a {
   height: 2.5rem;
   border: 0.0625rem solid #323232;
   border-radius: 0.25rem;
-  margin-top: 1em;
+  margin-top: 1rem;
   cursor: pointer;
 }
 .comments__container__new-comment__user-info__button:hover {
   background-color: #000000;
 }
 .comments__container--divider {
-  padding-top: 1em;
-  margin-bottom: 1em;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
   border-bottom: 0.0625rem solid #E1E1E1;
 }
 .comments__container__comment-section__avatar {
@@ -499,20 +499,20 @@ a {
 }
 
 .footer-page__container {
-  padding: 1em 0;
-  margin: 0 1em;
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .footer-page__container {
-    padding: 2.25em 0;
-    margin: 0 2.25em;
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .footer-page__container {
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
