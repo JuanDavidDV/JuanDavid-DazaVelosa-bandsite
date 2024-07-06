@@ -158,7 +158,6 @@ a {
 @media (min-width: 768px) {
   .page-header__container__nav__box {
     width: auto;
-    margin: 0em 3.75em;
   }
 }
 .page-header__container__nav__box--current {
@@ -174,7 +173,8 @@ a {
 @media (min-width: 768px) {
   .page-header__container__nav__box--current {
     width: auto; /*Used to setup the width of the white underline of current page*/
-    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline*/
+    margin: 0 3.75em; /*defines padding distance between link and bottom header container for white underline*/
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -219,6 +219,11 @@ a {
     height: 33.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero {
+    height: 40rem;
+  }
+}
 .hero__image--overlay {
   background-color: rgba(50, 50, 50, 0.5);
   height: 100%;
@@ -234,6 +239,13 @@ a {
 @media (min-width: 768px) {
   .hero__container {
     margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
+  }
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .hero__container__subtitle {

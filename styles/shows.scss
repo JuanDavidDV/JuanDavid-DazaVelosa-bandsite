@@ -58,12 +58,11 @@
 
                     @include tablet {
                         width: auto;
-                        margin: 0em 3.75em;
+                     
                     }
                 
                         &--current {
                             @include current-link-page;
-
 
                             &:hover {
                                 animation: nav-header 1.25s 0.1s ease-out;
@@ -71,7 +70,8 @@
 
                             @include tablet {
                                 width: auto; /*Used to setup the width of the white underline of current page*/
-                                padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
+                                margin: 0 3.75em;  /*defines padding distance between link and bottom header container for white underline*/
+                                padding-bottom: 1.5rem;
                             }
 
                             @include desktop {
@@ -116,6 +116,10 @@
         height: 33.5rem;
     }
 
+    @include desktop {
+        height: 40rem;
+    }
+
     &__image--overlay {
         @include hero-image-opacity;
         display: block;
@@ -128,6 +132,11 @@
 
         @include tablet {
             margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
+        }
+
+        @include desktop {
+            @include desktop-layout (0 $tablet-margin);
+            
         }
         
 
