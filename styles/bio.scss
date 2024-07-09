@@ -308,7 +308,7 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                margin-left: 0.75rem;
+                margin-left: 0.75em;
                 
                 &__label {
                     font-size: 0.625rem;
@@ -367,11 +367,24 @@
         }
 
         &__comment-section {
+            display: flex;
+
             &__avatar { 
                 @include avatar;
                 background-color: $Mercury;
                 margin-top: 0;
             }
+           
+            &__box {
+                margin-left: 0.75em;
+
+                &--userName {
+                    font-family: avenir-next-bold;
+                    font-weight: 700;
+                }
+                
+            }
+
         }
 
 

@@ -16,21 +16,22 @@ let comments = [
     }
 ]
 
-let commentInfo = document.querySelector(".comments__container__comment-section__information");
+const pastCommentsParent = document.querySelector(".comments__container__comment-section");
 
-let currentComment = (userComment) => {
-    console.log(comments[userComment]);
-}
+let pastCommentsAvatar = document.createElement("div"); //SHOULD I USE DIV OR IMG FOR THE PAST COMMENTS AVATAR? WHEN I USE IMAGE THERE IS A GRAY SURROUNDOING LINE, BUT WHEN I USE DIV IT DISAPPERAS
+pastCommentsAvatar.classList.add("comments__container__comment-section__avatar");
+pastCommentsParent.appendChild(pastCommentsAvatar);
 
-currentComment(0);
+let pastCommentUserInput = document.createElement("div");
+pastCommentUserInput.classList.add("comments__container__comment-section__box");
+pastCommentsParent.appendChild(pastCommentUserInput);
 
-let fullName = document.querySelector(".comments__container__comment-section__full-name");
-fullName.innerText = comments[0].userName;
+let pastCommentsName = document.createElement("p");
+pastCommentsName.classList.add("comments__container__comment-section__box--userName");
+pastCommentsName.innerText = "Juan David";
+pastCommentUserInput.appendChild(pastCommentsName);
 
-let timeStamp = document.querySelector(".comments__container__comment-section__time-stamp");
-timeStamp.innerText = comments[0].timeStamp;
-
-let content = document.querySelector(".comments__container__comment-section__content");
-content.innerText = comments[0].content;
+let pastCommentsTimeStamp = docuemnt.createElement("p");
+pastCommentsTimeStamp.classList.add()
 
 
