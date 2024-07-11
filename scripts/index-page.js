@@ -22,16 +22,25 @@ let pastCommentsAvatar = document.createElement("div"); //SHOULD I USE DIV OR IM
 pastCommentsAvatar.classList.add("comments__container__comment-section__avatar");
 pastCommentsParent.appendChild(pastCommentsAvatar);
 
-let pastCommentUserInput = document.createElement("div");
-pastCommentUserInput.classList.add("comments__container__comment-section__box");
-pastCommentsParent.appendChild(pastCommentUserInput);
+let pastCommentsBoxOne = document.createElement("div");
+pastCommentsBoxOne.classList.add("comments__container__comment-section__box1");
+pastCommentsParent.appendChild(pastCommentsBoxOne);
+
 
 let pastCommentsName = document.createElement("p");
-pastCommentsName.classList.add("comments__container__comment-section__box--userName");
+pastCommentsName.classList.add("comments__container__comment-section__box1--userName");
 pastCommentsName.innerText = "Juan David";
-pastCommentUserInput.appendChild(pastCommentsName);
+pastCommentsBoxOne.appendChild(pastCommentsName);
 
-let pastCommentsTimeStamp = docuemnt.createElement("p");
-pastCommentsTimeStamp.classList.add()
+let pastCommentsTimeStamp = document.createElement("p");
+pastCommentsTimeStamp.classList.add("comments__container__comment-section__box1--time-stamp");
+pastCommentsTimeStamp.innerText = "2000/09/20";
+pastCommentsBoxOne.appendChild(pastCommentsTimeStamp);
+
+let pastCommentsContent = document.createElement("div");
+pastCommentsContent.classList.add("comments__container__comment-section__box1--content");
+pastCommentsContent.innerText = "Hello World";
+pastCommentsBoxOne.appendChild(pastCommentsContent);
+
 
 

@@ -368,22 +368,46 @@
 
         &__comment-section {
             display: flex;
+            gap: 1rem;
 
-            &__avatar { 
-                @include avatar;
-                background-color: $Mercury;
-                margin-top: 0;
-            }
-           
-            &__box {
-                margin-left: 0.75em;
-
-                &--userName {
-                    font-family: avenir-next-bold;
-                    font-weight: 700;
+                &__avatar { 
+                    @include avatar;
+                    background-color: $Mercury;
+                    margin-top: 0;
                 }
+
+                &__box1 {
+                    display: flex;
+                    flex-grow: 1;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                       /*Fixed height to match mock document*/
+
+                        &--userName {
+                            font-family: avenir-next-bold;
+                            font-weight: 700;
+                            flex: 1;
+                            white-space: nowrap;
+                        }
+            
+                        &--time-stamp {
+                            font-weight: 700;
+                            color: $Silver;
+                            padding-bottom: 0.25rem;
+                        }
+            
+                        &--content {
+                            flex: 100%; /*applied to occupied complete space, and make use of the space wrap from parent, to move comment down*/
+                        }
+                }  
+
+    
+
+
+
+
                 
-            }
+
 
         }
 

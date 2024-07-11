@@ -486,6 +486,7 @@ a {
 }
 .comments__container__comment-section {
   display: flex;
+  gap: 1rem;
 }
 .comments__container__comment-section__avatar {
   border-radius: 50%;
@@ -500,12 +501,26 @@ a {
   background-color: #E1E1E1;
   margin-top: 0;
 }
-.comments__container__comment-section__box {
-  margin-left: 0.75em;
+.comments__container__comment-section__box1 {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /*Fixed height to match mock document*/
 }
-.comments__container__comment-section__box--userName {
+.comments__container__comment-section__box1--userName {
   font-family: avenir-next-bold;
   font-weight: 700;
+  flex: 1;
+  white-space: nowrap;
+}
+.comments__container__comment-section__box1--time-stamp {
+  font-weight: 700;
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
+}
+.comments__container__comment-section__box1--content {
+  flex: 100%; /*applied to occupied complete space, and make use of the space wrap from parent, to move comment down*/
 }
 
 .footer-page__container {
