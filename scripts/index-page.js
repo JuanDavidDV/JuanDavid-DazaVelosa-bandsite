@@ -16,7 +16,23 @@ let comments = [
     }
 ]
 
-const pastCommentsParent = document.querySelector(".comments__container__comment-section");
+
+
+    let currentCommentsParent = document.querySelector(".comments__container__comment-section");
+
+    let currentAvatar =  document.createElement("img");
+    currentAvatar.classList.add("comments__container__comment-section__avatar");
+    currentAvatar.setAttribute("alt", "");
+    currentAvatar.setAttribute("src", "");
+    currentCommentsParent.appendChild(currentAvatar);
+
+    let currentCommentsBoxOne = document.createElement("div");
+    currentCommentsBoxOne.classList.add("comments__container__comment-section__box1");
+
+
+
+
+//const pastCommentsParent = document.querySelector(".comments__container__comment-section");
 
 let pastCommentsAvatar = document.createElement("div"); //SHOULD I USE DIV OR IMG FOR THE PAST COMMENTS AVATAR? WHEN I USE IMAGE THERE IS A GRAY SURROUNDOING LINE, BUT WHEN I USE DIV IT DISAPPERAS
 pastCommentsAvatar.classList.add("comments__container__comment-section__avatar");
@@ -41,6 +57,8 @@ let pastCommentsContent = document.createElement("div");
 pastCommentsContent.classList.add("comments__container__comment-section__box1--content");
 pastCommentsContent.innerText = "Hello World";
 pastCommentsBoxOne.appendChild(pastCommentsContent);
+
+
 
 
 
