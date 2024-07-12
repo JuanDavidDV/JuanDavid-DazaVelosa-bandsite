@@ -46,8 +46,6 @@
     object-position: 20%;   /*applied to move avatar face to the rigth by 20% to match mock document*/
     flex-shrink: 0; /*Prevents image to shrink*/
     margin-top: 1.50rem;
+    border-color: transparent;
 }
 
-@mixin placeholder {
-    &::-webkit-input-placeholder {@content}
-}

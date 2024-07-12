@@ -310,18 +310,19 @@
                 width: 100%;
                 margin-left: 0.75em;
                 
-                &__label {
+                &__label--name {
                     font-size: 0.625rem;
                     line-height: 1.25rem;
                     font-weight: 700;
                     color: $Silver;
                     padding-bottom: 0.25rem;
-
-                    &--comment {
-                        @extend .comments__container__new-comment__user-info__label;
-                        padding-top: 1.25rem; /*customized padding to match Mock document*/
-                    }
                 }
+
+                &__label--comment {
+                    @extend .comments__container__new-comment__user-info__label--name;
+                    padding-top: 1.25rem; /*customized padding to match Mock document*/
+                }
+                
 
                 &--name {
                     height: 2.25rem;
@@ -330,16 +331,18 @@
                     border: 0.0625rem solid $Mercury;
                     white-space: normal;
 
-                    @include placeholder {
-                        color: $BandSite-Black;
-                        @extend p;
+                    &::placeholder {
+                        font-family: avenir-next-regular;
                     }
+
                 }
 
                 &--comment {
                     @extend .comments__container__new-comment__user-info--name;
                     height: 6rem;
+                    width: 100%;
                     margin-bottom: 0.5rem;
+                    resize: none;   /*prevents resizing comment box, this to match Mock document*/
                 }
 
                 &__button {
@@ -374,6 +377,9 @@
                     @include avatar;
                     background-color: $Mercury;
                     margin-top: 0;
+                    content: "";
+
+                    inset: 0;
                 }
 
                 &__box1 {

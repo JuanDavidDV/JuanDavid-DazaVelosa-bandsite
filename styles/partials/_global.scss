@@ -1,5 +1,6 @@
 @use './fonts' as *;
 @use './media-query' as *;
+@use './variables' as *;
 
 * { 
     margin: 0rem;
@@ -68,3 +69,4 @@ p {
 a {
     text-decoration: none;
 }
+

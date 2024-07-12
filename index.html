@@ -88,16 +88,16 @@
                     <h2 class="comments__container__title">
                         Join the Converstation
                     </h2>
-                    <div class="comments__container__new-comment">
+                    <form class="comments__container__new-comment">
                         <img class="comments__container__new-comment--avatar" src="assets/images/Mohan-muruge.jpg" alt="comment-photo">
                         <div class="comments__container__new-comment__user-info">
-                            <p class="comments__container__new-comment__user-info__label">NAME</p><!--USE LABEL TAG-->
-                            <input class="comments__container__new-comment__user-info--name" placeholder="Enter your name" type="text">
-                            <p class="comments__container__new-comment__user-info__label--comment">COMMENT</p>
-                            <input class="comments__container__new-comment__user-info--comment" placeholder="Add a new comment" type="text">
+                            <label class="comments__container__new-comment__user-info__label--name" for="name">NAME</label>
+                            <input class="comments__container__new-comment__user-info--name" placeholder="Enter your name" type="text" id="name">
+                            <label class="comments__container__new-comment__user-info__label--comment" for="comment">COMMENT</label>
+                            <textarea class="comments__container__new-comment__user-info--comment" placeholder="Add a new comment" type="text" id="comment"></textarea>
                             <button class="comments__container__new-comment__user-info__button">COMMENT</button>
                         </div>
-                    </div>
+                    </form>
                     <div class="comments__container--divider"></div>
                     <article class="comments__container__comment-section" id="comments__container__comment-section"></article>
                 </div>
