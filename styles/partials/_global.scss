@@ -70,3 +70,8 @@ a {
     text-decoration: none;
 }
 
+textarea {
+    @extend p;
+    font-family: avenir-next-regular;
+}
+

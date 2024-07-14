@@ -75,13 +75,13 @@ h3 {
 }
 
 /*Page body and footer*/
-p, .footer-page__container__bottom__box__email {
+p, .footer-page__container__bottom__box__email, textarea {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  p, .footer-page__container__bottom__box__email {
+  p, .footer-page__container__bottom__box__email, textarea {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -89,6 +89,10 @@ p, .footer-page__container__bottom__box__email {
 
 a {
   text-decoration: none;
+}
+
+textarea {
+  font-family: avenir-next-regular;
 }
 
 @keyframes nav-header {

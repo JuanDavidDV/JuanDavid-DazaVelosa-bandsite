@@ -330,9 +330,13 @@
                     padding: 0.75rem;
                     border: 0.0625rem solid $Mercury;
                     white-space: normal;
+                    color: $BandSite-Black;
+                    @extend p;
+                    background-color: $Alabaster;
 
                     &::placeholder {
                         font-family: avenir-next-regular;
+                        color: $BandSite-Black;
                     }
 
                 }
@@ -377,9 +381,6 @@
                     @include avatar;
                     background-color: $Mercury;
                     margin-top: 0;
-                    content: "";
-
-                    inset: 0;
                 }
 
                 &__box1 {
@@ -389,7 +390,7 @@
                     gap: 0.5rem;
                        /*Fixed height to match mock document*/
 
-                        &--userName {
+                        &--user-name {
                             font-family: avenir-next-bold;
                             font-weight: 700;
                             flex: 1;

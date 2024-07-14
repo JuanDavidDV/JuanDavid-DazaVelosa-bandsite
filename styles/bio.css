@@ -75,13 +75,13 @@ h3, .about-musicians__container__box__subheader--two {
 }
 
 /*Page body and footer*/
-p, .footer-page__container__bottom__box__email {
+p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .footer-page__container__bottom__box__email, textarea {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  p, .footer-page__container__bottom__box__email {
+  p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .footer-page__container__bottom__box__email, textarea {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -89,6 +89,10 @@ p, .footer-page__container__bottom__box__email {
 
 a {
   text-decoration: none;
+}
+
+textarea {
+  font-family: avenir-next-regular;
 }
 
 @keyframes nav-header {
@@ -458,12 +462,16 @@ a {
   padding: 0.75rem;
   border: 0.0625rem solid #E1E1E1;
   white-space: normal;
+  color: #323232;
+  background-color: #FAFAFA;
 }
 .comments__container__new-comment__user-info--name::-moz-placeholder, .comments__container__new-comment__user-info--comment::-moz-placeholder {
   font-family: avenir-next-regular;
+  color: #323232;
 }
 .comments__container__new-comment__user-info--name::placeholder, .comments__container__new-comment__user-info--comment::placeholder {
   font-family: avenir-next-regular;
+  color: #323232;
 }
 .comments__container__new-comment__user-info--comment {
   height: 6rem;
@@ -507,8 +515,6 @@ a {
   border-color: transparent;
   background-color: #E1E1E1;
   margin-top: 0;
-  content: "";
-  inset: 0;
 }
 .comments__container__comment-section__box1 {
   display: flex;
@@ -517,7 +523,7 @@ a {
   gap: 0.5rem;
   /*Fixed height to match mock document*/
 }
-.comments__container__comment-section__box1--userName {
+.comments__container__comment-section__box1--user-name {
   font-family: avenir-next-bold;
   font-weight: 700;
   flex: 1;

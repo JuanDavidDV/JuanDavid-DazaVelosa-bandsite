@@ -14,49 +14,43 @@ let comments = [
         timeStamp: "10/20/2023",
         content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
-]
+];
 
-
+const currentComments = (comment) => {
 
     let currentCommentsParent = document.querySelector(".comments__container__comment-section");
 
-    let currentAvatar =  document.createElement("img");
+    let currentAvatar =  document.createElement("div"); /*SHOULD I USE DIV OR IMG*/
     currentAvatar.classList.add("comments__container__comment-section__avatar");
-    currentAvatar.setAttribute("alt", "");
-    currentAvatar.setAttribute("src", "");
     currentCommentsParent.appendChild(currentAvatar);
 
     let currentCommentsBoxOne = document.createElement("div");
     currentCommentsBoxOne.classList.add("comments__container__comment-section__box1");
+    currentCommentsParent.appendChild(currentCommentsBoxOne);
 
+    let currentCommentsName = document.createElement("p");
+    currentCommentsName.classList.add("comments__container__comment-section__box1--user-name");
+    currentCommentsName.innerText = comment.userName;
+    currentCommentsBoxOne.appendChild(currentCommentsName);
 
+    let currentCommentsTimeStamp = document.createElement("p");
+    currentCommentsTimeStamp.classList.add("comments__container__comment-section__box1--time-stamp");
+    currentCommentsTimeStamp.innerText = "2000/09/20";
+    currentCommentsBoxOne.appendChild(currentCommentsTimeStamp);
 
+    let currentCommentsContent = document.createElement("p");
+    currentCommentsContent.classList.add("comments__container__comment-section__box1--content");
+    currentCommentsContent.innerText = "Hello World";
+    currentCommentsBoxOne.appendChild(currentCommentsContent);
+}
 
-//const pastCommentsParent = document.querySelector(".comments__container__comment-section");
+const displayCurrentComments = () => {
+    for(i = 0; i < comments.length; i++) {
+        currentComments(comments[i]);
+    }
+}
 
-let pastCommentsAvatar = document.createElement("div"); //SHOULD I USE DIV OR IMG FOR THE PAST COMMENTS AVATAR? WHEN I USE IMAGE THERE IS A GRAY SURROUNDOING LINE, BUT WHEN I USE DIV IT DISAPPERAS
-pastCommentsAvatar.classList.add("comments__container__comment-section__avatar");
-pastCommentsParent.appendChild(pastCommentsAvatar);
-
-let pastCommentsBoxOne = document.createElement("div");
-pastCommentsBoxOne.classList.add("comments__container__comment-section__box1");
-pastCommentsParent.appendChild(pastCommentsBoxOne);
-
-
-let pastCommentsName = document.createElement("p");
-pastCommentsName.classList.add("comments__container__comment-section__box1--userName");
-pastCommentsName.innerText = "Juan David";
-pastCommentsBoxOne.appendChild(pastCommentsName);
-
-let pastCommentsTimeStamp = document.createElement("p");
-pastCommentsTimeStamp.classList.add("comments__container__comment-section__box1--time-stamp");
-pastCommentsTimeStamp.innerText = "2000/09/20";
-pastCommentsBoxOne.appendChild(pastCommentsTimeStamp);
-
-let pastCommentsContent = document.createElement("div");
-pastCommentsContent.classList.add("comments__container__comment-section__box1--content");
-pastCommentsContent.innerText = "Hello World";
-pastCommentsBoxOne.appendChild(pastCommentsContent);
+displayCurrentComments();
 
 
 
