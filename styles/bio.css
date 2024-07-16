@@ -500,7 +500,10 @@ textarea {
 }
 .comments__container__comment-section {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 0.5rem;
+  width: 100%;
 }
 .comments__container__comment-section__avatar {
   border-radius: 50%;
@@ -516,26 +519,26 @@ textarea {
   background-color: #E1E1E1;
   margin-top: 0;
 }
-.comments__container__comment-section__box1 {
+.comments__container__comment-section__card {
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 0.5rem;
   /*Fixed height to match mock document*/
 }
-.comments__container__comment-section__box1--user-name {
+.comments__container__comment-section__card--user-name {
   font-family: avenir-next-bold;
   font-weight: 700;
   flex: 1;
   white-space: nowrap;
 }
-.comments__container__comment-section__box1--time-stamp {
+.comments__container__comment-section__card--time-stamp {
   font-weight: 700;
   color: #AFAFAF;
   padding-bottom: 0.25rem;
 }
-.comments__container__comment-section__box1--content {
-  flex: 100%; /*applied to occupied complete space, and make use of the space wrap from parent, to move comment down*/
+.comments__container__comment-section__card--content {
+  width: 100%;
 }
 
 .footer-page__container {

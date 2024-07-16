@@ -375,7 +375,10 @@
 
         &__comment-section {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            gap: 0.5rem;
+            width: 100%;
 
                 &__avatar { 
                     @include avatar;
@@ -383,7 +386,7 @@
                     margin-top: 0;
                 }
 
-                &__box1 {
+                &__card {
                     display: flex;
                     flex-grow: 1;
                     flex-wrap: wrap;
@@ -404,7 +407,7 @@
                         }
             
                         &--content {
-                            flex: 100%; /*applied to occupied complete space, and make use of the space wrap from parent, to move comment down*/
+                            width: 100%;
                         }
                 }  
 
