@@ -373,12 +373,19 @@
             border-bottom: 0.0625rem solid $Mercury;
         }
 
-        &__comment-section {
+        &__wrapper {
             display: flex;
+            align-items: flex-start;
             flex-wrap: wrap;
-            flex-grow: 1;
-            gap: 0.5rem;
+            gap: 1rem;
             width: 100%;
+            flex-direction: column;
+
+            &__comment-section {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+                border-bottom: 0.0625rem solid $Mercury;
 
                 &__avatar { 
                     @include avatar;
@@ -387,29 +394,35 @@
                 }
 
                 &__card {
-                    display: flex;
                     flex-grow: 1;
+                    display: flex;
                     flex-wrap: wrap;
-                    gap: 0.5rem;
-                       /*Fixed height to match mock document*/
-
-                        &--user-name {
-                            font-family: avenir-next-bold;
-                            font-weight: 700;
-                            flex: 1;
-                            white-space: nowrap;
-                        }
-            
-                        &--time-stamp {
-                            font-weight: 700;
-                            color: $Silver;
-                            padding-bottom: 0.25rem;
-                        }
-            
-                        &--content {
+                    
+                        &__box {
+                            display: flex;
+                            justify-content: space-between;
                             width: 100%;
+                            
+                            &--user-name {
+                                font-family: avenir-next-bold;
+                                font-weight: 700;
+                            }
+                
+                            &--time-stamp {
+                                font-weight: 700;
+                                color: $Silver;
+                                padding-bottom: 0.25rem;
+                            }
+                        }
+
+                        &--content {
+                            padding-bottom: 1rem;
                         }
                 }  
+
+            }
+
+
 
     
 

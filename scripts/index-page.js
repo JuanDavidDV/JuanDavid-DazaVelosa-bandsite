@@ -1,4 +1,4 @@
-let currentCommentsParent = document.querySelector(".comments__container__comment-section");
+let currentCommentsParent = document.querySelector(".comments__container__wrapper");
 
 let comments = [
     {
@@ -21,35 +21,34 @@ let comments = [
 const currentComments = (comment) => {
 
     let currentCommentsWrapper = document.createElement("article");
-    currentCommentsWrapper.classList.add("comments__container__comment-section");
+    currentCommentsWrapper.classList.add("comments__container__wrapper__comment-section");
     currentCommentsParent.appendChild(currentCommentsWrapper);
 
     let currentAvatar =  document.createElement("div"); /*SHOULD I USE DIV OR IMG*/
-    currentAvatar.classList.add("comments__container__comment-section__avatar");
+    currentAvatar.classList.add("comments__container__wrapper__comment-section__avatar");
     currentCommentsWrapper.appendChild(currentAvatar);
     
-
-
-
     let currentCommentsCard = document.createElement("div");
-    currentCommentsCard.classList.add("comments__container__comment-section__card");
+    currentCommentsCard.classList.add("comments__container__wrapper__comment-section__card");
     currentCommentsWrapper.appendChild(currentCommentsCard);
 
-
+    let currentCommentsCardBox = document.createElement("div");
+    currentCommentsCardBox.classList.add("comments__container__wrapper__comment-section__card__box");
+    currentCommentsCard.appendChild(currentCommentsCardBox);
 
     let currentCommentsName = document.createElement("p");
-    currentCommentsName.classList.add("comments__container__comment-section__card--user-name");
+    currentCommentsName.classList.add("comments__container__wrapper__comment-section__card__box--user-name");
     currentCommentsName.innerText = comment.userName;
-    currentCommentsCard.appendChild(currentCommentsName);
+    currentCommentsCardBox.appendChild(currentCommentsName);
 
     let currentCommentsTimeStamp = document.createElement("p");
-    currentCommentsTimeStamp.classList.add("comments__container__comment-section__card--time-stamp");
-    currentCommentsTimeStamp.innerText = "2000/09/20";
-    currentCommentsCard.appendChild(currentCommentsTimeStamp);
+    currentCommentsTimeStamp.classList.add("comments__container__wrapper__comment-section__card__box--time-stamp");
+    currentCommentsTimeStamp.innerText = comment.timeStamp;
+    currentCommentsCardBox.appendChild(currentCommentsTimeStamp);
 
     let currentCommentsContent = document.createElement("p");
-    currentCommentsContent.classList.add("comments__container__comment-section__card--content");
-    currentCommentsContent.innerText = "Hello World";
+    currentCommentsContent.classList.add("comments__container__wrapper__comment-section__card--content");
+    currentCommentsContent.innerText = comment.content;
     currentCommentsCard.appendChild(currentCommentsContent);
 }
 
