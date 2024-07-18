@@ -1,4 +1,17 @@
+const itemForm = document.getElementById("comments__container__new-comment");
+const dynamicContent = document.getElementById("comments__container__wrapper");
 let currentCommentsParent = document.querySelector(".comments__container__wrapper");
+
+
+let currentDate = new Date();
+let currentDateDay = currentDate.getDate();
+let currentDateMonth = currentDate.getMonth();
+let currentDateYear = currentDate.getFullYear();
+
+/*Added + 1 to the month gven that January is 0 */
+//DOES THE MONTH NEEDS TO BE DISPLAYED AS 01 OR 1???
+let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + currentDateYear;
+
 
 let comments = [
     {
@@ -17,6 +30,19 @@ let comments = [
         content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
 ];
+
+itemForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const newUserName = event.target.inputUserName.value;
+    const newComment = event.target.inputComment.value;
+
+    if (newUserName !== "" && newComment !== "") {  //Checks if input fields have a value
+        comments.push({
+            userName: newUserName,
+
+        })
+    }                       
+});
 
 const currentComments = (comment) => {
 
