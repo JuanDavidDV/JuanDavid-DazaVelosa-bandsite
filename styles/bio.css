@@ -498,7 +498,7 @@ textarea {
   margin-bottom: 1rem;
   border-bottom: 0.0625rem solid #E1E1E1;
 }
-.comments__container__wrapper {
+.comments__container__wrapper__area {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -506,13 +506,14 @@ textarea {
   width: 100%;
   flex-direction: column;
 }
-.comments__container__wrapper__comment-section {
+.comments__container__wrapper__area__comment-section {
   width: 100%;
   display: flex;
   gap: 0.5rem;
   border-bottom: 0.0625rem solid #E1E1E1;
+  margin-bottom: 1rem;
 }
-.comments__container__wrapper__comment-section__avatar {
+.comments__container__wrapper__area__comment-section__avatar {
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
@@ -526,26 +527,26 @@ textarea {
   background-color: #E1E1E1;
   margin-top: 0;
 }
-.comments__container__wrapper__comment-section__card {
+.comments__container__wrapper__area__comment-section__card {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
 }
-.comments__container__wrapper__comment-section__card__box {
+.comments__container__wrapper__area__comment-section__card__box {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.comments__container__wrapper__comment-section__card__box--user-name {
+.comments__container__wrapper__area__comment-section__card__box--user-name {
   font-family: avenir-next-bold;
   font-weight: 700;
 }
-.comments__container__wrapper__comment-section__card__box--time-stamp {
+.comments__container__wrapper__area__comment-section__card__box--time-stamp {
   font-weight: 700;
   color: #AFAFAF;
   padding-bottom: 0.25rem;
 }
-.comments__container__wrapper__comment-section__card--content {
+.comments__container__wrapper__area__comment-section__card--content {
   padding-bottom: 1rem;
 }
 
