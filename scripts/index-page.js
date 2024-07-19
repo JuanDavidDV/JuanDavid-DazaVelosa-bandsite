@@ -36,13 +36,36 @@ itemForm.addEventListener("submit", function (event) {
     const newUserName = event.target.inputUserName.value;
     const newComment = event.target.inputComment.value;
 
-    if (newUserName !== "" && newComment !== "") {  //Checks if input fields have a value
+    if (newUserName !== "" && newComment !== "" ) {  //Checks if input fields have a value
         comments.push({
             userName: newUserName,
-
-        })
+            timeStamp: actualTimeStamp,
+            content: newComment,
+        });
+        addComments();
+        event.target.reset();
     }                       
 });
+
+
+const addComments = () => {
+    dynamicContent.innerHTML = "";
+    comments.forEach(function (comment) {
+        //const boxComment = document.createElement("div");
+        const nameComment = document.createElement("p");
+        nameComment.classList.add("comments__container__wrapper__comment-section__card__box--user-name");
+        //const contentComment = document.createElement("p");
+        nameComment.innerText = comment.userName;
+        //contentComment.innerText = comment.content;
+
+        //boxComment.appendChild(nameComment);
+        //boxComment.appendChild(contentComment);
+        dynamicContent.appendChild(nameComment);
+
+    });
+}
+
+
 
 const currentComments = (comment) => {
 
@@ -79,6 +102,7 @@ const currentComments = (comment) => {
 }
 
 const displayCurrentComments = () => {
+    dynamicContent.innerHTML = "";
     for(i = 0; i < comments.length; i++) {
         currentComments(comments[i]);
     }
@@ -87,6 +111,6 @@ const displayCurrentComments = () => {
 displayCurrentComments();
 
 
-
+addComments();
 
 
