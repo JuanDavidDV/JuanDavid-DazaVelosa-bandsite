@@ -1,8 +1,6 @@
 const itemForm = document.getElementById("comments__container__new-comment");
 const dynamicContent = document.getElementById("comments__container__wrapper");
 
-
-
 let currentDate = new Date();
 let currentDateDay = currentDate.getDate();
 let currentDateMonth = currentDate.getMonth();
@@ -15,9 +13,9 @@ let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + curren
 
 let comments = [
     {
-        userName: "Victor Pinto",
-        timeStamp: "11/02/2023",
-        content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+        userName: "Isaac Tadesse",
+        timeStamp: "10/20/2023",
+        content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     },
     {
         userName: "Christina Cabrera",
@@ -25,44 +23,42 @@ let comments = [
         content: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {
-        userName: "Isaac Tadesse",
-        timeStamp: "10/20/2023",
-        content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+        userName: "Victor Pinto",
+        timeStamp: "11/02/2023",
+        content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
     }
 ];
 
 itemForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); //Prevents page to reload when submitting a new comment
     let newUserName = event.target.inputUserName.value;
     let newContentComment = event.target.inputComment.value;
 
-    let newComment = {
-        userName: itemForm.elements["inputUserName"].value,
-        timeStamp: actualTimeStamp,
-        content: itemForm.elements["inputComment"].value
-    };
-    
-    comments.push(newComment);
-    displayCurrentComments();
+    if(newUserName !== "" && newContentComment !== "") {
+        let newComment = {
+            userName: itemForm.elements["inputUserName"].value, //Takes value input from the form for the user name
+            timeStamp: actualTimeStamp,
+            content: itemForm.elements["inputComment"].value,   //Takes value unput from the form for the comment content
+        };
+        
+        comments.push(newComment);
+        clearComments();    //Clears comments from page
+        displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
+        itemForm.reset();   //Clears input fields after submitting a new comment
+    } 
 
-    itemForm.reset();
 });
 
-
 const currentComments = (comment) => {
-
-
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
-
-
 
     let currentCommentsWrapper = document.createElement("article");
     currentCommentsWrapper.classList.add("comments__container__wrapper__area__comment-section");
     currentCommentsParent.appendChild(currentCommentsWrapper);
 
-    let currentAvatar =  document.createElement("div"); /*SHOULD I USE DIV OR IMG*/
+    let currentAvatar =  document.createElement("div"); /*SHOULD I USE DIV OR IMG*/ /*ALSO DOES IT NEED TO INCLUDE THE AVATAR PICTURE WHEN ADDING A COMMENT OF THE GUY BEING DISPLAYED*/ 
     currentAvatar.classList.add("comments__container__wrapper__area__comment-section__avatar");
     currentCommentsWrapper.appendChild(currentAvatar);
     
@@ -91,10 +87,13 @@ const currentComments = (comment) => {
 }
 
 const displayCurrentComments = () => {
-    dynamicContent.innerHTML = "";
-    for(i = 0; i < comments.length; i++) {
+    for(i = comments.length -1; i >= 0; i--) {
         currentComments(comments[i]);
     }
+}
+
+const clearComments = () => {
+    dynamicContent.innerHTML = "";
 }
 
 displayCurrentComments();

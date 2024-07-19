@@ -291,7 +291,7 @@
     @include section-container ($White);
 
     &__container {
-        @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+        @include section-layout ($mobile-padding 0 0 0, 0 $mobile-margin);
     
         &__title {
             color: $BandSite-Black;
@@ -323,7 +323,6 @@
                     padding-top: 1.25rem; /*customized padding to match Mock document*/
                 }
                 
-
                 &--name {
                     height: 2.25rem;
                     border-radius: 0.25rem;
@@ -389,7 +388,7 @@
                         display: flex;
                         gap: 0.5rem;
                         border-bottom: 0.0625rem solid $Mercury;
-                        margin-bottom: 1rem;
+                        margin-bottom: $mobile-padding;
 
                         &__avatar { 
                             @include avatar;
