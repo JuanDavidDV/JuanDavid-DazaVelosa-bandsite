@@ -49,3 +49,18 @@
     border-color: transparent;
 }
 
+@mixin pagesButton {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    background-color: $BandSite-Black;
+    color: $White;
+    height: 2.5rem;
+    border: 0.0625rem solid $BandSite-Black;
+    border-radius: 0.25rem;
+    margin-top: $mobile-margin;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $BandSite-DarkBlack;
+    }
+};

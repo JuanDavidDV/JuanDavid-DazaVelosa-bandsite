@@ -193,6 +193,46 @@
     }
 }
 
+.shows {
+    @include section-container ($White);
+
+    &__container {
+        @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+
+        &__title {
+            color: $BandSite-DarkBlack;
+        }
+
+        &__wrapper {
+            padding-top: 0.5em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+
+            &__label {
+                font-size: 0.625rem;
+                line-height: 1.25rem;
+                font-weight: 700;
+                color: $Silver;
+            }
+
+            &__value {
+                padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
+                color: $BandSite-Black;
+            }
+
+            &__button {
+                @include pagesButton;
+            }
+        }
+    }
+
+    &__divider {
+        border-top: 0.0625rem solid $Mercury;
+        margin-bottom: $mobile-margin;
+    }
+}
+
 .footer-page {
     @extend .page-header;
 

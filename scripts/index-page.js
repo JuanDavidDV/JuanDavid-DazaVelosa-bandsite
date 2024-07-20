@@ -1,17 +1,4 @@
-const itemForm = document.getElementById("comments__container__new-comment");
-const dynamicContent = document.getElementById("comments__container__wrapper");
-
-let currentDate = new Date();
-let currentDateDay = currentDate.getDate();
-let currentDateMonth = currentDate.getMonth();
-let currentDateYear = currentDate.getFullYear();
-
-/*Added + 1 to the month gven that January is 0 */
-//DOES THE MONTH NEEDS TO BE DISPLAYED AS 01 OR 1???
-let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + currentDateYear;
-
-
-let comments = [
+const comments = [
     {
         userName: "Isaac Tadesse",
         timeStamp: "10/20/2023",
@@ -29,22 +16,36 @@ let comments = [
     }
 ];
 
-itemForm.addEventListener("submit", function (event) {
+const commentForm = document.getElementById("commentForm");
+const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");
+
+//Creates Time Stamps
+let currentDate = new Date();
+let currentDateDay = currentDate.getDate();
+let currentDateMonth = currentDate.getMonth();
+let currentDateYear = currentDate.getFullYear();
+
+/*Added + 1 to the month gven that January is 0 */
+//DOES THE MONTH NEEDS TO BE DISPLAYED AS 01 OR 1???
+let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + currentDateYear;
+
+commentForm.addEventListener("submit", (event) => {
     event.preventDefault(); //Prevents page to reload when submitting a new comment
     let newUserName = event.target.inputUserName.value;
     let newContentComment = event.target.inputComment.value;
 
     if(newUserName !== "" && newContentComment !== "") {
+        //Constructs a new comment object
         let newComment = {
-            userName: itemForm.elements["inputUserName"].value, //Takes value input from the form for the user name
+            userName: newUserName, //Takes value input from the form for the user name
             timeStamp: actualTimeStamp,
-            content: itemForm.elements["inputComment"].value,   //Takes value unput from the form for the comment content
+            content: newContentComment,   //Takes value unput from the form for the comment content
         };
         
         comments.push(newComment);
-        clearComments();    //Clears comments from page
+        clearComments();    //Clears rep comments from page
         displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
-        itemForm.reset();   //Clears input fields after submitting a new comment
+        commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 
 });
@@ -87,13 +88,11 @@ const currentComments = (comment) => {
 }
 
 const displayCurrentComments = () => {
-    for(i = comments.length -1; i >= 0; i--) {
-        currentComments(comments[i]);
-    }
-}
+    comments.slice().reverse().forEach((commentsi) => currentComments(commentsi))   //Output comments chronologically by using .slice().reverse() functions
+};
 
 const clearComments = () => {
     dynamicContent.innerHTML = "";
 }
 
-displayCurrentComments();
+displayCurrentComments();   // Invokes function to display default comments chronologically 
