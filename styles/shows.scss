@@ -195,61 +195,134 @@
 
 .shows {
     @include section-container ($White);
-    padding-bottom: 1rem;
 
-    &__container {
-        @include section-layout ($mobile-padding , 0);
+    &__container { 
 
-        &:hover {
-            background-color: $Alabaster;
 
+        @include tablet {
+            @include section-layout ($tablet-padding 0 0 0, 0 $tablet-margin);
         }
 
-        &--active {
-            background-color: $Mercury;
+        &--tickets {
+            @include section-layout (0 $mobile-padding , 0);
+        }
+
+        &__subcontainer {
+            @include section-layout (0 $mobile-padding , 0);
+
+            @include tablet {
+                padding: 0;
+            }
 
             &:hover {
+                background-color: $Alabaster;
+
+            }
+
+            &--active {
                 background-color: $Mercury;
-            }
-        }
 
-        &--top {
-            padding: $mobile-padding;
-            padding-bottom: 0em;
-        }
-
-        &__title {
-            color: $BandSite-DarkBlack;
-            padding-top: 1.5rem;
-            padding-bottom: 0rem;
-        }
-
-        &__wrapper {
-            padding-top: 0.5em;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-
-            &__label {
-                font-size: 0.625rem;
-                line-height: 1.25rem;
-                font-weight: 700;
-                color: $Silver;
+                &:hover {
+                    background-color: $Mercury;
+                }
             }
 
-            &__value {
-                padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
-                color: $BandSite-Black;
+            &__title {
+                color: $BandSite-DarkBlack;
+                padding-top: 3rem;
+                padding-bottom: $mobile-padding;
+
+                @include tablet {
+                    padding: 0.75rem 0 $tablet-padding 0;
+                }
             }
 
-            &__button {
-                @include pagesButton;
+            &__label__tablet-box {
+
+                
+                @include tablet {
+                    display: flex;
+                    gap: 10rem;
+                    
+                }
+
+                &--labels {
+                    display: none;
+
+                    @include tablet {
+                        display: inline-block;
+                        width: 25%;
+                    }
+                }
+
+            }
+
+            &__wrapper {
+                padding-top: 0.5em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+
+                @include tablet {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 0;
+                    align-items: baseline;
+                    padding: $tablet-gutters 1.125rem;
+                    border-bottom: 0.0625rem solid $Mercury;
+
+                }
+
+                &__label {
+                    font-size: 0.625rem;
+                    line-height: 1.25rem;
+                    font-weight: 700;
+                    color: $Silver;
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+
+                &__value {
+                    padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
+                    color: $BandSite-Black;
+
+                    @include tablet {
+                        font-size: 0.875rem;
+                    }
+                }
+
+                &__button {
+                    @include pagesButton;
+
+                    @include tablet {
+                        width: 9.375rem;
+                    }
+                }
             }
         }
     }
-
     &__divider {
         border-top: 0.0625rem solid $Mercury;
+        margin: $mobile-margin 0;
+        padding: 0 1.125rem;
+
+        @include tablet {
+            display: none;
+        }
+
+        &--tablet {
+            @extend .shows__divider;
+            display: none;
+
+            @include tablet {
+                width: 100%;
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+            }
+        }
     }
 }
 
