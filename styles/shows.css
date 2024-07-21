@@ -318,6 +318,12 @@ textarea {
 .shows__container:hover {
   background-color: #FAFAFA;
 }
+.shows__container--active {
+  background-color: #E1E1E1;
+}
+.shows__container--active:hover {
+  background-color: #E1E1E1;
+}
 .shows__container--top {
   padding: 1rem;
   padding-bottom: 0em;

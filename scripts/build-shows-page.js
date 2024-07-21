@@ -45,10 +45,9 @@ const showTicketsDetails = [
     }
 ];
 
-const showTickets = (tickets, i) => {
+const showTickets = (tickets) => {
     let showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
-    showsContainer.setAttribute("id", i);
     shows.appendChild(showsContainer);
 
     const showsWrapper = document.createElement("div");
@@ -94,9 +93,7 @@ const showTickets = (tickets, i) => {
 };
 
 const displayCurrentShows = () => {
-    for(let i = 0; i < showTicketsDetails.length; i++) {
-        showTickets(showTicketsDetails[i], i);
-    }
+    showTicketsDetails.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 };
 
 const createDividers = () => {
@@ -109,13 +106,12 @@ const createDividers = () => {
 displayCurrentShows();
 
 let eventClicked = document.querySelectorAll(".shows__container");
-for (let i = 0; i < eventClicked.length; i++) {
-    eventClicked[i].addEventListener("click", (event) => {
-        console.log(event.target);
-        isClicked = true;
-        if(isClicked === true) {    
-            document.getElementById(i).style.backgroundColor = "red";
 
-        }
-    })
-}
+eventClicked.forEach(showAddClickListener => {
+    showAddClickListener.addEventListener("click", () => {
+        document.querySelector(".shows__container--active")?.classList.remove("shows__container--active");
+        showAddClickListener.classList.add("shows__container--active");
+    });
+});
+
+
