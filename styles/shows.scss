@@ -195,12 +195,24 @@
 
 .shows {
     @include section-container ($White);
+    padding-bottom: 1rem;
 
     &__container {
-        @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+        @include section-layout ($mobile-padding , 0);
+
+        &:hover {
+            background-color: $Alabaster;
+        }
+
+        &--top {
+            padding: $mobile-padding;
+            padding-bottom: 0em;
+        }
 
         &__title {
             color: $BandSite-DarkBlack;
+            padding-top: 1.5rem;
+            padding-bottom: 0rem;
         }
 
         &__wrapper {
@@ -229,7 +241,6 @@
 
     &__divider {
         border-top: 0.0625rem solid $Mercury;
-        margin-bottom: $mobile-margin;
     }
 }
 

@@ -88,7 +88,7 @@ const currentComments = (comment) => {
 }
 
 const displayCurrentComments = () => {
-    comments.slice().reverse().forEach((commentsi) => currentComments(commentsi))   //Output comments chronologically by using .slice().reverse() functions
+    comments.slice().reverse().forEach((commentsDisplayed) => currentComments(commentsDisplayed))   //Output comments chronologically by using .slice().reverse() functions
 };
 
 const clearComments = () => {

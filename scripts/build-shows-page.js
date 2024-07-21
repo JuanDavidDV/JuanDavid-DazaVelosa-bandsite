@@ -1,4 +1,16 @@
+const shows = document.getElementById("shows");
+
+let showsContainerTop = document.createElement("div");
+showsContainerTop.classList.add("shows__container--top");
+shows.appendChild(showsContainerTop);
+
+const showsTitle = document.createElement("h2");
+showsTitle.classList.add("shows__container__title");
+showsTitle.innerText = "Shows";
+showsContainerTop.appendChild(showsTitle);
+
 let showLocation = "San Francisco, CA";
+let isClicked = false;
 
 const showTicketsDetails = [
     {
@@ -33,17 +45,11 @@ const showTicketsDetails = [
     }
 ];
 
-
-    const shows = document.getElementById("shows");
-
-    const showsContainer = document.createElement("div");
+const showTickets = (tickets, i) => {
+    let showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
+    showsContainer.setAttribute("id", i);
     shows.appendChild(showsContainer);
-
-    const showsTitle = document.createElement("h2");
-    showsTitle.classList.add("shows__container__title");
-    showsTitle.innerText = "Shows";
-    showsContainer.appendChild(showsTitle);
 
     const showsWrapper = document.createElement("div");
     showsWrapper.classList.add("shows__container__wrapper");
@@ -56,7 +62,7 @@ const showTicketsDetails = [
 
     let showsWrapperDateValue = document.createElement("h3");
     showsWrapperDateValue.classList.add("shows__container__wrapper__value");
-    showsWrapperDateValue.innerText = showTicketsDetails[0].date;
+    showsWrapperDateValue.innerText = tickets.date;
     showsWrapper.appendChild(showsWrapperDateValue);
 
     let showsWrapperVenueLabel = document.createElement("p");
@@ -66,7 +72,7 @@ const showTicketsDetails = [
 
     let showsWrapperVenueValue = document.createElement("p");
     showsWrapperVenueValue.classList.add("shows__container__wrapper__value");
-    showsWrapperVenueValue.innerText = showTicketsDetails[0].venue;
+    showsWrapperVenueValue.innerText = tickets.venue;
     showsWrapper.appendChild(showsWrapperVenueValue);
 
     let showsWrapperLocationLabel = document.createElement("p");
@@ -76,7 +82,7 @@ const showTicketsDetails = [
 
     const showsWrapperLocationValue = document.createElement("p");
     showsWrapperLocationValue.classList.add("shows__container__wrapper__value");
-    showsWrapperLocationValue.innerText = showLocation;
+    showsWrapperLocationValue.innerText = tickets.location;
     showsWrapper.appendChild(showsWrapperLocationValue);
 
     const showsWrapperButton = document.createElement("button");
@@ -84,13 +90,32 @@ const showTicketsDetails = [
     showsWrapperButton.innerText = "BUY TICKETS";
     showsWrapper.appendChild(showsWrapperButton);
 
+    createDividers();
+};
+
+const displayCurrentShows = () => {
+    for(let i = 0; i < showTicketsDetails.length; i++) {
+        showTickets(showTicketsDetails[i], i);
+    }
+};
+
+const createDividers = () => {
     const showsWrapperDivider = document.createElement("hr");
     showsWrapperDivider.classList.add("shows__divider");
     shows.appendChild(showsWrapperDivider);
+    return showsWrapperDivider;
+}
 
+displayCurrentShows();
 
+let eventClicked = document.querySelectorAll(".shows__container");
+for (let i = 0; i < eventClicked.length; i++) {
+    eventClicked[i].addEventListener("click", (event) => {
+        console.log(event.target);
+        isClicked = true;
+        if(isClicked === true) {    
+            document.getElementById(i).style.backgroundColor = "red";
 
-
-
-
-
+        }
+    })
+}

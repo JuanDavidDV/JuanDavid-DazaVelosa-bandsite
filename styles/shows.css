@@ -309,13 +309,23 @@ textarea {
 .shows {
   width: 100%;
   background-color: #FFFFFF;
+  padding-bottom: 1rem;
 }
 .shows__container {
-  padding: 1rem 0;
-  margin: 0 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+.shows__container:hover {
+  background-color: #FAFAFA;
+}
+.shows__container--top {
+  padding: 1rem;
+  padding-bottom: 0em;
 }
 .shows__container__title {
   color: #000000;
+  padding-top: 1.5rem;
+  padding-bottom: 0rem;
 }
 .shows__container__wrapper {
   padding-top: 0.5em;
@@ -349,7 +359,6 @@ textarea {
 }
 .shows__divider {
   border-top: 0.0625rem solid #E1E1E1;
-  margin-bottom: 1rem;
 }
 
 .footer-page__container {
