@@ -25,7 +25,7 @@ const labels = ["DATE", "VENUE", "LOCATION"];
 
 for(i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
-    showsLabels.classList.add("shows__container__label__subcontainer__tablet-box--labels");
+    showsLabels.classList.add("shows__container__subcontainer__label__tablet-box--labels");
     showsLabels.innerText = labels[i];
     showsLabelTabletContainer.appendChild(showsLabels);
 }

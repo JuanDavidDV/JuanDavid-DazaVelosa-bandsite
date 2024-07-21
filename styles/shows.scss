@@ -196,6 +196,10 @@
 .shows {
     @include section-container ($White);
 
+    @include tablet {
+        padding-bottom: $tablet-padding;
+    }
+
     &__container { 
 
 
@@ -238,11 +242,11 @@
             }
 
             &__label__tablet-box {
-
+                display: none;
                 
                 @include tablet {
                     display: flex;
-                    gap: 10rem;
+
                     
                 }
 
@@ -252,6 +256,9 @@
                     @include tablet {
                         display: inline-block;
                         width: 25%;
+                        color: $Silver;
+                        font-weight: 700;
+                        line-height: 1.125rem;
                     }
                 }
 
@@ -265,7 +272,6 @@
 
                 @include tablet {
                     flex-direction: row;
-                    justify-content: space-between;
                     gap: 0;
                     align-items: baseline;
                     padding: $tablet-gutters 1.125rem;
@@ -290,6 +296,7 @@
 
                     @include tablet {
                         font-size: 0.875rem;
+                        width: 25%;
                     }
                 }
 
@@ -298,6 +305,7 @@
 
                     @include tablet {
                         width: 9.375rem;
+                        margin-top: 0;
                     }
                 }
             }

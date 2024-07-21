@@ -311,6 +311,11 @@ textarea {
   background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
+  .shows {
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
   .shows__container {
     padding: 2.25rem 0 0 0;
     margin: 0 2.25rem;
@@ -348,10 +353,12 @@ textarea {
     padding: 0.75rem 0 2.25rem 0;
   }
 }
+.shows__container__subcontainer__label__tablet-box {
+  display: none;
+}
 @media (min-width: 768px) {
   .shows__container__subcontainer__label__tablet-box {
     display: flex;
-    gap: 10rem;
   }
 }
 .shows__container__subcontainer__label__tablet-box--labels {
@@ -361,6 +368,9 @@ textarea {
   .shows__container__subcontainer__label__tablet-box--labels {
     display: inline-block;
     width: 25%;
+    color: #AFAFAF;
+    font-weight: 700;
+    line-height: 1.125rem;
   }
 }
 .shows__container__subcontainer__wrapper {
@@ -372,7 +382,6 @@ textarea {
 @media (min-width: 768px) {
   .shows__container__subcontainer__wrapper {
     flex-direction: row;
-    justify-content: space-between;
     gap: 0;
     align-items: baseline;
     padding: 1.5em 1.125rem;
@@ -397,6 +406,7 @@ textarea {
 @media (min-width: 768px) {
   .shows__container__subcontainer__wrapper__value {
     font-size: 0.875rem;
+    width: 25%;
   }
 }
 .shows__container__subcontainer__wrapper__button {
@@ -416,6 +426,7 @@ textarea {
 @media (min-width: 768px) {
   .shows__container__subcontainer__wrapper__button {
     width: 9.375rem;
+    margin-top: 0;
   }
 }
 .shows__divider, .shows__divider--tablet {
