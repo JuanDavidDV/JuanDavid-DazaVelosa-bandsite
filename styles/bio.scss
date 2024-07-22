@@ -297,6 +297,10 @@
             @include section-layout ($tablet-padding 0, 0 $tablet-margin);
         }
 
+        @include desktop {
+            @include desktop-layout ($tablet-padding);  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+        }
+
         &__title {
             color: $BandSite-Black;
         }
