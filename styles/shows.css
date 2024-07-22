@@ -322,7 +322,7 @@ textarea {
     justify-content: space-between;
     width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
     margin: 0 auto;
-    padding: 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    padding: 0 1.25rem 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 @media (min-width: 768px) {

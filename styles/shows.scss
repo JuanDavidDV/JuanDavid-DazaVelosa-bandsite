@@ -204,7 +204,7 @@
     @include desktop {
         display: flex;
         justify-content: space-between;
-        @include desktop-layout(0 $tablet-margin);
+        @include desktop-layout(0 1.25rem 0 $tablet-margin);
     }
 
     &__container { 
