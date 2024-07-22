@@ -368,7 +368,6 @@
                     @extend .comments__container__new-comment__user-info--name;
                     height: 6rem;
                     width: 100%;
-                    margin-bottom: 0.5rem;
                     resize: none;   /*prevents resizing comment box, this to match Mock document*/
                 
                     &--invalid {
@@ -446,10 +445,10 @@
                                     &--user-name {
                                         font-family: avenir-next-bold;
                                         font-weight: 700;
+                                        color: $BandSite-Black;
                                     }
                         
                                     &--time-stamp {
-                                        font-weight: 700;
                                         color: $Silver;
                                         padding-bottom: 0.25rem;
                                     }

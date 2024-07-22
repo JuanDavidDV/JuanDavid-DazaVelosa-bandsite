@@ -216,7 +216,7 @@ textarea {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 23rem; /*Customized height to match Mock doc*/
+  height: 20rem; /*Customized height to match Mock doc*/
 }
 @media (min-width: 768px) {
   .hero {
@@ -274,7 +274,7 @@ textarea {
 .hero__container__box__title {
   color: #FFFFFF;
   width: 14rem; /*Customized width to match layout of music title to match Mock document*/
-  padding: 1rem 0;
+  padding: 1rem 0 0 0;
 }
 @media (min-width: 768px) {
   .hero__container__box__title {
@@ -290,7 +290,7 @@ textarea {
 .hero__container__box__song {
   width: 100%;
   box-sizing: content-box;
-  height: 9.375rem;
+  height: 7.375rem;
   padding-top: 1.5em;
   border-radius: 0.25rem;
 }
@@ -357,6 +357,11 @@ textarea {
 @media (min-width: 768px) {
   .shows__container__subcontainer__title {
     padding: 0.75rem 0 2.25rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__container__subcontainer__title {
+    color: #323232;
   }
 }
 .shows__container__wrapper__label {
@@ -452,7 +457,7 @@ textarea {
     gap: 0;
     align-items: baseline;
     justify-content: space-between;
-    padding: 1.5em 1.125rem;
+    padding: 1rem 1.125rem; /*Decided to use 1rem instead of 1.5rem to match Mock document*/
     border-bottom: 0.0625rem solid #E1E1E1;
   }
 }
@@ -467,15 +472,18 @@ textarea {
     display: none;
   }
 }
-.shows__container-details__subcontainer__box__wrapper__value {
+.shows__container-details__subcontainer__box__wrapper__value, .shows__container-details__subcontainer__box__wrapper__value--date {
   padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
-  color: #323232;
+  color: #000000;
 }
 @media (min-width: 768px) {
-  .shows__container-details__subcontainer__box__wrapper__value {
+  .shows__container-details__subcontainer__box__wrapper__value, .shows__container-details__subcontainer__box__wrapper__value--date {
     font-size: 0.875rem;
     width: 25%;
   }
+}
+.shows__container-details__subcontainer__box__wrapper__value--date {
+  color: #323232;
 }
 .shows__container-details__subcontainer__box__wrapper__button {
   font-weight: 700;

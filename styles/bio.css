@@ -503,7 +503,6 @@ textarea {
 .comments__container__new-comment__user-info--comment {
   height: 6rem;
   width: 100%;
-  margin-bottom: 0.5rem;
   resize: none; /*prevents resizing comment box, this to match Mock document*/
 }
 .comments__container__new-comment__user-info--comment--invalid {
@@ -595,9 +594,9 @@ textarea {
 .comments__container__wrapper__area__comment-section__card__box--user-name {
   font-family: avenir-next-bold;
   font-weight: 700;
+  color: #323232;
 }
 .comments__container__wrapper__area__comment-section__card__box--time-stamp {
-  font-weight: 700;
   color: #AFAFAF;
   padding-bottom: 0.25rem;
 }

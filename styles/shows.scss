@@ -110,7 +110,7 @@
 
 .hero {
     @include background-image ($hero-show);
-    height: 23rem;  /*Customized height to match Mock doc*/
+    height: 20rem;  /*Customized height to match Mock doc*/
 
     @include tablet {
         height: 33.5rem;
@@ -161,7 +161,7 @@
             &__title {
                 color: $White;
                 width: 14rem;   /*Customized width to match layout of music title to match Mock document*/
-                padding: $mobile-padding 0;
+                padding: $mobile-padding 0 0 0;
     
                 @include tablet {
                     width: 10em;
@@ -176,7 +176,7 @@
             &__song {
                 width: 100%; 
                 box-sizing:content-box;
-                height: 9.375rem; 
+                height: 7.375rem; 
                 padding-top: 1.5em;
                 border-radius: 0.25rem;
     
@@ -235,6 +235,10 @@
 
                 @include tablet {
                     padding: 0.75rem 0 $tablet-padding 0;
+                }
+
+                @include desktop {
+                    color: $BandSite-Black; //Mock document shows title color $BandSite-Black in desktop view
                 }
             }
         }
@@ -329,7 +333,7 @@
                         gap: 0;
                         align-items: baseline;
                         justify-content: space-between;
-                        padding: $tablet-gutters 1.125rem;
+                        padding: 1rem 1.125rem; /*Decided to use 1rem instead of 1.5rem to match Mock document*/
                         border-bottom: 0.0625rem solid $Mercury;
                     }
 
@@ -346,11 +350,16 @@
 
                     &__value {
                         padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
-                        color: $BandSite-Black;
+                        color: $BandSite-DarkBlack;
     
                         @include tablet {
                             font-size: 0.875rem;
                             width: 25%;
+                        }
+
+                        &--date {
+                            @extend .shows__container-details__subcontainer__box__wrapper__value;
+                            color: $BandSite-Black;
                         }
                     }
 

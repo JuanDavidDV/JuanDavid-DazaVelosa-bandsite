@@ -89,7 +89,7 @@ const showTickets = (tickets) => {
     showsWrapper.appendChild(showsWrapperDateLabel);
 
     let showsWrapperDateValue = document.createElement("h3");
-    showsWrapperDateValue.classList.add("shows__container-details__subcontainer__box__wrapper__value");
+    showsWrapperDateValue.classList.add("shows__container-details__subcontainer__box__wrapper__value--date");
     showsWrapperDateValue.innerText = tickets.date;
     showsWrapper.appendChild(showsWrapperDateValue);
 
