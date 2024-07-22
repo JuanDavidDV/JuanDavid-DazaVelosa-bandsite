@@ -129,11 +129,11 @@ showsContainerDetails.append()
 displayCurrentShows(showsSubContainer, showsContainer);
 
 
-let eventClicked = document.querySelectorAll(".shows__container__subcontainer");
+let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
 
 eventClicked.forEach(showAddClickListener => {
     showAddClickListener.addEventListener("click", () => {
-        document.querySelector(".shows__container__subcontainer--active")?.classList.remove("shows__container__subcontainer--active");
-        showAddClickListener.classList.add("shows__container__subcontainer--active");
+        document.querySelector(".shows__container-details__subcontainer--active")?.classList.remove("shows__container-details__subcontainer--active");
+        showAddClickListener.classList.add("shows__container-details__subcontainer--active");
     });
 });

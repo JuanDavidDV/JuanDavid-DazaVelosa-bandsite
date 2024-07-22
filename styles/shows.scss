@@ -224,19 +224,6 @@
                 padding: 0;
             }
 
-            &:hover {
-                background-color: $Alabaster;
-
-            }
-
-            &--active {
-                background-color: $Mercury;
-
-                &:hover {
-                    background-color: $Mercury;
-                }
-            }
-
             &--top {
                 height: 100%;
             }
@@ -313,6 +300,19 @@
             @include tablet {
                 padding: 0;
                 border-bottom: 0;
+            }
+
+            &:hover {
+                background-color: $Alabaster;
+
+            }
+
+            &--active {
+                background-color: $Mercury;
+
+                &:hover {
+                    background-color: $Mercury;
+                }
             }
 
 

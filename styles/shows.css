@@ -346,15 +346,6 @@ textarea {
     padding: 0;
   }
 }
-.shows__container__subcontainer:hover {
-  background-color: #FAFAFA;
-}
-.shows__container__subcontainer--active {
-  background-color: #E1E1E1;
-}
-.shows__container__subcontainer--active:hover {
-  background-color: #E1E1E1;
-}
 .shows__container__subcontainer--top {
   height: 100%;
 }
@@ -439,6 +430,15 @@ textarea {
     padding: 0;
     border-bottom: 0;
   }
+}
+.shows__container-details__subcontainer:hover {
+  background-color: #FAFAFA;
+}
+.shows__container-details__subcontainer--active {
+  background-color: #E1E1E1;
+}
+.shows__container-details__subcontainer--active:hover {
+  background-color: #E1E1E1;
 }
 .shows__container-details__subcontainer__box__wrapper {
   padding-top: 0.5em;

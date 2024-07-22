@@ -422,11 +422,23 @@ textarea {
   padding: 1rem 0 0 0;
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .comments__container {
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
+  }
+}
 .comments__container__title {
   color: #323232;
 }
 .comments__container__new-comment {
   display: flex;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .comments__container__new-comment {
+    max-width: 36rem;
+  }
 }
 .comments__container__new-comment--avatar {
   border-radius: 50%;
@@ -439,6 +451,12 @@ textarea {
   flex-shrink: 0; /*Prevents image to shrink*/
   margin-top: 1.5rem;
   border-color: transparent;
+}
+@media (min-width: 768px) {
+  .comments__container__new-comment--avatar {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 .comments__container__new-comment__user-info {
   display: flex;
@@ -473,6 +491,12 @@ textarea {
   font-family: avenir-next-regular;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment {
+    height: 3rem;
+    padding: 1rem;
+  }
+}
 .comments__container__new-comment__user-info--comment {
   height: 6rem;
   width: 100%;
@@ -493,10 +517,29 @@ textarea {
 .comments__container__new-comment__user-info__button:hover {
   background-color: #000000;
 }
+@media (min-width: 768px) {
+  .comments__container__new-comment__user-info__button {
+    width: 9.375rem;
+    padding: 0 2rem;
+    align-self: flex-end;
+  }
+}
 .comments__container--divider {
   padding-top: 1rem;
   margin-bottom: 1rem;
   border-bottom: 0.0625rem solid #E1E1E1;
+}
+@media (min-width: 768px) {
+  .comments__container--divider {
+    max-width: 36rem;
+    margin: 0.75rem auto;
+  }
+}
+@media (min-width: 768px) {
+  .comments__container__wrapper {
+    max-width: 36rem;
+    margin: auto;
+  }
 }
 .comments__container__wrapper__area {
   display: flex;
@@ -526,6 +569,12 @@ textarea {
   border-color: transparent;
   background-color: #E1E1E1;
   margin-top: 0;
+}
+@media (min-width: 768px) {
+  .comments__container__wrapper__area__comment-section__avatar {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 .comments__container__wrapper__area__comment-section__card {
   flex-grow: 1;
