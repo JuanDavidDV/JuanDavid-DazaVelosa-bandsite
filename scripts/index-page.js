@@ -69,7 +69,7 @@ const currentComments = (comment) => {
     currentCommentsWrapper.classList.add("comments__container__wrapper__area__comment-section");
     currentCommentsParent.appendChild(currentCommentsWrapper);
 
-    let currentAvatar =  document.createElement("div"); /*SHOULD I USE DIV OR IMG*/ /*ALSO DOES IT NEED TO INCLUDE THE AVATAR PICTURE WHEN ADDING A COMMENT OF THE GUY BEING DISPLAYED*/ 
+    let currentAvatar =  document.createElement("div"); 
     currentAvatar.classList.add("comments__container__wrapper__area__comment-section__avatar");
     currentCommentsWrapper.appendChild(currentAvatar);
     

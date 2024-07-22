@@ -1,5 +1,6 @@
 const shows = document.getElementById("shows");
 
+//Creates the 2 main containers for Shows Tickets section
 let showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
 shows.appendChild(showsContainer);
@@ -8,6 +9,7 @@ let showsContainerDetails = document.createElement("div");
 showsContainerDetails.classList.add("shows__container-details");
 shows.appendChild(showsContainerDetails);
 
+//Creates elements for title, containers and labels
 let showsSubContainer = document.createElement("div");
 showsSubContainer.classList.add("shows__container__subcontainer");
 showsContainer.appendChild(showsSubContainer);
@@ -25,8 +27,10 @@ const showsLabelTabletContainer = document.createElement("div");
 showsLabelTabletContainer.classList.add("shows__container-details__label-box");
 showsContainerDetails.appendChild(showsLabelTabletContainer);
 
+//Creates an array to store labels
 const labels = ["DATE", "VENUE", "LOCATION"];
 
+//Generates labels and creates an element to everyone of them
 for(i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
     showsLabels.classList.add("shows__container-details__label-box--labels");
@@ -69,8 +73,8 @@ const showTicketsDetails = [
     }
 ];
 
+//Function created for the table that displays the shows
 const showTickets = (tickets) => {
-
     let showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container-details__subcontainer");
     showsContainerDetails.appendChild(showsContainer);
@@ -124,10 +128,7 @@ const displayCurrentShows = () => {
     showTicketsDetails.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 };
 
-showsContainerDetails.append()
-
-displayCurrentShows(showsSubContainer, showsContainer);
-
+displayCurrentShows();
 
 let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
 
