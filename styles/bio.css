@@ -491,6 +491,9 @@ textarea {
   font-family: avenir-next-regular;
   color: #323232;
 }
+.comments__container__new-comment__user-info--name--invalid {
+  border-color: #D22D2D;
+}
 @media (min-width: 768px) {
   .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment {
     height: 3rem;
@@ -502,6 +505,9 @@ textarea {
   width: 100%;
   margin-bottom: 0.5rem;
   resize: none; /*prevents resizing comment box, this to match Mock document*/
+}
+.comments__container__new-comment__user-info--comment--invalid {
+  border-color: #D22D2D;
 }
 .comments__container__new-comment__user-info__button {
   font-weight: 700;
@@ -737,4 +743,10 @@ textarea {
     line-height: 1.25rem; /*applied to match Style document*/
     padding-top: 2.25rem; /*customized padding to match Mock document*/
   }
+}
+
+input:focus, textarea:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: #323232;
 }/*# sourceMappingURL=bio.css.map */

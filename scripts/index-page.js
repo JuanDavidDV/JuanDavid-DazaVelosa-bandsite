@@ -26,13 +26,23 @@ let currentDateMonth = currentDate.getMonth();
 let currentDateYear = currentDate.getFullYear();
 
 /*Added + 1 to the month gven that January is 0 */
-//DOES THE MONTH NEEDS TO BE DISPLAYED AS 01 OR 1???
 let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + currentDateYear;
 
 commentForm.addEventListener("submit", (event) => {
     event.preventDefault(); //Prevents page to reload when submitting a new comment
     let newUserName = event.target.inputUserName.value;
     let newContentComment = event.target.inputComment.value;
+
+    if (newUserName.length === 0) {
+        event.target.inputUserName.classList.add("comments__container__new-comment__user-info--name--invalid");
+    } else {
+        event.target.inputUserName.classList.remove("comments__container__new-comment__user-info--name--invalid");
+    }
+    if (newContentComment.length === 0) {
+        event.target.inputComment.classList.add("comments__container__new-comment__user-info--comment--invalid");
+    } else {
+        event.target.inputComment.classList.remove("comments__container__new-comment__user-info--comment--invalid");
+    }
 
     if(newUserName !== "" && newContentComment !== "") {
         //Constructs a new comment object

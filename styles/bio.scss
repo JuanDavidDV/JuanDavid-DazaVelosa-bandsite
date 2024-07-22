@@ -353,6 +353,10 @@
                         color: $BandSite-Black;
                     }
 
+                    &--invalid {
+                        border-color: #D22D2D;
+                    }
+
                     @include tablet {
                         height: 3rem;
                         padding: 1rem;
@@ -366,6 +370,11 @@
                     width: 100%;
                     margin-bottom: 0.5rem;
                     resize: none;   /*prevents resizing comment box, this to match Mock document*/
+                
+                    &--invalid {
+                        border-color: #D22D2D;
+                    }
+                
                 }
 
                 &__button {
@@ -602,4 +611,10 @@
             padding-top: 2.25rem;  /*customized padding to match Mock document*/
         }
     }
+}
+
+input:focus, textarea:focus {
+    outline-style: none;
+    box-shadow: none;
+    border-color: $BandSite-Black;
 }
