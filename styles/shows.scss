@@ -195,20 +195,26 @@
 
 .shows {
     @include section-container ($White);
+    padding-bottom: $mobile-margin;
 
     @include tablet {
         padding-bottom: $tablet-padding;
     }
 
-    &__container { 
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        @include desktop-layout(0 $tablet-margin);
+    }
 
+    &__container { 
 
         @include tablet {
             @include section-layout ($tablet-padding 0 0 0, 0 $tablet-margin);
         }
 
-        &--tickets {
-            @include section-layout (0 $mobile-padding , 0);
+        @include desktop {
+            @include section-layout ($tablet-padding 0 0 0, 0);
         }
 
         &__subcontainer {
@@ -231,54 +237,22 @@
                 }
             }
 
+            &--top {
+                height: 100%;
+            }
+
             &__title {
                 color: $BandSite-DarkBlack;
                 padding-top: 3rem;
-                padding-bottom: $mobile-padding;
+                padding-bottom: 0;
 
                 @include tablet {
                     padding: 0.75rem 0 $tablet-padding 0;
                 }
             }
-
-            &__label__tablet-box {
-                display: none;
-                
-                @include tablet {
-                    display: flex;
-
-                    
-                }
-
-                &--labels {
-                    display: none;
-
-                    @include tablet {
-                        display: inline-block;
-                        width: 25%;
-                        color: $Silver;
-                        font-weight: 700;
-                        line-height: 1.125rem;
-                    }
-                }
-
-            }
+        }
 
             &__wrapper {
-                padding-top: 0.5em;
-                display: flex;
-                flex-direction: column;
-                gap: 0.25rem;
-
-                @include tablet {
-                    flex-direction: row;
-                    gap: 0;
-                    align-items: baseline;
-                    padding: $tablet-gutters 1.125rem;
-                    border-bottom: 0.0625rem solid $Mercury;
-
-                }
-
                 &__label {
                     font-size: 0.625rem;
                     line-height: 1.25rem;
@@ -287,16 +261,6 @@
 
                     @include tablet {
                         display: none;
-                    }
-                }
-
-                &__value {
-                    padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
-                    color: $BandSite-Black;
-
-                    @include tablet {
-                        font-size: 0.875rem;
-                        width: 25%;
                     }
                 }
 
@@ -310,7 +274,100 @@
                 }
             }
         }
+    
+    &__container-details {
+
+        @include tablet {
+            margin: 0 1rem;
+        }
+
+        @include desktop {
+            margin: 4rem 0 $tablet-margin 0;
+            width: 80%;
+        }
+
+        &__label-box {
+            @include tablet {
+                display: flex;
+                padding: 0 1.25rem;
+                width: 65.5%;
+                justify-content: space-between;
+            }
+
+            &--labels {
+                display: none;
+
+                @include tablet {
+                    display: inline-block;
+                    color: $Silver;
+                    font-weight: 700;
+                    line-height: 1.125rem;
+                }
+            }
+        }
+
+        &__subcontainer {
+            @include section-layout ($mobile-padding , 0);
+            border-bottom: 0.0625rem solid $Mercury;
+
+            @include tablet {
+                padding: 0;
+                border-bottom: 0;
+            }
+
+
+            &__box {
+
+                &__wrapper {
+                    padding-top: 0.5em;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+    
+                    @include tablet {
+                        flex-direction: row;
+                        gap: 0;
+                        align-items: baseline;
+                        justify-content: space-between;
+                        padding: $tablet-gutters 1.125rem;
+                        border-bottom: 0.0625rem solid $Mercury;
+                    }
+
+                    &__label {
+                        font-size: 0.625rem;
+                        line-height: 1.25rem;
+                        font-weight: 700;
+                        color: $Silver;
+    
+                        @include tablet {
+                            display: none;
+                        }
+                    }
+
+                    &__value {
+                        padding-bottom: 0.25rem; /*0.75rem = 12px, gap=0.25rem = 4px; 12px+4px=16px, this to match Mock document*/
+                        color: $BandSite-Black;
+    
+                        @include tablet {
+                            font-size: 0.875rem;
+                            width: 25%;
+                        }
+                    }
+
+                    &__button {
+                        @include pagesButton;
+    
+                        @include tablet {
+                            width: 9.375rem;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
     }
+
     &__divider {
         border-top: 0.0625rem solid $Mercury;
         margin: $mobile-margin 0;
@@ -321,7 +378,6 @@
         }
 
         &--tablet {
-            @extend .shows__divider;
             display: none;
 
             @include tablet {
@@ -332,7 +388,10 @@
             }
         }
     }
+
 }
+
+
 
 .footer-page {
     @extend .page-header;
