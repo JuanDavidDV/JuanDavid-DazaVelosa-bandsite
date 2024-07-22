@@ -21,12 +21,12 @@
 
         @include desktop {
             @include desktop-layout (1.5em 2.25em 0 2.25em); /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-            height: 6.5rem; /*increases nav height to match Mock document*/
+            height: 6.5rem; 
         }
     
             &__logo {
-                height: 20px;   /*in this way logo should not exceed 20px height as the Style guide mentioned*/
-                width: 120px;   /*in this way logo should not exceed 120px width as the Style guide mentioned*/  
+                height: 20px;   
+                width: 120px;   
             
                 &__link {
                     align-self: center;
@@ -44,7 +44,7 @@
 
             &__nav {
                 display: flex;
-                font-size: 1rem; /*customized font to match mock document*/
+                font-size: 1rem; 
                 margin-top: 0.75em;
 
                 @include desktop {
@@ -69,7 +69,7 @@
                             }
 
                             @include tablet {
-                                width: auto; /*Used to setup the width of the white underline of current page*/
+                                width: auto; 
                                 padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
                             }
 
@@ -81,7 +81,7 @@
 
                 &__link {
                     color: $Mercury;
-                    padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+                    padding-bottom: 0.75em; 
 
                     @include tablet {
                         padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
@@ -98,7 +98,7 @@
                         display: block; /*converted to block to enable bottom border line be full size when hovering*/
                     }
 
-                        &--current { /*Current active link*/
+                        &--current { 
                             color: $White; 
                             font-family: avenir-next-bold;
                         }
@@ -109,14 +109,14 @@
 
 .hero {
     @include background-image ($hero-bio);
-        height: 12rem; /*Customized height to match Mock doc*/
+        height: 12rem; 
 
         @include tablet {
-            height: 25rem;  /*Customized height to match Mock doc*/
+            height: 25rem;  
         }
 
         @include desktop {
-            height: 40rem;  /*Customized height to match Mock doc*/
+            height: 40rem;  
         }
 
         &__image--overlay {
@@ -125,10 +125,10 @@
 
         &__container {
             display: flex;
-            margin-left: $mobile-margin; /*Equals to 16px left-padding to match style document requirements*/
+            margin-left: $mobile-margin; 
 
             @include tablet {
-                margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
+                margin-left: $tablet-margin;    
             }
 
             @include desktop {
@@ -162,11 +162,11 @@
 
         &__box {
             @include tablet {
-                padding: 0 3.75em;  /*cutomized padding to match Mock document for tablet screen*/
+                padding: 0 3.75em; 
             }
 
             @include desktop {
-                padding: 0 6em;     /*cutomized padding to match Mock document for desktop screen*/
+                padding: 0 6em;  
             }
 
             &__image {
@@ -188,18 +188,18 @@
             }
 
             &__subheader--two {
-                @extend h3; /*applies subheader in order to match Mock document and Style guide for mobile layout diplay only*/
-                line-height: 2rem;  /*Customized line height to match mock document*/
+                @extend h3; 
+                line-height: 2rem;  
                 color: $BandSite-Black; 
 
                 @include tablet {
-                    font-size: 1rem;    /*Customized font size to match Mock document*/
-                    padding: 0.75em 0 3em 0;   /*customized padding to match Mock document*/
+                    font-size: 1rem;    
+                    padding: 0.75em 0 3em 0;   
                 }
             }
 
             &__subheader-title {
-                color: $BandSite-DarkBlack; /*Color black used given that Mock document uses black color for this particular subheader*/
+                color: $BandSite-DarkBlack; 
 
                     @include tablet {
                         padding-bottom: 1.5em;
@@ -214,25 +214,25 @@
                 }
 
                     &--content {
-                        padding-bottom: 1rem;   /*equals 16px of bottom padding, this to match style doc instructions*/
+                        padding-bottom: 1rem;   
 
                         @include tablet {
                             padding: 0 0.75rem 0 0;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
                         }
 
                         @include desktop {
-                            font-size: 1rem;    /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+                            font-size: 1rem;    
                         }
 
                             &--alignment {
-                                padding-bottom: 0em; /*removes unwanted padding*/
+                                padding-bottom: 0em; 
                                 
                                 @include tablet {
                                     padding: 0 0 0 0.75rem;  /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
                                 }
 
                                 @include desktop {
-                                    font-size: 1rem;    /*font size increased to match Mock document layout and have same number of lines per paragraph*/
+                                    font-size: 1rem;    
                                 }
                             }
                     }
@@ -267,7 +267,7 @@
                 @include tablet {
                     flex-direction: row;
                     flex-wrap: wrap;
-                    gap: 1.5rem;    /*provides 24px for gutter between photos, this to follow Style guide document*/
+                    gap: 1.5rem;   
                 }
 
                     &__image {
@@ -311,7 +311,6 @@
 
             @include tablet {
                 max-width: 36rem;
-
             }
 
             &--avatar {
@@ -365,7 +364,6 @@
                         height: 3rem;
                         padding: 1rem;
                     }
-
                 }
 
                 &--comment {
@@ -376,8 +374,7 @@
                 
                     &--invalid {
                         border-color: #D22D2D;
-                    }
-                
+                    } 
                 }
 
                 &__button {
@@ -416,7 +413,6 @@
                     gap: 1rem;
                     width: 100%;
                     flex-direction: column;
-
 
                     &__comment-section {
                         width: 100%;
@@ -504,7 +500,7 @@
                     }
 
                     @include desktop {
-                        width: 57%;  /*customized width to match desktop footer Mock document*/
+                        width: 57%; 
                     }
                     
                     &--icons {
@@ -512,13 +508,13 @@
                         padding: 0em 0.75em;
 
                             &--alignment {
-                                padding-left: 0em;  /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
+                                padding-left: 0em;  
                             }
                     }
                 }
 
                 &__logo {
-                    display: none;  /*hides logo when Mobile breakout points occur*/
+                    display: none; 
 
                     @include tablet {
                         display: flex;
@@ -548,23 +544,23 @@
                     }
 
                     @include desktop {
-                        width: 26.5%;  /*Customized width to match desktop footer layout*/
+                        width: 26.5%; 
                     }
 
                     &__subheader {
                         color: $White;
-                        font-family: avenir-next-demi;   /*font family applied to match Mock document*/
-                        font-weight: 600;   /*font weight applied to match Mock document*/
+                        font-family: avenir-next-demi;   
+                        font-weight: 600;   
                         padding-top: 1rem;
 
                         @include tablet {
                             padding-top: 0rem;
-                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
+                            line-height: $tablet-footer-line-height;  
                         }
 
                             &--alignment {  /*class created to adjust padding and match Mock document layout*/
                                 @extend .footer-page__container__bottom__box__subheader;
-                                padding-top: 1.5rem;    /*customized padding to match Mock mobile document*/
+                                padding-top: 1.5rem;  
                             
                                 @include tablet {
                                     padding-top: 0rem;
@@ -574,11 +570,11 @@
 
                     &__paragraph {
                         color: $White;
-                        padding: 1rem 0;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+                        padding: 1rem 0;
                     
                         @include tablet {
-                            line-height: $tablet-footer-line-height;   /*applied to match Style document*/
-                            padding: 1.5rem 0;    /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
+                            line-height: $tablet-footer-line-height;   
+                            padding: 1.5rem 0;   
                         }
                     }
 
@@ -587,7 +583,7 @@
                         color: $White;
 
                         @include tablet {
-                            line-height: 1.25rem;   /*applied to match Style document*/
+                            line-height: 1.25rem;  
                         }
                     }
                 }
@@ -595,27 +591,28 @@
         }
 
     &__logo-mobile { 
-        margin-top: 3.25em; /*customized padding to match Mock document*/
+        margin-top: 3.25em; 
         @extend .page-header__container__logo;
         
         @include tablet {
-            display: none;  /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
+            display: none;  
         }   
     }
         
     &--copy-right {
-        font-size: 0.7rem;  /*customized font size to match mock doc*/
+        font-size: 0.7rem; 
         color: $White; 
-        padding-top: 1rem;  /*Customized padding to match mobile layout as in the Style guide of 16px */
+        padding-top: 1rem;  
 
         @include tablet {
             font-size: 0.875rem;
-            line-height: 1.25rem;   /*applied to match Style document*/
-            padding-top: 2.25rem;  /*customized padding to match Mock document*/
+            line-height: 1.25rem;   
+            padding-top: 2.25rem;  
         }
     }
 }
 
+//Removes default active styles in inputs for text areas
 input:focus, textarea:focus {
     outline-style: none;
     box-shadow: none;
