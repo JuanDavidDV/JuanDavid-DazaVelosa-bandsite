@@ -34,9 +34,9 @@ const timeAgo = (timeStampAgo) => {
 
 
         if (secondsAgo === 0 || secondsAgo === 1) {
-            return secondsAgo + " second ago";
+            return parseInt(secondsAgo) + " seconds ago";
         } else if (secondsAgo > 1  && secondsAgo <= 60) {
-            return secondsAgo + " seconds ago";
+            return parseInt(secondsAgo) + " seconds ago";
         } else if (secondsAgo < 3600) {
             return parseInt(secondsAgo / 60) + " minutes ago";
         } else if (secondsAgo <= 86400) {
