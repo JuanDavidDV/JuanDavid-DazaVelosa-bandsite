@@ -19,20 +19,10 @@ const comments = [
 const commentForm = document.getElementById("commentForm");
 const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");
 
-//Creates Time Stamps
-let currentDate = new Date();
-let currentDateDay = currentDate.getDate();
-let currentDateMonth = currentDate.getMonth();
-let currentDateYear = currentDate.getFullYear();
-
-/*Added + 1 to the month gven that January is 0 */
-let actualTimeStamp = currentDateMonth + 1 + "/" + currentDateDay + "/" + currentDateYear;
-
+//NEED T0 POLISH THIS PART
 const timeAgo = (timeStampAgo) => {
     let actualDate = new Date();
     let secondsAgo = (actualDate.getTime() - timeStampAgo) / 1000;
-
-
         if (secondsAgo === 0 || secondsAgo === 1) {
             return parseInt(secondsAgo) + " seconds ago";
         } else if (secondsAgo > 1  && secondsAgo <= 60) {
@@ -78,7 +68,7 @@ commentForm.addEventListener("submit", (event) => {
         comments.push(newComment);
         clearComments();    //Clears rep comments from page
         displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
-        commentForm.reset();   //Clears input fields after submitting a new comment
+        commentForm.reset();   //Clears input fields after submitting a new commen
     } 
 
 });
