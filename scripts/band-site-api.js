@@ -22,3 +22,6 @@ async function getData() {
 }
 
 getData();
+
+const getAxios = axios.get(endpointUrl);
+console.log(getAxios);
