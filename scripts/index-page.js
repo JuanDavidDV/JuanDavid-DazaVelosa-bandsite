@@ -1,21 +1,3 @@
-const comments = [
-    {
-        userName: "Isaac Tadesse",
-        timeStamp: Date.parse("10/20/2023"),
-        content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    },
-    {
-        userName: "Christina Cabrera",
-        timeStamp: Date.parse("10/28/2023"),
-        content: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-    {
-        userName: "Victor Pinto",
-        timeStamp: Date.parse("11/02/2023"),
-        content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    }
-];
-
 const commentForm = document.getElementById("commentForm");
 const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");
 
@@ -73,7 +55,7 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
-const currentComments = (comment) => {
+const currentComments = ({name, timestamp, comment}) => {
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
@@ -96,22 +78,25 @@ const currentComments = (comment) => {
 
     let currentCommentsName = document.createElement("p");
     currentCommentsName.classList.add("comments__container__wrapper__area__comment-section__card__box--user-name");
-    currentCommentsName.innerText = comment.userName;
+    currentCommentsName.innerText = name;
     currentCommentsCardBox.appendChild(currentCommentsName);
 
     let currentCommentsTimeStamp = document.createElement("p");
     currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--time-stamp");
-    currentCommentsTimeStamp.innerText = timeAgo(comment.timeStamp);
+    currentCommentsTimeStamp.innerText = timestamp;
     currentCommentsCardBox.appendChild(currentCommentsTimeStamp);
 
     let currentCommentsContent = document.createElement("p");
     currentCommentsContent.classList.add("comments__container__wrapper__area__comment-section__card--content");
-    currentCommentsContent.innerText = comment.content;
+    currentCommentsContent.innerText = comment;
     currentCommentsCard.appendChild(currentCommentsContent);
 }
 
-const displayCurrentComments = () => {
+const displayCurrentComments = async () => {
+    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const comments = await defaultComments.getComments(); 
     comments.slice().reverse().forEach((commentsDisplayed) => currentComments(commentsDisplayed))   //Output comments chronologically by using .slice().reverse() functions
+    console.log(await defaultComments.getComments());
 };
 
 const clearComments = () => {
