@@ -1,3 +1,5 @@
+export default BandSiteApi;
+
 class BandSiteApi {
     constructor(apiKey) {
         this.apiKey = apiKey;
