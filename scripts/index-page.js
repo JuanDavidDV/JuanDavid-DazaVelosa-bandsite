@@ -1,4 +1,4 @@
-import BandSiteApi from './band-site-api';
+import BandSiteApi from './band-site-api.js';
 
 const commentForm = document.getElementById("commentForm");
 const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");

@@ -1,6 +1,4 @@
-export default BandSiteApi;
-
-class BandSiteApi {
+export default class BandSiteApi {
     constructor(apiKey) {
         this.apiKey = apiKey;
         this.baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com";
@@ -17,5 +15,5 @@ class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    }   
+    } 
 }
