@@ -126,8 +126,10 @@ const showTickets = (tickets) => {
 
 };
 
-const displayCurrentShows = () => {
-    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4")
+const displayCurrentShows = async () => {
+    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const shows = await defaultShows.getShows();
+    console.log(shows);
     showTicketsDetails.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 };
 

@@ -26,16 +26,16 @@ export default class BandSiteApi {
     }
 
     async getShows() {
-        
+        try {
+            const showsResult = await axios.get(this.baseUrl + "/showdates" + "?api_key=" + this.apiKey);
+            const showsData = showsResult.data;
+            console.log(showsData);
+            return showsData;
+        }
+        catch(error) {
+            console.error(error);
+        }
     }
 };
-
-const test = async () => {
-    const results = await axios.get("https://unit-2-project-api-25c1595833b2.herokuapp.com/showdates?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
-    const data = results.data;
-    console.log(data);
-}
-
-test();
 
 
