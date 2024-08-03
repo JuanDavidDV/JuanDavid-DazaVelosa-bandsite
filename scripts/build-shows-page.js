@@ -1,3 +1,5 @@
+import BandSiteApi from './band-site-api.js';
+
 const shows = document.getElementById("shows");
 
 //Creates the 2 main containers for Shows Tickets section
@@ -125,6 +127,7 @@ const showTickets = (tickets) => {
 };
 
 const displayCurrentShows = () => {
+    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4")
     showTicketsDetails.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 };
 
