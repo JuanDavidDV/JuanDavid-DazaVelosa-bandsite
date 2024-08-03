@@ -58,7 +58,7 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
-const currentComments = ( {name, timestamp, comment} ) => {
+const currentComments = ( {name, timestamp, comment} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
@@ -86,7 +86,7 @@ const currentComments = ( {name, timestamp, comment} ) => {
 
     let currentCommentsTimeStamp = document.createElement("p");
     currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--time-stamp");
-    currentCommentsTimeStamp.innerText = new Date(timestamp);
+    currentCommentsTimeStamp.innerText = timeAgo(timestamp);
     currentCommentsCardBox.appendChild(currentCommentsTimeStamp);
 
     let currentCommentsContent = document.createElement("p");

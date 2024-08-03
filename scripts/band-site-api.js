@@ -9,7 +9,7 @@ export default class BandSiteApi {
             const result = await axios.get(this.baseUrl + "/comments" + "?api_key=" + this.apiKey);
             const data = result.data;
 
-            const sortComments = async () => {  //Sorts comments from newest to oldest when extracting them from API
+            const sortComments = () => {  //Sorts comments from newest to oldest when extracting them from API
                 let timeDifference = (a, b) => {
                     const timeA = a.timestamp;
                     const timeB = b.timestamp;
@@ -24,4 +24,4 @@ export default class BandSiteApi {
             console.error(error);
         }
     } 
-}
+};
