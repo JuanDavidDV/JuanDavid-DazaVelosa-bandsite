@@ -32,7 +32,7 @@ showsContainerDetails.appendChild(showsLabelTabletContainer);
 //Creates an array to store labels
 const labels = ["DATE", "VENUE", "LOCATION"];
 
-//Generates labels and creates an element to everyone of them
+//Generates labels and creates an element to everyone of them for tablet and desktop breakpoints
 for(let i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
     showsLabels.classList.add("shows__container-details__label-box--labels");
@@ -76,7 +76,7 @@ const showTicketsDetails = [
 ];
 
 //Function created for the table that displays the shows
-const showTickets = (tickets) => {
+const showTickets = ( {date, place, location} ) => {
     let showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container-details__subcontainer");
     showsContainerDetails.appendChild(showsContainer);
@@ -96,7 +96,7 @@ const showTickets = (tickets) => {
 
     let showsWrapperDateValue = document.createElement("h3");
     showsWrapperDateValue.classList.add("shows__container-details__subcontainer__box__wrapper__value--date");
-    showsWrapperDateValue.innerText = tickets.date;
+    showsWrapperDateValue.innerText = date;
     showsWrapper.appendChild(showsWrapperDateValue);
 
     let showsWrapperVenueLabel = document.createElement("p");
@@ -106,7 +106,7 @@ const showTickets = (tickets) => {
 
     let showsWrapperVenueValue = document.createElement("p");
     showsWrapperVenueValue.classList.add("shows__container-details__subcontainer__box__wrapper__value");
-    showsWrapperVenueValue.innerText = tickets.venue;
+    showsWrapperVenueValue.innerText = place;
     showsWrapper.appendChild(showsWrapperVenueValue);
 
     let showsWrapperLocationLabel = document.createElement("p");
@@ -116,7 +116,7 @@ const showTickets = (tickets) => {
 
     const showsWrapperLocationValue = document.createElement("p");
     showsWrapperLocationValue.classList.add("shows__container-details__subcontainer__box__wrapper__value");
-    showsWrapperLocationValue.innerText = tickets.location;
+    showsWrapperLocationValue.innerText = location;
     showsWrapper.appendChild(showsWrapperLocationValue);
 
     const showsWrapperButton = document.createElement("button");
@@ -130,7 +130,7 @@ const displayCurrentShows = async () => {
     const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const shows = await defaultShows.getShows();
     console.log(shows);
-    showTicketsDetails.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
+    shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 };
 
 displayCurrentShows();

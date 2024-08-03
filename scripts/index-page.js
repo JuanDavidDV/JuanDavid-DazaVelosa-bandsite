@@ -99,7 +99,7 @@ const displayCurrentComments = async () => {
     const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const comments = await defaultComments.getComments(); 
     console.log(comments);
-    comments.forEach((commentsDisplayed) => currentComments(commentsDisplayed))   //Output comments chronologically by using .slice().reverse() functions
+    comments.forEach((commentsDisplayed) => currentComments(commentsDisplayed));
 
     return comments;
 };
