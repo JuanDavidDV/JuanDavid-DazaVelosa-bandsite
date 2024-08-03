@@ -57,7 +57,7 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
-const currentComments = ({name, timestamp, comment}) => {
+const currentComments = ( {name, timestamp, comment} ) => {
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
@@ -85,7 +85,7 @@ const currentComments = ({name, timestamp, comment}) => {
 
     let currentCommentsTimeStamp = document.createElement("p");
     currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--time-stamp");
-    currentCommentsTimeStamp.innerText = timestamp;
+    currentCommentsTimeStamp.innerText = new Date(timestamp);
     currentCommentsCardBox.appendChild(currentCommentsTimeStamp);
 
     let currentCommentsContent = document.createElement("p");
@@ -97,8 +97,10 @@ const currentComments = ({name, timestamp, comment}) => {
 const displayCurrentComments = async () => {
     const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const comments = await defaultComments.getComments(); 
-    comments.slice().reverse().forEach((commentsDisplayed) => currentComments(commentsDisplayed))   //Output comments chronologically by using .slice().reverse() functions
-    console.log(await defaultComments.getComments());
+    console.log(comments);
+    comments.forEach((commentsDisplayed) => currentComments(commentsDisplayed))   //Output comments chronologically by using .slice().reverse() functions
+
+    return comments;
 };
 
 const clearComments = () => {
@@ -106,3 +108,18 @@ const clearComments = () => {
 }
 
 displayCurrentComments();   // Invokes function to display default comments chronologically 
+
+const test = async () => {
+    let customSort = (a, b) => {
+        const dateA = a.date;
+        const dateB = b.date;
+        
+        return dateB - dateA;
+    }
+
+
+    const variable = (await displayCurrentComments());
+    console.log(variable.sort(customSort));
+}
+
+test();

@@ -10,6 +10,7 @@ export default class BandSiteApi {
         try {
             const result = await axios.get(this.baseUrl + "/comments" + "?api_key=" + this.apiKey);
             const data = result.data;
+            //console.log(data);
             return data;
         }
         catch(error) {
@@ -17,3 +18,34 @@ export default class BandSiteApi {
         }
     } 
 }
+
+
+// const employees = [
+//     {
+//         name: "Peter",
+//         age: 19,
+//         date: "22 aug 1990"
+//     },
+//     {
+//         name: "Juan",
+//         age: 23,
+//         date: "20 sept 1986"
+//     },
+//     {
+//         name: "Ringo",
+//         age: 12,
+//         date: "10 jan 1992"
+//     }
+// ];
+
+
+
+// let customSort = (a, b) => {
+//     const dateA = new Date(a.date);
+//     const dateB = new Date(b.date);
+
+//     return dateB - dateA;
+// }
+
+
+// console.log(employees.sort(customSort));
