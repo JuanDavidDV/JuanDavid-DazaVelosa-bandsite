@@ -40,40 +40,14 @@ for(let i = 0; i < labels.length; i++) {
     showsLabelTabletContainer.appendChild(showsLabels);
 }
 
-const showLocation = "San Francisco, CA";
+//Function transforms API data timestamp to appropiate format
+ const dateFormat = (timestamp) => {    
+     const timeStampDate = new Date(timestamp);
+     timeStampDate.setHours(0, 0, 0, 0);
+     const dateWithoutTime = timeStampDate.toDateString();  //Removes hours and time
+     return dateWithoutTime;
 
-const showTicketsDetails = [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane",
-        location: showLocation
-    }, 
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: showLocation
-    }, 
-    {
-        date: "Sat Oct 12 2024",
-        venue: "View Lounge",
-        location: showLocation
-    }, 
-    {
-        date: "Sat Nov 16 2024",
-        venue: "Hyatt Agency",
-        location: showLocation
-    },
-    {
-        date: "Fri Nov 29 2024",
-        venue: "Moscow Center",
-        location: showLocation
-    },
-    {
-        date: "Wed Dec 18 2024",
-        venue: "Press Club",
-        location: showLocation
-    }
-];
+};
 
 //Function created for the table that displays the shows
 const showTickets = ( {date, place, location} ) => {
@@ -96,7 +70,7 @@ const showTickets = ( {date, place, location} ) => {
 
     let showsWrapperDateValue = document.createElement("h3");
     showsWrapperDateValue.classList.add("shows__container-details__subcontainer__box__wrapper__value--date");
-    showsWrapperDateValue.innerText = date;
+    showsWrapperDateValue.innerText = dateFormat(date);
     showsWrapper.appendChild(showsWrapperDateValue);
 
     let showsWrapperVenueLabel = document.createElement("p");
@@ -127,10 +101,11 @@ const showTickets = ( {date, place, location} ) => {
 };
 
 const displayCurrentShows = async () => {
-    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");   //BandSiteApi instance
     const shows = await defaultShows.getShows();
     shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 
+    //Event Listener added inside the async function to make it work
     let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
     eventClicked.forEach(showAddClickListener => {
         showAddClickListener.addEventListener("click", () => {
@@ -143,4 +118,3 @@ const displayCurrentShows = async () => {
 };
 
 displayCurrentShows();
-

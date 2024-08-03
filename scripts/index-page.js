@@ -96,7 +96,7 @@ const currentComments = ( {name, timestamp, comment} ) => {     //Passes only th
 }
 
 const displayCurrentComments = async () => {
-    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");    //BandSiteApi instance
     const comments = await defaultComments.getComments(); 
     console.log(comments);
     comments.forEach((commentsDisplayed) => currentComments(commentsDisplayed));
