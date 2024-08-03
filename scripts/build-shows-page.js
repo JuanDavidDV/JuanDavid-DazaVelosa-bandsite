@@ -31,7 +31,7 @@ showsContainerDetails.appendChild(showsLabelTabletContainer);
 const labels = ["DATE", "VENUE", "LOCATION"];
 
 //Generates labels and creates an element to everyone of them
-for(i = 0; i < labels.length; i++) {
+for(let i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
     showsLabels.classList.add("shows__container-details__label-box--labels");
     showsLabels.innerText = labels[i];

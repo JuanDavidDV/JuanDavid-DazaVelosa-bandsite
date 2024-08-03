@@ -23,5 +23,18 @@ export default class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    } 
+    }
+
+    async getShows() {
+    
+    }
 };
+
+const test = async () => {
+    const results = await axios.get("https://unit-2-project-api-25c1595833b2.herokuapp.com/showdates?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    console.log(results);
+}
+
+test();
+
+
