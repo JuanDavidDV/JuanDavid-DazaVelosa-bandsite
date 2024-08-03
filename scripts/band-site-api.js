@@ -18,8 +18,6 @@ export default class BandSiteApi {
                 const commentsOrdered = data.sort(timeDifference);
                 return commentsOrdered;
             };
-
-            
             return sortComments();
         }
         catch(error) {

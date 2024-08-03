@@ -26,9 +26,9 @@ const timeAgo = (timeStampAgo) => {
 
 commentForm.addEventListener("submit", (event) => {
     event.preventDefault(); //Prevents page to reload when submitting a new comment
-    let newUserName = event.target.inputUserName.value;
-    let newContentComment = event.target.inputComment.value;
-    let newTimeStamp = new Date();
+    const newUserName = event.target.inputUserName.value;
+    const newContentComment = event.target.inputComment.value;
+    const newTimeStamp = new Date();
 
     if (newUserName.length === 0) {
         event.target.inputUserName.classList.add("comments__container__new-comment__user-info--name--invalid");
@@ -41,18 +41,19 @@ commentForm.addEventListener("submit", (event) => {
         event.target.inputComment.classList.remove("comments__container__new-comment__user-info--comment--invalid");
     }
 
-    if(newUserName !== "" && newContentComment !== "") {
+    //Prevents to upload content that do not have a name and a comment
+    if(newUserName !== "" && newContentComment !== "") { 
         //Constructs a new comment object
         let newComment = {
             userName: newUserName, //Takes value input from the form for the user name
             timeStamp: newTimeStamp,
-            content: newContentComment,   //Takes value unput from the form for the comment content
+            content: newContentComment,   //Takes value input from the form for the comment content
         };
         
         comments.push(newComment);
         clearComments();    //Clears rep comments from page
         displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
-        commentForm.reset();   //Clears input fields after submitting a new commen
+        commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 
 });
@@ -108,18 +109,3 @@ const clearComments = () => {
 }
 
 displayCurrentComments();   // Invokes function to display default comments chronologically 
-
-const test = async () => {
-    let customSort = (a, b) => {
-        const dateA = a.date;
-        const dateB = b.date;
-        
-        return dateB - dateA;
-    }
-
-
-    const variable = (await displayCurrentComments());
-    console.log(variable.sort(customSort));
-}
-
-test();
