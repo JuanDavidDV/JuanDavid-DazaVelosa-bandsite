@@ -32,7 +32,7 @@ showsContainerDetails.appendChild(showsLabelTabletContainer);
 //Creates an array to store labels
 const labels = ["DATE", "VENUE", "LOCATION"];
 
-//Generates labels and creates an element to everyone of them for tablet and desktop breakpoints
+//Generates labels and creates an element to everyone of them
 for(let i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
     showsLabels.classList.add("shows__container-details__label-box--labels");
@@ -129,17 +129,18 @@ const showTickets = ( {date, place, location} ) => {
 const displayCurrentShows = async () => {
     const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const shows = await defaultShows.getShows();
-    console.log(shows);
     shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
+
+    let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
+    eventClicked.forEach(showAddClickListener => {
+        showAddClickListener.addEventListener("click", () => {
+            document.querySelector(".shows__container-details__subcontainer--active")?.classList.remove("shows__container-details__subcontainer--active");
+            showAddClickListener.classList.add("shows__container-details__subcontainer--active");
+        });
+    });
+
+    return shows;
 };
 
 displayCurrentShows();
 
-let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
-
-eventClicked.forEach(showAddClickListener => {
-    showAddClickListener.addEventListener("click", () => {
-        document.querySelector(".shows__container-details__subcontainer--active")?.classList.remove("shows__container-details__subcontainer--active");
-        showAddClickListener.classList.add("shows__container-details__subcontainer--active");
-    });
-});

@@ -29,7 +29,6 @@ export default class BandSiteApi {
         try {
             const showsResult = await axios.get(this.baseUrl + "/showdates" + "?api_key=" + this.apiKey);
             const showsData = showsResult.data;
-            console.log(showsData);
             return showsData;
         }
         catch(error) {
