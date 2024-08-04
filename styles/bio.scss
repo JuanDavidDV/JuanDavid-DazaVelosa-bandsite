@@ -441,16 +441,30 @@
                                     display: flex;
                                     justify-content: space-between;
                                     width: 100%;
+                                    padding-bottom: 0.50rem;
                                     
                                     &--user-name {
                                         font-family: avenir-next-bold;
                                         font-weight: 700;
                                         color: $BandSite-Black;
                                     }
-                        
-                                    &--time-stamp {
-                                        color: $Silver;
-                                        padding-bottom: 0.25rem;
+
+                                    &--left {
+                                        display: flex;
+
+                                        &--like-button {
+                                            padding: 0 0.5rem;
+                                            vertical-align: baseline;
+                                        }
+
+                                        &--delete-button {
+                                            padding: 0 0.5rem;
+                                            vertical-align: baseline;
+                                        }
+                            
+                                        &--time-stamp {
+                                            color: $Silver;
+                                        }
                                     }
                                 }
 

@@ -597,15 +597,26 @@ textarea {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-bottom: 0.5rem;
 }
 .comments__container__wrapper__area__comment-section__card__box--user-name {
   font-family: avenir-next-bold;
   font-weight: 700;
   color: #323232;
 }
-.comments__container__wrapper__area__comment-section__card__box--time-stamp {
+.comments__container__wrapper__area__comment-section__card__box--left {
+  display: flex;
+}
+.comments__container__wrapper__area__comment-section__card__box--left--like-button {
+  padding: 0 0.5rem;
+  vertical-align: baseline;
+}
+.comments__container__wrapper__area__comment-section__card__box--left--delete-button {
+  padding: 0 0.5rem;
+  vertical-align: baseline;
+}
+.comments__container__wrapper__area__comment-section__card__box--left--time-stamp {
   color: #AFAFAF;
-  padding-bottom: 0.25rem;
 }
 .comments__container__wrapper__area__comment-section__card--content {
   padding-bottom: 1rem;

@@ -97,7 +97,6 @@ const showTickets = ( {date, place, location} ) => {
     showsWrapperButton.classList.add("shows__container-details__subcontainer__box__wrapper__button");
     showsWrapperButton.innerText = "BUY TICKETS";
     showsWrapper.appendChild(showsWrapperButton);
-
 };
 
 const displayCurrentShows = async () => {
@@ -105,7 +104,7 @@ const displayCurrentShows = async () => {
     const shows = await defaultShows.getShows();
     shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 
-    //Event Listener added inside the async function to make it work
+    //TRY TO CREATE A FUNCTION FOR THIS AND CALL IT HERE Event Listener added inside the async function to make it work 
     let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
     eventClicked.forEach(showAddClickListener => {
         showAddClickListener.addEventListener("click", () => {
