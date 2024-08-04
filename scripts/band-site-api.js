@@ -59,6 +59,18 @@ export default class BandSiteApi {
             console.error(error);
         }
     }
+
+    async likeComment(idLikes) {
+        try {
+            const likeComment = await axios.put(this.baseUrl + "/comments/" + idLikes + "/like" + "?api_key=" + this.apiKey);
+            const likeCommentData = likeComment.data;
+            console.log(likeCommentData);
+            return likeCommentData;
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
 };
 
 

@@ -8,11 +8,11 @@ const timeAgo = (timeStampAgo) => {
     let actualDate = new Date();
     let secondsAgo = (actualDate.getTime() - timeStampAgo) / 1000;
         if (secondsAgo === 0 || secondsAgo === 1) {
-            return parseInt(secondsAgo) + " seconds ago";
+            return parseInt(secondsAgo) + " sec ago";
         } else if (secondsAgo > 1  && secondsAgo <= 60) {
-            return parseInt(secondsAgo) + " seconds ago";
+            return parseInt(secondsAgo) + " sec ago";
         } else if (secondsAgo < 3600) {
-            return parseInt(secondsAgo / 60) + " minutes ago";
+            return parseInt(secondsAgo / 60) + " min ago";
         } else if (secondsAgo <= 86400) {
             return parseInt(secondsAgo / 3600) + " hours ago";
         } else if (secondsAgo <= 2628000) {
@@ -59,7 +59,7 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
-const currentComments = ( {name, timestamp, comment, id} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
+const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
@@ -85,27 +85,33 @@ const currentComments = ( {name, timestamp, comment, id} ) => {     //Passes onl
     currentCommentsName.innerText = name;
     currentCommentsCardBox.appendChild(currentCommentsName);
 
-    let currentCommentsCardBoxLeft = document.createElement("div");
-    currentCommentsCardBoxLeft.classList.add("comments__container__wrapper__area__comment-section__card__box--left");
-    currentCommentsCardBox.appendChild(currentCommentsCardBoxLeft);
+    let currentCommentsCardBoxRight = document.createElement("div");
+    currentCommentsCardBoxRight.classList.add("comments__container__wrapper__area__comment-section__card__box--right");
+    currentCommentsCardBox.appendChild(currentCommentsCardBoxRight);
 
     let currentLikeButton = document.createElement("img");
     currentLikeButton.src = "../assets/icons/SVG/icon-like.svg"
     currentLikeButton.alt = "like-button";
-    currentLikeButton.classList.add("comments__container__wrapper__area__comment-section__card__box--left--like-button");
-    currentCommentsCardBoxLeft.appendChild(currentLikeButton);
+    currentLikeButton.classList.add("comments__container__wrapper__area__comment-section__card__box--right--like-button");
+    currentLikeButton.addEventListener("click", () => likeComment(id));
+    currentCommentsCardBoxRight.appendChild(currentLikeButton);
+
+    let currentLikeCount = document.createElement("span");
+    currentLikeCount.classList.add("comments__container__wrapper__area__comment-section__card__box--right--like-count");
+    currentLikeCount.innerText = `${likes} likes`;
+    currentCommentsCardBoxRight.appendChild(currentLikeCount);
 
     let currentDeleteButton = document.createElement("img");
     currentDeleteButton.src = "../assets/icons/SVG/icon-delete.svg";
     currentDeleteButton.alt = "delete-button";
-    currentDeleteButton.classList.add("comments__container__wrapper__area__comment-section__card__box--left--delete-button");
+    currentDeleteButton.classList.add("comments__container__wrapper__area__comment-section__card__box--right--delete-button");
     currentDeleteButton.addEventListener("click", () => deleteComment(id));
-    currentCommentsCardBoxLeft.appendChild(currentDeleteButton);
+    currentCommentsCardBoxRight.appendChild(currentDeleteButton);
 
     let currentCommentsTimeStamp = document.createElement("p");
-    currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--left--time-stamp");
+    currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--right--time-stamp");
     currentCommentsTimeStamp.innerText = timeAgo(timestamp);
-    currentCommentsCardBoxLeft.appendChild(currentCommentsTimeStamp);
+    currentCommentsCardBoxRight.appendChild(currentCommentsTimeStamp);
 
     let currentCommentsContent = document.createElement("p");
     currentCommentsContent.classList.add("comments__container__wrapper__area__comment-section__card--content");
@@ -128,6 +134,13 @@ const deleteComment = async (id) => {
     const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const deleteCommentById = await selectDeleteComment.deleteComment(id);
     return deleteCommentById;
+}
+
+const likeComment = async (idLikes) => {
+    const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const likedComment = await selectLikedComment.likeComment(idLikes);
+    console.log(likedComment);
+    return likedComment;
 }
 
 displayCurrentComments();   // Invokes function to display default comments chronologically 

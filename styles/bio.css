@@ -75,13 +75,13 @@ h3, .about-musicians__container__box__subheader--two {
 }
 
 /*Page body and footer*/
-p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .footer-page__container__bottom__box__email, textarea {
+p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .comments__container__wrapper__area__comment-section__card__box--right--like-count, .footer-page__container__bottom__box__email, textarea {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .footer-page__container__bottom__box__email, textarea {
+  p, .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment, .comments__container__wrapper__area__comment-section__card__box--right--like-count, .footer-page__container__bottom__box__email, textarea {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -604,18 +604,23 @@ textarea {
   font-weight: 700;
   color: #323232;
 }
-.comments__container__wrapper__area__comment-section__card__box--left {
+.comments__container__wrapper__area__comment-section__card__box--right {
   display: flex;
+  align-items: flex-start;
 }
-.comments__container__wrapper__area__comment-section__card__box--left--like-button {
+.comments__container__wrapper__area__comment-section__card__box--right--like-button {
   padding: 0 0.5rem;
-  vertical-align: baseline;
+  cursor: pointer;
 }
-.comments__container__wrapper__area__comment-section__card__box--left--delete-button {
+.comments__container__wrapper__area__comment-section__card__box--right--like-count {
   padding: 0 0.5rem;
-  vertical-align: baseline;
+  color: #AFAFAF;
 }
-.comments__container__wrapper__area__comment-section__card__box--left--time-stamp {
+.comments__container__wrapper__area__comment-section__card__box--right--delete-button {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+.comments__container__wrapper__area__comment-section__card__box--right--time-stamp {
   color: #AFAFAF;
 }
 .comments__container__wrapper__area__comment-section__card--content {

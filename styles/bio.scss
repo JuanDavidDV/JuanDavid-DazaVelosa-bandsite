@@ -449,17 +449,25 @@
                                         color: $BandSite-Black;
                                     }
 
-                                    &--left {
+                                    &--right {
                                         display: flex;
+                                        align-items: flex-start;
 
                                         &--like-button {
+                                            padding: 0 0.5rem; 
+                                            cursor: pointer;
+                                        }
+
+                                        &--like-count {
                                             padding: 0 0.5rem;
-                                            vertical-align: baseline;
+                                            color: $Silver;
+                                            @extend p;
+
                                         }
 
                                         &--delete-button {
                                             padding: 0 0.5rem;
-                                            vertical-align: baseline;
+                                            cursor: pointer;
                                         }
                             
                                         &--time-stamp {
