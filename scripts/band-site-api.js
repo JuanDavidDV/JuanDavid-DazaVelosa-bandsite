@@ -7,7 +7,8 @@ export default class BandSiteApi {
     async postComment(newComment) {
         try {
             const sendComment = await axios.post(this.baseUrl + "/comments" + "?api_key=" + this.apiKey, newComment);
-            return console.log(sendComment.data);
+            console.log(sendComment.data);
+            return sendComment.data;
         }
         catch(error){
             console.error(error);
@@ -28,6 +29,7 @@ export default class BandSiteApi {
                 const commentsOrdered = commentsData.sort(timeDifference);
                 return commentsOrdered;
             };
+            console.log(commentsData);
             return sortComments();
         }
         catch(error) {
@@ -40,6 +42,18 @@ export default class BandSiteApi {
             const showsResult = await axios.get(this.baseUrl + "/showdates" + "?api_key=" + this.apiKey);
             const showsData = showsResult.data;
             return showsData;
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
+
+    async deleteComment(id) {
+        try {
+            const deleteComment = await axios.delete(this.baseUrl + "/comments/" + id + "?api_key=" + this.apiKey);
+            const deleteCommentData = deleteComment.data;
+            console.log(deleteCommentData);
+            return deleteCommentData;
         }
         catch(error) {
             console.error(error);

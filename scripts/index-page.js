@@ -59,7 +59,7 @@ commentForm.addEventListener("submit", (event) => {
 
 });
 
-const currentComments = ( {name, timestamp, comment} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
+const currentComments = ( {name, timestamp, comment, id} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     dynamicContent.appendChild(currentCommentsParent);
@@ -99,6 +99,7 @@ const currentComments = ( {name, timestamp, comment} ) => {     //Passes only th
     currentDeleteButton.src = "../assets/icons/SVG/icon-delete.svg";
     currentDeleteButton.alt = "delete-button";
     currentDeleteButton.classList.add("comments__container__wrapper__area__comment-section__card__box--left--delete-button");
+    currentDeleteButton.addEventListener("click", () => deleteComment(id));
     currentCommentsCardBoxLeft.appendChild(currentDeleteButton);
 
     let currentCommentsTimeStamp = document.createElement("p");
@@ -122,6 +123,11 @@ const displayCurrentComments = async () => {
 
 const clearComments = () => {
     dynamicContent.innerHTML = "";
+}
+const deleteComment = async (id) => {
+    const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const deleteCommentById = await selectDeleteComment.deleteComment(id);
+    return deleteCommentById;
 }
 
 displayCurrentComments();   // Invokes function to display default comments chronologically 
