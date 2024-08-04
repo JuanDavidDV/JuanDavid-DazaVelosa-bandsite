@@ -29,6 +29,11 @@ commentForm.addEventListener("submit", (event) => {
     const newUserName = event.target.inputUserName.value;
     const newContentComment = event.target.inputComment.value;
 
+    const newCommentContent = {
+        name: newUserName,
+        comment: newContentComment
+    };
+
     if (newUserName.length === 0) {
         event.target.inputUserName.classList.add("comments__container__new-comment__user-info--name--invalid");
     } else {
@@ -45,7 +50,7 @@ commentForm.addEventListener("submit", (event) => {
         //Constructs a new comment object
         const postNewComment = async () => {
             const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
-            const newCommentPost = await newComment.postComment({name: newUserName, comment: newContentComment});
+            const newCommentPost = await newComment.postComment(newCommentContent);
             console.log(newCommentPost);
             displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
             return newCommentPost;

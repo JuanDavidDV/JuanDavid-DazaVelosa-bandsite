@@ -7,13 +7,14 @@ export default class BandSiteApi {
     async postComment(newComment) {
         try {
             const sendComment = await axios.post(this.baseUrl + "/comments" + "?api_key=" + this.apiKey, newComment);
-            console.log(sendComment.data);
-            return sendComment.data;
+            const sendCommentData = sendComment.data;
+            console.log(sendCommentData);
+            return sendCommentData;
         }
         catch(error){
             console.error(error);
         }
-    }
+    };
 
     async getComments() {
         try {
@@ -35,7 +36,7 @@ export default class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    }
+    };
 
     async getShows() {
         try {
@@ -46,7 +47,7 @@ export default class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    }
+    };
 
     async deleteComment(id) {
         try {
@@ -58,7 +59,7 @@ export default class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    }
+    };
 
     async likeComment(idLikes) {
         try {
@@ -70,7 +71,7 @@ export default class BandSiteApi {
         catch(error) {
             console.error(error);
         }
-    }
+    };
 };
 
 
