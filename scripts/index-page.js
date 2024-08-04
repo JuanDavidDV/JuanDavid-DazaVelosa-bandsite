@@ -28,7 +28,6 @@ commentForm.addEventListener("submit", (event) => {
     event.preventDefault(); //Prevents page to reload when submitting a new comment
     const newUserName = event.target.inputUserName.value;
     const newContentComment = event.target.inputComment.value;
-    const newTimeStamp = new Date();
 
     if (newUserName.length === 0) {
         event.target.inputUserName.classList.add("comments__container__new-comment__user-info--name--invalid");
@@ -48,12 +47,12 @@ commentForm.addEventListener("submit", (event) => {
             const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
             const newCommentPost = await newComment.postComment({name: newUserName, comment: newContentComment});
             console.log(newCommentPost);
+            displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
             return newCommentPost;
         } 
 
         postNewComment();
         clearComments();    //Clears rep comments from page
-        displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
         commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 
@@ -133,6 +132,8 @@ const clearComments = () => {
 const deleteComment = async (id) => {
     const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const deleteCommentById = await selectDeleteComment.deleteComment(id);
+    clearComments();
+    displayCurrentComments();
     return deleteCommentById;
 }
 
@@ -140,7 +141,9 @@ const likeComment = async (idLikes) => {
     const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const likedComment = await selectLikedComment.likeComment(idLikes);
     console.log(likedComment);
+    clearComments();
+    displayCurrentComments();
     return likedComment;
 }
 
-displayCurrentComments();   // Invokes function to display default comments chronologically 
+displayCurrentComments();  // Invokes function to display default comments chronologically 
