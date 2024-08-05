@@ -649,25 +649,4 @@ textarea {
     width: 9.375rem;
     margin-top: 0;
   }
-}
-.shows__divider {
-  border-top: 0.0625rem solid #E1E1E1;
-  margin: 1rem 0;
-  padding: 0 1.125rem;
-}
-@media (min-width: 768px) {
-  .shows__divider {
-    display: none;
-  }
-}
-.shows__divider--tablet {
-  display: none;
-}
-@media (min-width: 768px) {
-  .shows__divider--tablet {
-    width: 100%;
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-  }
 }/*# sourceMappingURL=shows.css.map */

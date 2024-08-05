@@ -83,3 +83,20 @@
         background-color: $BandSite-DarkBlack;
     }
 };
+
+@mixin song {
+    width: 100%; 
+    box-sizing:content-box;
+    height: 7.375rem; 
+    padding-top: 1.5em;
+    border-radius: 0.25rem;
+}
+
+@mixin shows-wrapper-tablet {
+    flex-direction: row;
+    gap: 0;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 1rem 1.125rem; /*Decided to use 1rem instead of 1.5rem to match Mock document*/
+    border-bottom: 0.0625rem solid $Mercury;
+}
