@@ -344,14 +344,7 @@
                 }
                 
                 &--name {
-                    height: 2.25rem;
-                    border-radius: 0.25rem;
-                    padding: 0.75rem;
-                    border: 0.0625rem solid $Mercury;
-                    white-space: normal;
-                    color: $BandSite-Black;
-                    @extend p;
-                    background-color: $Alabaster;
+                    @include name-section;
 
                     &::placeholder {
                         font-family: avenir-next-regular;
