@@ -319,11 +319,11 @@ textarea {
     padding: 0.75em 0 3em 0;
   }
 }
-.about-musicians__container__box__subheader-title {
+.about-musicians__container__box__subheader--title {
   color: #000000;
 }
 @media (min-width: 768px) {
-  .about-musicians__container__box__subheader-title {
+  .about-musicians__container__box__subheader--title {
     padding-bottom: 1.5em;
   }
 }

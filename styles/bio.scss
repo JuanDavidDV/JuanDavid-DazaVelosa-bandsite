@@ -178,32 +178,34 @@
                 }
             }
 
-            &__subheader--one {
-                color: $BandSite-Black;
-                padding-bottom: 0em;
-
-                @include desktop {
-                    width: 70%;
+            &__subheader {
+                &--one {
+                    color: $BandSite-Black;
+                    padding-bottom: 0em;
+    
+                    @include desktop {
+                        width: 70%;
+                    }         
                 }
-            }
 
-            &__subheader--two {
-                @extend h3; 
-                line-height: 2rem;  
-                color: $BandSite-Black; 
-
-                @include tablet {
-                    font-size: 1rem;    
-                    padding: 0.75em 0 3em 0;   
-                }
-            }
-
-            &__subheader-title {
-                color: $BandSite-DarkBlack; 
+                &--two {
+                    @extend h3; 
+                    line-height: 2rem;  
+                    color: $BandSite-Black; 
 
                     @include tablet {
-                        padding-bottom: 1.5em;
+                        font-size: 1rem;    
+                        padding: 0.75em 0 3em 0;   
                     }
+                }
+
+                &--title {
+                    color: $BandSite-DarkBlack; 
+    
+                        @include tablet {
+                            padding-bottom: 1.5em;
+                        }
+                }
             }
 
             &__paragraph {
