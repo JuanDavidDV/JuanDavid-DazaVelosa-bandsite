@@ -46,7 +46,10 @@
                 display: flex;
                 font-size: 1rem; /*customized font to match mock document*/
                 margin-top: 0.75em;
-                column-gap: 3.75rem;
+                
+                @include tablet {
+                    column-gap: 3.75rem;
+                }
 
                 @include desktop {
                     margin-top: 1.3em; 

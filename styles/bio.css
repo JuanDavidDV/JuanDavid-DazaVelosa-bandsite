@@ -148,8 +148,12 @@ textarea {
   display: flex;
   font-size: 1rem; /*customized font to match mock document*/
   margin-top: 0.75em;
-  -moz-column-gap: 3.75rem;
-       column-gap: 3.75rem;
+}
+@media (min-width: 768px) {
+  .page-header__container__nav {
+    -moz-column-gap: 3.75rem;
+         column-gap: 3.75rem;
+  }
 }
 @media (min-width: 1280px) {
   .page-header__container__nav {

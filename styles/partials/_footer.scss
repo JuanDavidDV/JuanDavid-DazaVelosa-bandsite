@@ -4,7 +4,7 @@
 @use './media-query' as *;
 @use './variables' as *;
 @use './animations' as *;
-@use './header' as *;
+@use './header' as *;   //to rehuse an extend comming from header.scss
 
 .footer-page {
     @extend .page-header;
