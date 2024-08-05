@@ -60,6 +60,14 @@
     background-color: $Alabaster;
 }
 
+@mixin labels-comments {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    color: $Silver;
+    padding-bottom: 0.25rem;
+}
+
 @mixin pagesButton {
     font-weight: 700;
     font-size: 0.9375rem;

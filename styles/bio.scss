@@ -331,11 +331,7 @@
                 margin-left: 0.75em;
                 
                 &__label--name {
-                    font-size: 0.625rem;
-                    line-height: 1.25rem;
-                    font-weight: 700;
-                    color: $Silver;
-                    padding-bottom: 0.25rem;
+                    @include labels-comments;
                 }
 
                 &__label--comment {
@@ -449,19 +445,18 @@
                                         align-items: flex-start;
 
                                         &--like-button {
-                                            padding: 0 0.5rem; 
+                                            padding: 0 0.25rem; 
                                             cursor: pointer;
                                         }
 
                                         &--like-count {
-                                            padding: 0 0.5rem;
+                                            padding: 0 0.25rem;
                                             color: $Silver;
                                             @extend p;
-
                                         }
 
                                         &--delete-button {
-                                            padding: 0 0.5rem;
+                                            padding: 0 0.25rem;
                                             cursor: pointer;
                                         }
                             

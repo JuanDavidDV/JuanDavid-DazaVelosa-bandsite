@@ -101,7 +101,7 @@ const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Pas
 
     let currentLikeCount = document.createElement("span");
     currentLikeCount.classList.add("comments__container__wrapper__area__comment-section__card__box--right--like-count");
-    currentLikeCount.innerText = `${likes} likes`;
+    currentLikeCount.innerText = `${likes}`;
     currentCommentsCardBoxRight.appendChild(currentLikeCount);
 
     let currentDeleteButton = document.createElement("img");
