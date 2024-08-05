@@ -32,7 +32,7 @@ showsContainerDetails.appendChild(showsLabelTabletContainer);
 //Creates an array to store labels
 const labels = ["DATE", "VENUE", "LOCATION"];
 
-//Generates labels and creates an element to everyone of them
+//Generates labels and creates an element to their respective
 for(let i = 0; i < labels.length; i++) {
     const showsLabels = document.createElement("p");
     showsLabels.classList.add("shows__container-details__label-box--labels");
@@ -98,7 +98,7 @@ const showTickets = ( {date, place, location} ) => {
     showsWrapperButton.innerText = "BUY TICKETS";
     showsWrapper.appendChild(showsWrapperButton);
 };
-
+//DO I NEED TO INLY CREATE 1 INSTANCE OF THE API?
 const displayCurrentShows = async () => {
     const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");   //BandSiteApi instance
     const shows = await defaultShows.getShows();

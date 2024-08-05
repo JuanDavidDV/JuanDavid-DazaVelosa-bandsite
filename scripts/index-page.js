@@ -60,7 +60,6 @@ commentForm.addEventListener("submit", (event) => {
         clearComments();    //Clears rep comments from page
         commentForm.reset();   //Clears input fields after submitting a new comment
     } 
-
 });
 
 const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
@@ -145,7 +144,6 @@ const deleteComment = async (id) => {
 const likeComment = async (idLikes) => {
     const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const likedComment = await selectLikedComment.likeComment(idLikes);
-    console.log(likedComment);
     clearComments();
     displayCurrentComments();
     return likedComment;

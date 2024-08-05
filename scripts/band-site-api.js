@@ -8,7 +8,6 @@ export default class BandSiteApi {
         try {
             const sendComment = await axios.post(this.baseUrl + "/comments" + "?api_key=" + this.apiKey, newComment);
             const sendCommentData = sendComment.data;
-            console.log(sendCommentData);
             return sendCommentData;
         }
         catch(error){
@@ -30,7 +29,6 @@ export default class BandSiteApi {
                 const commentsOrdered = commentsData.sort(timeDifference);
                 return commentsOrdered;
             };
-            console.log(commentsData);
             return sortComments();
         }
         catch(error) {
@@ -49,24 +47,22 @@ export default class BandSiteApi {
         }
     };
 
-    async deleteComment(id) {
+    async likeComment(idLikes) {
         try {
-            const deleteComment = await axios.delete(this.baseUrl + "/comments/" + id + "?api_key=" + this.apiKey);
-            const deleteCommentData = deleteComment.data;
-            console.log(deleteCommentData);
-            return deleteCommentData;
+            const likeComment = await axios.put(this.baseUrl + "/comments/" + idLikes + "/like" + "?api_key=" + this.apiKey);
+            const likeCommentData = likeComment.data;
+            return likeCommentData;
         }
         catch(error) {
             console.error(error);
         }
     };
 
-    async likeComment(idLikes) {
+    async deleteComment(id) {
         try {
-            const likeComment = await axios.put(this.baseUrl + "/comments/" + idLikes + "/like" + "?api_key=" + this.apiKey);
-            const likeCommentData = likeComment.data;
-            console.log(likeCommentData);
-            return likeCommentData;
+            const deleteComment = await axios.delete(this.baseUrl + "/comments/" + id + "?api_key=" + this.apiKey);
+            const deleteCommentData = deleteComment.data;
+            return deleteCommentData;
         }
         catch(error) {
             console.error(error);
