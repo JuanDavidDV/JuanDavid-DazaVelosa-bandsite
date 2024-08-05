@@ -1,0 +1,154 @@
+@use './global' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+@use './media-query' as *;
+@use './variables' as *;
+@use './animations' as *;
+@use './header' as *;
+
+.footer-page {
+    @extend .page-header;
+
+        &__container {
+            @include section-layout ($mobile-padding 0, 0 $mobile-margin);
+
+            @include tablet {
+                @include section-layout ($tablet-padding 0, 0 $tablet-margin);
+            }
+
+            @include desktop {
+                @include desktop-layout ($tablet-padding);   /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+            }
+        
+            &__top {
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                }
+                
+                &__title {
+                    color: $White;
+
+                    @include tablet {
+                        width: $tablet-layout-grid; 
+                    }
+                }
+
+                &__socials {
+                    @include tablet {
+                        width: $tablet-layout-grid;
+                    }
+
+                    @include desktop {
+                        width: 57%; 
+                    }
+                    
+                    &--icons {
+                        height: 1.5rem;
+                        padding: 0em 0.75em;
+
+                            &--alignment {
+                                padding-left: 0em;  
+                            }
+                    }
+                }
+
+                &__logo {
+                    display: none; 
+
+                    @include tablet {
+                        display: flex;
+                        width: $tablet-layout-grid; 
+                        justify-content: flex-end;
+                    } 
+                   
+                        &--tablet-desktop {
+                            @extend .page-header__container__logo;
+                        }
+                }
+            }
+
+            &__bottom { 
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                @include desktop {
+                    justify-content: flex-start;
+                }
+                
+                &__box {                   
+                    @include tablet {
+                        width: $tablet-layout-grid; 
+                    }
+
+                    @include desktop {
+                        width: 26.5%; 
+                    }
+
+                    &__subheader {
+                        color: $White;
+                        font-family: avenir-next-demi;   
+                        font-weight: 600;   
+                        padding-top: 1rem;
+
+                        @include tablet {
+                            padding-top: 0rem;
+                            line-height: $tablet-footer-line-height;  
+                        }
+
+                            &--alignment {  /*class created to adjust padding and match Mock document layout*/
+                                @extend .footer-page__container__bottom__box__subheader;
+                                padding-top: 1.5rem;  
+                            
+                                @include tablet {
+                                    padding-top: 0rem;
+                                }
+                            }
+                    }
+
+                    &__paragraph {
+                        color: $White;
+                        padding: 1rem 0;
+                    
+                        @include tablet {
+                            line-height: $tablet-footer-line-height;   
+                            padding: 1.5rem 0;   
+                        }
+                    }
+
+                    &__email {
+                        @extend p;
+                        color: $White;
+
+                        @include tablet {
+                            line-height: 1.25rem;  
+                        }
+                    }
+                }
+            } 
+        }
+
+    &__logo-mobile { 
+        margin-top: 3.25em; 
+        @extend .page-header__container__logo;
+        
+        @include tablet {
+            display: none;  
+        }   
+    }
+        
+    &--copy-right {
+        font-size: 0.7rem; 
+        color: $White; 
+        padding-top: 1rem;  
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.25rem;   
+            padding-top: 2.25rem;  
+        }
+    }
+}

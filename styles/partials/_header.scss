@@ -1,0 +1,108 @@
+@use './global' as *;
+@use './fonts' as *;
+@use './mixins' as *;
+@use './media-query' as *;
+@use './variables' as *;
+@use './animations' as *;
+
+.page-header {  
+    @include section-container ($BandSite-Black);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+                
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            padding-top: 1.5em;
+            margin: 0 $tablet-margin;
+        }
+
+        @include desktop {
+            @include desktop-layout (1.5em 2.25em 0 2.25em); /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+            height: 6.5rem; 
+        }
+    
+            &__logo {
+                height: 20px;   
+                width: 120px;   
+            
+                &__link {
+                    align-self: center;
+                    margin-top: 1.25em;
+
+                    &:hover {
+                        animation: nav-header 1.25s 0.1s ease-out;
+                    }
+
+                    @include tablet { 
+                            margin: 0em 4em 1em 0;                    
+                    }
+                } 
+            }
+
+            &__nav {
+                display: flex;
+                font-size: 1rem; 
+                margin-top: 0.75em;
+
+                @include desktop {
+                    margin-top: 1.3em; 
+                }
+
+                &__box {
+                    display: inline-block;
+                    text-align: center;
+                    width: 50%;
+
+                    @include tablet {
+                        width: auto;
+                        margin: 0em 3.75em;
+                    }
+                
+                        &--current {
+                            @include current-link-page;
+
+                            &:hover {
+                                animation: nav-header 1.25s 0.1s ease-out;
+                            }
+
+                            @include tablet {
+                                width: auto; 
+                                padding-bottom: 1.5rem;  /*defines padding distance between link and bottom header container for white underline*/
+                            }
+
+                            @include desktop {
+                                padding-bottom: 2.30rem;    /*defines padding distance between link and bottom header container for white underline*/
+                            }
+                        }
+                }   
+
+                &__link {
+                    color: $Mercury;
+                    padding-bottom: 0.75em; 
+
+                    @include tablet {
+                        padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                    }
+
+                    @include desktop {
+                        padding-bottom: 2.3rem;    /*defines padding distance between link and bottom header container for white underline when link is hover*/
+                    }
+
+                    &:hover { 
+                        animation: nav-header 1.25s 0.1s ease-out;
+                        border-bottom: 0.2rem solid $White; 
+                        color: $White;
+                        display: block; /*converted to block to enable bottom border line be full size when hovering*/
+                    }
+
+                        &--current { 
+                            color: $White; 
+                            font-family: avenir-next-bold;
+                        }
+                }
+            }      
+    }
+}
