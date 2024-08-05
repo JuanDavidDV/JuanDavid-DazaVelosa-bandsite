@@ -146,8 +146,10 @@ textarea {
 }
 .page-header__container__nav {
   display: flex;
-  font-size: 1rem;
+  font-size: 1rem; /*customized font to match mock document*/
   margin-top: 0.75em;
+  -moz-column-gap: 3.75rem;
+       column-gap: 3.75rem;
 }
 @media (min-width: 1280px) {
   .page-header__container__nav {
@@ -162,7 +164,6 @@ textarea {
 @media (min-width: 768px) {
   .page-header__container__nav__box {
     width: auto;
-    margin: 0em 3.75em;
   }
 }
 .page-header__container__nav__box--current {
@@ -177,13 +178,13 @@ textarea {
 }
 @media (min-width: 768px) {
   .page-header__container__nav__box--current {
-    width: auto;
-    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline*/
+    width: auto; /*Used to setup the width of the white underline of current page*/
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
   .page-header__container__nav__box--current {
-    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline*/
+    padding-bottom: 2.3rem;
   }
 }
 .page-header__container__nav__link {
@@ -192,12 +193,12 @@ textarea {
 }
 @media (min-width: 768px) {
   .page-header__container__nav__link {
-    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
   .page-header__container__nav__link {
-    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 2.3rem;
   }
 }
 .page-header__container__nav__link:hover {

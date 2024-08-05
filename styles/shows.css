@@ -125,12 +125,12 @@ textarea {
     margin: 0 auto;
     padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    height: 6.5rem; /*increases nav height to match Mock document*/
+    height: 6.5rem;
   }
 }
-.page-header__container__logo, .footer-page__logo-mobile, .footer-page__container__top__logo--tablet-desktop {
-  height: 20px; /*in this way logo should not exceed 20px height as the Style guide mentioned*/
-  width: 120px; /*in this way logo should not exceed 120px width as the Style guide mentioned*/
+.page-header__container__logo, .footer-page__container__top__logo--tablet-desktop, .footer-page__logo-mobile {
+  height: 20px;
+  width: 120px;
 }
 .page-header__container__logo__link {
   align-self: center;
@@ -148,6 +148,8 @@ textarea {
   display: flex;
   font-size: 1rem; /*customized font to match mock document*/
   margin-top: 0.75em;
+  -moz-column-gap: 3.75rem;
+       column-gap: 3.75rem;
 }
 @media (min-width: 1280px) {
   .page-header__container__nav {
@@ -177,27 +179,26 @@ textarea {
 @media (min-width: 768px) {
   .page-header__container__nav__box--current {
     width: auto; /*Used to setup the width of the white underline of current page*/
-    margin: 0 3.75em; /*defines padding distance between link and bottom header container for white underline*/
     padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
   .page-header__container__nav__box--current {
-    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline*/
+    padding-bottom: 2.3rem;
   }
 }
 .page-header__container__nav__link {
   color: #E1E1E1;
-  padding-bottom: 0.75em; /*defines padding between link and bottom header container for white underline when link is hover*/
+  padding-bottom: 0.75em;
 }
 @media (min-width: 768px) {
   .page-header__container__nav__link {
-    padding-bottom: 1.5rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
   .page-header__container__nav__link {
-    padding-bottom: 2.3rem; /*defines padding distance between link and bottom header container for white underline when link is hover*/
+    padding-bottom: 2.3rem;
   }
 }
 .page-header__container__nav__link:hover {
@@ -206,9 +207,149 @@ textarea {
   color: #FFFFFF;
   display: block; /*converted to block to enable bottom border line be full size when hovering*/
 }
-.page-header__container__nav__link--current { /*Current active link*/
+.page-header__container__nav__link--current {
   color: #FFFFFF;
   font-family: avenir-next-bold;
+}
+
+.footer-page__container {
+  padding: 1rem 0;
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .footer-page__container {
+    padding: 2.25rem 0;
+    margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container {
+    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    margin: 0 auto;
+    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+.footer-page__container__top__title {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__title {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__socials {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__top__socials {
+    width: 57%;
+  }
+}
+.footer-page__container__top__socials--icons {
+  height: 1.5rem;
+  padding: 0em 0.75em;
+}
+.footer-page__container__top__socials--icons--alignment {
+  padding-left: 0em;
+}
+.footer-page__container__top__logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-page__container__top__logo {
+    display: flex;
+    width: calc(33.33% - 16px);
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__bottom {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box {
+    width: calc(33.33% - 16px);
+  }
+}
+@media (min-width: 1280px) {
+  .footer-page__container__bottom__box {
+    width: 26.5%;
+  }
+}
+.footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
+  color: #FFFFFF;
+  font-family: avenir-next-demi;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
+    padding-top: 0rem;
+    line-height: 1.25rem;
+  }
+}
+.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
+  padding-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__subheader--alignment {
+    padding-top: 0rem;
+  }
+}
+.footer-page__container__bottom__box__paragraph {
+  color: #FFFFFF;
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__paragraph {
+    line-height: 1.25rem;
+    padding: 1.5rem 0;
+  }
+}
+.footer-page__container__bottom__box__email {
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .footer-page__container__bottom__box__email {
+    line-height: 1.25rem;
+  }
+}
+.footer-page__logo-mobile {
+  margin-top: 3.25em;
+}
+@media (min-width: 768px) {
+  .footer-page__logo-mobile {
+    display: none;
+  }
+}
+.footer-page--copy-right {
+  font-size: 0.7rem;
+  color: #FFFFFF;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-page--copy-right {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 2.25rem;
+  }
 }
 
 .hero {
@@ -524,145 +665,5 @@ textarea {
     display: inline-block;
     padding: 0;
     margin: 0;
-  }
-}
-
-.footer-page__container {
-  padding: 1rem 0;
-  margin: 0 1rem;
-}
-@media (min-width: 768px) {
-  .footer-page__container {
-    padding: 2.25rem 0;
-    margin: 0 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .footer-page__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
-    margin: 0 auto;
-    padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-  }
-}
-@media (min-width: 768px) {
-  .footer-page__container__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-}
-.footer-page__container__top__title {
-  color: #FFFFFF;
-}
-@media (min-width: 768px) {
-  .footer-page__container__top__title {
-    width: calc(33.33% - 16px);
-  }
-}
-@media (min-width: 768px) {
-  .footer-page__container__top__socials {
-    width: calc(33.33% - 16px);
-  }
-}
-@media (min-width: 1280px) {
-  .footer-page__container__top__socials {
-    width: 57%; /*customized width to match desktop footer Mock document*/
-  }
-}
-.footer-page__container__top__socials--icons {
-  height: 1.5rem;
-  padding: 0em 0.75em;
-}
-.footer-page__container__top__socials--icons--alignment {
-  padding-left: 0em; /*Removes left padding from Instagram logo to align footer social media section as Mock document*/
-}
-.footer-page__container__top__logo {
-  display: none; /*hides logo when Mobile breakout points occur*/
-}
-@media (min-width: 768px) {
-  .footer-page__container__top__logo {
-    display: flex;
-    width: calc(33.33% - 16px);
-    justify-content: flex-end;
-  }
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 1280px) {
-  .footer-page__container__bottom {
-    justify-content: flex-start;
-  }
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box {
-    width: calc(33.33% - 16px);
-  }
-}
-@media (min-width: 1280px) {
-  .footer-page__container__bottom__box {
-    width: 26.5%; /*Customized width to match desktop footer layout*/
-  }
-}
-.footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
-  color: #FFFFFF;
-  font-family: avenir-next-demi; /*font family applied to match Mock document*/
-  font-weight: 600; /*font weight applied to match Mock document*/
-  padding-top: 1rem;
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box__subheader, .footer-page__container__bottom__box__subheader--alignment {
-    padding-top: 0rem;
-    line-height: 1.25rem; /*applied to match Style document*/
-  }
-}
-.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
-  padding-top: 1.5rem; /*customized padding to match Mock mobile document*/
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box__subheader--alignment {
-    padding-top: 0rem;
-  }
-}
-.footer-page__container__bottom__box__paragraph {
-  color: #FFFFFF;
-  padding: 1rem 0; /*Customized padding to match mobile layout as in the Style guide of 16px */
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box__paragraph {
-    line-height: 1.25rem; /*applied to match Style document*/
-    padding: 1.5rem 0; /*Customized padding to match tablet layout as in the Style guide of 24px between components*/
-  }
-}
-.footer-page__container__bottom__box__email {
-  color: #FFFFFF;
-}
-@media (min-width: 768px) {
-  .footer-page__container__bottom__box__email {
-    line-height: 1.25rem; /*applied to match Style document*/
-  }
-}
-.footer-page__logo-mobile {
-  margin-top: 3.25em; /*customized padding to match Mock document*/
-}
-@media (min-width: 768px) {
-  .footer-page__logo-mobile {
-    display: none; /*hides logo when tablet/desktop breakpoints are met, this to match Mock document*/
-  }
-}
-.footer-page--copy-right {
-  font-size: 0.7rem; /*customized font size to match mock doc*/
-  color: #FFFFFF;
-  padding-top: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px */
-}
-@media (min-width: 768px) {
-  .footer-page--copy-right {
-    font-size: 0.875rem;
-    line-height: 1.25rem; /*applied to match Style document*/
-    padding-top: 2.25rem; /*customized padding to match Mock document*/
   }
 }/*# sourceMappingURL=shows.css.map */
