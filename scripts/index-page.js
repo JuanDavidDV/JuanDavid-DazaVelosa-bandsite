@@ -7,9 +7,7 @@ const dynamicContent = document.getElementById("commentsContainerWrapperDynamic"
 const timeAgo = (timeStampAgo) => {
     let actualDate = new Date();
     let secondsAgo = (actualDate.getTime() - timeStampAgo) / 1000;
-        if (secondsAgo === 0 || secondsAgo === 1) {
-            return parseInt(secondsAgo) + " sec ago";
-        } else if (secondsAgo > 1  && secondsAgo <= 60) {
+        if (secondsAgo < 60) {
             return parseInt(secondsAgo) + " sec ago";
         } else if (secondsAgo < 3600) {
             return parseInt(secondsAgo / 60) + " min ago";
@@ -24,7 +22,7 @@ const timeAgo = (timeStampAgo) => {
         }
 };
 
-commentForm.addEventListener("submit", (event) => {
+commentForm.addEventListener("submit", async (event) => {
     event.preventDefault(); //Prevents page to reload when submitting a new comment
     const newUserName = event.target.inputUserName.value;
     const newContentComment = event.target.inputComment.value;
@@ -46,26 +44,27 @@ commentForm.addEventListener("submit", (event) => {
     }
 
     //Prevents to upload content that do not have a name and a comment
-    if(newUserName !== "" && newContentComment !== "") { 
-        //Constructs a new comment object
-        const postNewComment = async () => {
-            const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
-            const newCommentPost = await newComment.postComment(newCommentContent);
-            console.log(newCommentPost);
-            displayCurrentComments();   //Re-renders all comments to the page from the "comments" array
-            return newCommentPost;
-        } 
-
-        postNewComment();
-        clearComments();    //Clears rep comments from page
+    if(newUserName !== "" && newContentComment !== "") {       
+        const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+        const newCommentPost = await newComment.postComment(newCommentContent);
+        console.log(newCommentPost);
+        buildComment(newCommentPost, true);   //Re-renders all comments to the page from the "comments" array        
+        //clearComments();    //Clears rep comments from page
         commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 });
 
-const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
+//Change name of FUNTION
+const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = false ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
     let currentCommentsParent = document.createElement("div");
+    currentCommentsParent.setAttribute("id", id);
     currentCommentsParent.classList.add("comments__container__wrapper__area");
-    dynamicContent.appendChild(currentCommentsParent);
+    
+    if (isNewComment) {
+        dynamicContent.insertBefore(currentCommentsParent, dynamicContent.firstChild);
+    } else {
+        dynamicContent.appendChild(currentCommentsParent);
+    }
 
     let currentCommentsWrapper = document.createElement("article");
     currentCommentsWrapper.classList.add("comments__container__wrapper__area__comment-section");
@@ -102,6 +101,7 @@ const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Pas
     let currentLikeCount = document.createElement("span");
     currentLikeCount.classList.add("comments__container__wrapper__area__comment-section__card__box--right--like-count");
     currentLikeCount.innerText = `${likes}`;
+    currentLikeCount.setAttribute("id", "like");
     currentCommentsCardBoxRight.appendChild(currentLikeCount);
 
     let currentDeleteButton = document.createElement("img");
@@ -123,9 +123,10 @@ const currentComments = ( {name, timestamp, comment, id, likes} ) => {     //Pas
 }
 
 const displayCurrentComments = async () => {
+    clearComments();
     const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");    //BandSiteApi instance
     const comments = await defaultComments.getComments(); 
-    comments.forEach((commentsDisplayed) => currentComments(commentsDisplayed));
+    comments.forEach((commentsDisplayed) => buildComment(commentsDisplayed));
     console.log(comments);
     return comments;
 };
@@ -135,18 +136,27 @@ const clearComments = () => {
 }
 const deleteComment = async (id) => {
     const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
-    const deleteCommentById = await selectDeleteComment.deleteComment(id);
-    clearComments();
-    displayCurrentComments();
-    return deleteCommentById;
+    const deleteCommentById = await selectDeleteComment.deleteComment(id); //deletes comment from API
+    const parent = document.getElementById(id);
+    parent.remove();    //deletes comment from HTML, this to peveent re-calling "displayCurrentComments()" function, given that it makes comment section to "blink", and reload the whole dynamic section
+    //clearComments();
+    //displayCurrentComments();
+
 }
 
-const likeComment = async (idLikes) => {
+const likeComment = async (commentId) => {
     const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
-    const likedComment = await selectLikedComment.likeComment(idLikes);
-    clearComments();
-    displayCurrentComments();
-    return likedComment;
+    const likedComment = await selectLikedComment.likeComment(commentId);
+    const likedCommentCount = likedComment.likes;
+    console.log(likedCommentCount);
+    const parent = document.getElementById(commentId);
+    const likeElement = parent.querySelector("#like");  //Update just the like
+    likeElement.innerHTML = likedCommentCount;
+
+    //buildComment(commentId, true);
+    //clearComments();
+    //displayCurrentComments();
+
 }
 
 displayCurrentComments();  // Invokes function to display default comments chronologically 
