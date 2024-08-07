@@ -1,7 +1,7 @@
 import BandSiteApi from './band-site-api.js';
 
-const commentForm = document.getElementById("commentForm");
-const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");
+const commentForm = document.getElementById("commentForm"); //Variable created to create event listener "submit" to the form
+const dynamicContent = document.getElementById("commentsContainerWrapperDynamic");  //Variable created to manipulate DOM section for dynamic content of the comments 
 
 //NEED T0 POLISH THIS PART
 const timeAgo = (timeStampAgo) => {
@@ -20,6 +20,8 @@ const timeAgo = (timeStampAgo) => {
         } else if (secondsAgo > 31536000) {
             return parseInt(secondsAgo / 31536000) + " years ago";
         }
+
+        console.log("hello");
 };
 
 commentForm.addEventListener("submit", async (event) => {
@@ -49,19 +51,17 @@ commentForm.addEventListener("submit", async (event) => {
         const newCommentPost = await newComment.postComment(newCommentContent);
         console.log(newCommentPost);
         buildComment(newCommentPost, true);   //Re-renders all comments to the page from the "comments" array        
-        //clearComments();    //Clears rep comments from page
         commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 });
 
-//Change name of FUNTION
-const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = false ) => {     //Passes only the name, timestamp and comment parameters from the comments variable from the displayCurrentComments function
+const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = false ) => {
     let currentCommentsParent = document.createElement("div");
-    currentCommentsParent.setAttribute("id", id);
     currentCommentsParent.classList.add("comments__container__wrapper__area");
+    currentCommentsParent.setAttribute("id", id);
     
     if (isNewComment) {
-        dynamicContent.insertBefore(currentCommentsParent, dynamicContent.firstChild);
+        dynamicContent.insertBefore(currentCommentsParent, dynamicContent.firstChild);  //Inserts currentCommentsParent as the firstChild inside dynamic content
     } else {
         dynamicContent.appendChild(currentCommentsParent);
     }
@@ -101,7 +101,7 @@ const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = fal
     let currentLikeCount = document.createElement("span");
     currentLikeCount.classList.add("comments__container__wrapper__area__comment-section__card__box--right--like-count");
     currentLikeCount.innerText = `${likes}`;
-    currentLikeCount.setAttribute("id", "like");
+    currentLikeCount.setAttribute("id", "like");    //creates an id attribute to this span element
     currentCommentsCardBoxRight.appendChild(currentLikeCount);
 
     let currentDeleteButton = document.createElement("img");
@@ -138,25 +138,22 @@ const deleteComment = async (id) => {
     const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const deleteCommentById = await selectDeleteComment.deleteComment(id); //deletes comment from API
     const parent = document.getElementById(id);
-    parent.remove();    //deletes comment from HTML, this to peveent re-calling "displayCurrentComments()" function, given that it makes comment section to "blink", and reload the whole dynamic section
-    //clearComments();
-    //displayCurrentComments();
-
+    parent.remove();    //deletes comment from HTML, this to prevent re-calling "displayCurrentComments()" function, given that it makes comment section to "blink", and reload the whole dynamic section
 }
 
 const likeComment = async (commentId) => {
     const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const likedComment = await selectLikedComment.likeComment(commentId);
     const likedCommentCount = likedComment.likes;
-    console.log(likedCommentCount);
-    const parent = document.getElementById(commentId);
-    const likeElement = parent.querySelector("#like");  //Update just the like
+
+    const parent = document.getElementById(commentId);  //variable created to precisely select appropiate comment parent by the object ID
+    const likeElement = parent.querySelector("#like"); 
     likeElement.innerHTML = likedCommentCount;
-
-    //buildComment(commentId, true);
-    //clearComments();
-    //displayCurrentComments();
-
 }
 
 displayCurrentComments();  // Invokes function to display default comments chronologically 
+
+
+// setInterval(function test () {
+//     console.log("Hello")
+// }, 1000)
