@@ -7,7 +7,9 @@ const dynamicContent = document.getElementById("commentsContainerWrapperDynamic"
 const timeAgo = (timeStampAgo) => {
     let actualDate = new Date();
     let secondsAgo = (actualDate.getTime() - timeStampAgo) / 1000;
-        if (secondsAgo < 60) {
+        if (secondsAgo < 30) {
+            return "Just now";
+        } else if(secondsAgo < 60) {
             return parseInt(secondsAgo) + " sec ago";
         } else if (secondsAgo < 3600) {
             return parseInt(secondsAgo / 60) + " min ago";
@@ -20,8 +22,6 @@ const timeAgo = (timeStampAgo) => {
         } else if (secondsAgo > 31536000) {
             return parseInt(secondsAgo / 31536000) + " years ago";
         }
-
-        console.log("hello");
 };
 
 commentForm.addEventListener("submit", async (event) => {
@@ -50,22 +50,19 @@ commentForm.addEventListener("submit", async (event) => {
         const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
         const newCommentPost = await newComment.postComment(newCommentContent);
         console.log(newCommentPost);
-        buildComment(newCommentPost, true);   //Re-renders all comments to the page from the "comments" array        
+        buildComment(newCommentPost);   //Re-renders all comments to the page from the "comments" array  
+        displayCurrentComments();       
+        clearComments();
         commentForm.reset();   //Clears input fields after submitting a new comment
     } 
 });
 
-const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = false ) => {
+const buildComment = ( {name, timestamp, comment, id, likes} ) => {
     let currentCommentsParent = document.createElement("div");
     currentCommentsParent.classList.add("comments__container__wrapper__area");
     currentCommentsParent.setAttribute("id", id);
+    dynamicContent.appendChild(currentCommentsParent);
     
-    if (isNewComment) {
-        dynamicContent.insertBefore(currentCommentsParent, dynamicContent.firstChild);  //Inserts currentCommentsParent as the firstChild inside dynamic content
-    } else {
-        dynamicContent.appendChild(currentCommentsParent);
-    }
-
     let currentCommentsWrapper = document.createElement("article");
     currentCommentsWrapper.classList.add("comments__container__wrapper__area__comment-section");
     currentCommentsParent.appendChild(currentCommentsWrapper);
@@ -113,6 +110,7 @@ const buildComment = ( {name, timestamp, comment, id, likes}, isNewComment = fal
 
     let currentCommentsTimeStamp = document.createElement("p");
     currentCommentsTimeStamp.classList.add("comments__container__wrapper__area__comment-section__card__box--right--time-stamp");
+    currentCommentsTimeStamp.setAttribute("id", "time");
     currentCommentsTimeStamp.innerText = timeAgo(timestamp);
     currentCommentsCardBoxRight.appendChild(currentCommentsTimeStamp);
 
@@ -148,12 +146,7 @@ const likeComment = async (commentId) => {
 
     const parent = document.getElementById(commentId);  //variable created to precisely select appropiate comment parent by the object ID
     const likeElement = parent.querySelector("#like"); 
-    likeElement.innerHTML = likedCommentCount;
+    likeElement.innerText = likedCommentCount;
 }
 
 displayCurrentComments();  // Invokes function to display default comments chronologically 
-
-
-// setInterval(function test () {
-//     console.log("Hello")
-// }, 1000)
