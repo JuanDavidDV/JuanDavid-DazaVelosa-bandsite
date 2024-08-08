@@ -568,7 +568,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .comments__container {
-    padding: 2.25rem 0;
+    padding: 2.25rem 0 0 0;
     margin: 0 2.25rem;
   }
 }
@@ -690,6 +690,7 @@ textarea {
   .comments__container--divider {
     max-width: 36rem;
     margin: 0.75rem auto;
+    margin-bottom: 2.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -712,6 +713,11 @@ textarea {
   gap: 0.5rem;
   border-bottom: 0.0625rem solid #E1E1E1;
   margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .comments__container__wrapper__area__comment-section {
+    margin-bottom: 2.25rem;
+  }
 }
 .comments__container__wrapper__area__comment-section__avatar {
   border-radius: 50%;
@@ -770,6 +776,11 @@ textarea {
 }
 .comments__container__wrapper__area__comment-section__card--content {
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .comments__container__wrapper__area__comment-section__card--content {
+    padding-bottom: 2.25rem;
+  }
 }
 
 input:focus, textarea:focus {

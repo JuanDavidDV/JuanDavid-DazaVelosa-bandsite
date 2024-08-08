@@ -120,7 +120,7 @@ const buildComment = ( {name, timestamp, comment, id, likes} ) => {
 
 const displayCurrentComments = async () => {
     clearComments();
-    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");    //BandSiteApi instance
+    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4"); 
     const comments = await defaultComments.getComments(); 
     comments.forEach((commentsDisplayed) => buildComment(commentsDisplayed));
     console.log(comments);
