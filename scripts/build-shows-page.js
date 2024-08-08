@@ -98,13 +98,18 @@ const showTickets = ( {date, place, location} ) => {
     showsWrapperButton.innerText = "BUY TICKETS";
     showsWrapper.appendChild(showsWrapperButton);
 };
-//DO I NEED TO INLY CREATE 1 INSTANCE OF THE API?
+
 const displayCurrentShows = async () => {
-    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");   //BandSiteApi instance
+    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const shows = await defaultShows.getShows();
     shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 
-    //TRY TO CREATE A FUNCTION FOR THIS AND CALL IT HERE Event Listener added inside the async function to make it work 
+    //selectedShows function invocked inside the async function to make it work 
+    selectedShows();
+    return shows;
+};
+
+const selectedShows = () => {
     let eventClicked = document.querySelectorAll(".shows__container-details__subcontainer");
     eventClicked.forEach(showAddClickListener => {
         showAddClickListener.addEventListener("click", () => {
@@ -112,8 +117,6 @@ const displayCurrentShows = async () => {
             showAddClickListener.classList.add("shows__container-details__subcontainer--active");
         });
     });
-
-    return shows;
 };
 
 displayCurrentShows();
