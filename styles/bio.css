@@ -568,7 +568,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .comments__container {
-    padding: 2.25rem 0 0 0;
+    padding: 2.25rem 0 0.75rem 0;
     margin: 0 2.25rem;
   }
 }
@@ -679,6 +679,7 @@ textarea {
     width: 9.375rem;
     padding: 0 2rem;
     align-self: flex-end;
+    margin-top: 1.75rem;
   }
 }
 .comments__container--divider {
@@ -690,7 +691,7 @@ textarea {
   .comments__container--divider {
     max-width: 36rem;
     margin: 0.75rem auto;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 768px) {
@@ -716,7 +717,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .comments__container__wrapper__area__comment-section {
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
   }
 }
 .comments__container__wrapper__area__comment-section__avatar {
@@ -779,7 +780,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .comments__container__wrapper__area__comment-section__card--content {
-    padding-bottom: 2.25rem;
+    padding-bottom: 1.5rem;
   }
 }
 

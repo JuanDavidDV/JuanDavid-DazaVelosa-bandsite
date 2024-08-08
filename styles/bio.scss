@@ -196,7 +196,7 @@
         @include section-layout ($mobile-padding 0 0 0, 0 $mobile-margin);
     
         @include tablet {  
-            @include section-layout ($tablet-padding 0 0 0, 0 $tablet-margin);
+            @include section-layout ($tablet-padding 0 0.75rem 0, 0 $tablet-margin);
         }
 
         @include desktop {
@@ -275,6 +275,7 @@
                         width: 9.375rem;
                         padding: 0 2rem;
                         align-self: flex-end;
+                        margin-top: 1.75rem;
                     }
                 }
             }       
@@ -288,7 +289,7 @@
             @include tablet {
                 max-width: 36rem;
                 margin: 0.75rem auto;
-                margin-bottom: $tablet-margin;
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -314,7 +315,7 @@
                         margin-bottom: $mobile-padding;
 
                         @include tablet {
-                            margin-bottom: $tablet-padding;
+                            margin-bottom: 1.5rem;
                         }
 
                         &__avatar { 
@@ -375,7 +376,7 @@
                                     padding-bottom: $mobile-padding;
 
                                     @include tablet {
-                                        padding-bottom: $tablet-padding;
+                                        padding-bottom: 1.5rem;
                                     }
                                 }
                         }  
