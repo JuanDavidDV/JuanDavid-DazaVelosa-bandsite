@@ -123,7 +123,6 @@ const displayCurrentComments = async () => {
     const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4"); 
     const comments = await defaultComments.getComments(); 
     comments.forEach((commentsDisplayed) => buildComment(commentsDisplayed));
-    console.log(comments);
     return comments;
 };
 
@@ -134,7 +133,7 @@ const deleteComment = async (id) => {
     const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
     const deleteCommentById = await selectDeleteComment.deleteComment(id); //deletes comment from API
     const parent = document.getElementById(id); //Selects parent comment by ID to be deleted in the UI
-    parent.remove(); //Removes comment from the HTML display
+    return parent.remove(); //Removes comment from the HTML display
 }
 
 const likeComment = async (id) => {
@@ -144,7 +143,7 @@ const likeComment = async (id) => {
 
     const parent = document.getElementById(id);  //variable created to precisely select appropiate comment parent by the object ID to display # of likes
     const likeElement = parent.querySelector("#like"); 
-    likeElement.innerText = likedCommentCount;
+    return likeElement.innerText = likedCommentCount;
 }
 
 displayCurrentComments();  // Invokes function to display default comments chronologically 
