@@ -17,8 +17,6 @@
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
 /*Responsive Layout Grid*/
-/*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
-/*applied to match Style document*/
 /*Background Image*/
 * {
   margin: 0rem;
@@ -47,14 +45,14 @@ h1, h2 {
 
 /*Section Header*/
 h2 {
-  padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    padding-top: 0.75rem; /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
+    padding-top: 0.75rem;
     padding-bottom: 2.25rem;
   }
 }
@@ -65,7 +63,7 @@ h3, .about-musicians__container__box__subheader--two {
   line-height: 1.375rem;
   font-family: avenir-next-demi;
   font-weight: 600;
-  padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h3, .about-musicians__container__box__subheader--two {
@@ -121,10 +119,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .page-header__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     height: 6.5rem;
   }
 }
@@ -146,7 +143,7 @@ textarea {
 }
 .page-header__container__nav {
   display: flex;
-  font-size: 1rem; /*customized font to match mock document*/
+  font-size: 1rem;
   margin-top: 0.75em;
 }
 @media (min-width: 768px) {
@@ -182,7 +179,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .page-header__container__nav__box--current {
-    width: auto; /*Used to setup the width of the white underline of current page*/
+    width: auto;
     padding-bottom: 1.5rem;
   }
 }
@@ -228,10 +225,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .footer-page__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 @media (min-width: 768px) {
@@ -309,7 +305,7 @@ textarea {
     line-height: 1.25rem;
   }
 }
-.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
+.footer-page__container__bottom__box__subheader--alignment {
   padding-top: 1.5rem;
 }
 @media (min-width: 768px) {
@@ -390,10 +386,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .hero__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 0 0 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*for this particular case it was used the tablet margin, this to have consistency on the sides when screen width is > 1279px*/
   }
 }
 .hero__container__title {
@@ -417,10 +412,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .about-musicians__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .about-musicians__container__title {
@@ -485,7 +479,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .about-musicians__container__box__paragraph--content {
-    padding: 0 0.75rem 0 0; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
+    padding: 0 0.75rem 0 0;
   }
 }
 @media (min-width: 1280px) {
@@ -498,7 +492,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .about-musicians__container__box__paragraph--content--alignment {
-    padding: 0 0 0 0.75rem; /*provides a gutters-padding as required from the Layout Grid of the Style guide 12px (for a total of 12px + 12px = 24px adding both gutter padding of the 2 paragraphs sides*/
+    padding: 0 0 0 0.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -523,10 +517,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .photo-gallery__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .photo-gallery__container__title {
@@ -574,10 +567,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .comments__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .comments__container__title {
@@ -597,10 +589,10 @@ textarea {
   height: 2.25rem;
   width: 2.25rem;
   -o-object-fit: cover;
-     object-fit: cover; /*used to match avatar picture exactly as mock document*/
+     object-fit: cover;
   -o-object-position: 20%;
-     object-position: 20%; /*applied to move avatar face to the rigth by 20% to match mock document*/
-  flex-shrink: 0; /*Prevents image to shrink*/
+     object-position: 20%;
+  flex-shrink: 0;
   margin-top: 1.5rem;
   border-color: transparent;
 }
@@ -624,7 +616,7 @@ textarea {
   padding-bottom: 0.25rem;
 }
 .comments__container__new-comment__user-info__label--comment {
-  padding-top: 1.25rem; /*customized padding to match Mock document*/
+  padding-top: 1.25rem;
 }
 .comments__container__new-comment__user-info--name, .comments__container__new-comment__user-info--comment {
   height: 2.25rem;
@@ -725,10 +717,10 @@ textarea {
   height: 2.25rem;
   width: 2.25rem;
   -o-object-fit: cover;
-     object-fit: cover; /*used to match avatar picture exactly as mock document*/
+     object-fit: cover;
   -o-object-position: 20%;
-     object-position: 20%; /*applied to move avatar face to the rigth by 20% to match mock document*/
-  flex-shrink: 0; /*Prevents image to shrink*/
+     object-position: 20%;
+  flex-shrink: 0;
   margin-top: 1.5rem;
   border-color: transparent;
   background-color: #E1E1E1;

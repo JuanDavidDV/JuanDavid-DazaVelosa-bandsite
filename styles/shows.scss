@@ -9,7 +9,7 @@
 
 .hero {
     @include background-image ($hero-show);
-    height: 20rem;  /*Customized height to match Mock doc*/
+    height: 20rem; 
 
     @include tablet {
         height: 33.5rem;
@@ -31,7 +31,7 @@
         height: 100%;
 
         @include tablet {
-            margin-left: $tablet-margin;    /*adds margin of 36px to match Mock document layout*/
+            margin-left: $tablet-margin;  
             justify-content: center;
         }
 
@@ -41,7 +41,7 @@
         
 
         &__subtitle {
-            padding: 2.5rem 0 0 0;    /*Customized padding to match Mock document*/
+            padding: 2.5rem 0 0 0;  
             color: $White;
             font-size: 1rem;
             
@@ -59,7 +59,7 @@
             
             &__title {
                 color: $White;
-                width: 14rem;   /*Customized width to match layout of music title to match Mock document*/
+                width: 14rem;   
                 padding: $mobile-padding 0 0 0;
     
                 @include tablet {
@@ -133,7 +133,7 @@
                 }
 
                 @include desktop {
-                    color: $BandSite-Black; //Mock document shows title color $BandSite-Black in desktop view
+                    color: $BandSite-Black; 
                 }
             }
         }

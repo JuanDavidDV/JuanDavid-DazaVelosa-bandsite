@@ -18,8 +18,8 @@ $mobile-margin: 1rem;
 $tablet-padding: 2.25rem;
 $tablet-margin: 2.25rem;
 $tablet-gutters: 1.5em; 
-$tablet-layout-grid: calc(33.33% - 16px);    /*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
-$tablet-footer-line-height: 1.25rem;    /*applied to match Style document*/
+$tablet-layout-grid: calc(33.33% - 16px); 
+$tablet-footer-line-height: 1.25rem;    
 
 /*Background Image*/
 $hero-bio: url("../../assets/images/hero-bio.jpg");

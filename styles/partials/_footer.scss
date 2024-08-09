@@ -17,7 +17,7 @@
             }
 
             @include desktop {
-                @include desktop-layout ($tablet-padding);   /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
+                @include desktop-layout ($tablet-padding);
             }
         
             &__top {
@@ -99,7 +99,7 @@
                             line-height: $tablet-footer-line-height;  
                         }
 
-                            &--alignment {  /*class created to adjust padding and match Mock document layout*/
+                            &--alignment {  
                                 @extend .footer-page__container__bottom__box__subheader;
                                 padding-top: 1.5rem;  
                             

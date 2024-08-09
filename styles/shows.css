@@ -17,8 +17,6 @@
 /*Secundary Colors*/
 /*Responsive Design Breakpoints*/
 /*Responsive Layout Grid*/
-/*applied to match Mock document tablet grid layout to keep design consistent until 1280px breakpoint*/
-/*applied to match Style document*/
 /*Background Image*/
 * {
   margin: 0rem;
@@ -47,14 +45,14 @@ h1, h2 {
 
 /*Section Header*/
 h2 {
-  padding-top: 0.5rem; /*Customized padding equals to 8px to match mobile layout of 24px total (+ padding applied at section, 8px+16px=24px), of "before headlines" to match Mock document layout*/
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    padding-top: 0.75rem; /*Customized padding equals to 12px to match mobile layout of 48px total (+ padding applied at section, 12px+36px=48px), of "before headlines" to match Mock document layout*/
+    padding-top: 0.75rem;
     padding-bottom: 2.25rem;
   }
 }
@@ -65,7 +63,7 @@ h3 {
   line-height: 1.375rem;
   font-family: avenir-next-demi;
   font-weight: 600;
-  padding-bottom: 1rem; /*Customized padding to match mobile layout as in the Style guide of 16px*/
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h3 {
@@ -121,10 +119,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .page-header__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 1.5em 2.25em 0 2.25em; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
     height: 6.5rem;
   }
 }
@@ -146,7 +143,7 @@ textarea {
 }
 .page-header__container__nav {
   display: flex;
-  font-size: 1rem; /*customized font to match mock document*/
+  font-size: 1rem;
   margin-top: 0.75em;
 }
 @media (min-width: 768px) {
@@ -182,7 +179,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .page-header__container__nav__box--current {
-    width: auto; /*Used to setup the width of the white underline of current page*/
+    width: auto;
     padding-bottom: 1.5rem;
   }
 }
@@ -228,10 +225,9 @@ textarea {
 }
 @media (min-width: 1280px) {
   .footer-page__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
-    /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 @media (min-width: 768px) {
@@ -309,7 +305,7 @@ textarea {
     line-height: 1.25rem;
   }
 }
-.footer-page__container__bottom__box__subheader--alignment { /*class created to adjust padding and match Mock document layout*/
+.footer-page__container__bottom__box__subheader--alignment {
   padding-top: 1.5rem;
 }
 @media (min-width: 768px) {
@@ -361,7 +357,7 @@ textarea {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 20rem; /*Customized height to match Mock doc*/
+  height: 20rem;
 }
 @media (min-width: 768px) {
   .hero {
@@ -388,19 +384,19 @@ textarea {
 }
 @media (min-width: 768px) {
   .hero__container {
-    margin-left: 2.25rem; /*adds margin of 36px to match Mock document layout*/
+    margin-left: 2.25rem;
     justify-content: center;
   }
 }
 @media (min-width: 1280px) {
   .hero__container {
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
 }
 .hero__container__subtitle {
-  padding: 2.5rem 0 0 0; /*Customized padding to match Mock document*/
+  padding: 2.5rem 0 0 0;
   color: #FFFFFF;
   font-size: 1rem;
 }
@@ -418,7 +414,7 @@ textarea {
 }
 .hero__container__box__title {
   color: #FFFFFF;
-  width: 14rem; /*Customized width to match layout of music title to match Mock document*/
+  width: 14rem;
   padding: 1rem 0 0 0;
 }
 @media (min-width: 768px) {
@@ -465,7 +461,7 @@ textarea {
   .shows {
     display: flex;
     justify-content: space-between;
-    width: 1280px; /*fixed width applied to match Mock document Desktop layout width*/
+    width: 1280px;
     margin: 0 auto;
     padding: 0 1.25rem 0 2.25rem; /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
   }
@@ -602,7 +598,7 @@ textarea {
     gap: 0;
     align-items: baseline;
     justify-content: space-between;
-    padding: 1rem 1.125rem; /*Decided to use 1rem instead of 1.5rem to match Mock document*/
+    padding: 1rem 1.125rem;
     border-bottom: 0.0625rem solid #E1E1E1;
   }
 }

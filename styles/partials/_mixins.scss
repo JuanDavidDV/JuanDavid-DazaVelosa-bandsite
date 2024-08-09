@@ -33,7 +33,7 @@
 }
 
 @mixin desktop-layout ($padding) {
-    width: $desktop; /*fixed width applied to match Mock document Desktop layout width*/
+    width: $desktop; 
     margin: 0 auto;
     padding: $padding;  /*padding added in order to mantain section layout, and be consistent on the sides when screen width is > 1279px*/
 }
@@ -42,9 +42,9 @@
     border-radius: 50%;
     height: 2.25rem;
     width: 2.25rem;
-    object-fit: cover; /*used to match avatar picture exactly as mock document*/
-    object-position: 20%;   /*applied to move avatar face to the rigth by 20% to match mock document*/
-    flex-shrink: 0; /*Prevents image to shrink*/
+    object-fit: cover; 
+    object-position: 20%;   
+    flex-shrink: 0; 
     margin-top: 1.50rem;
     border-color: transparent;
 }
@@ -97,6 +97,6 @@
     gap: 0;
     align-items: baseline;
     justify-content: space-between;
-    padding: 1rem 1.125rem; /*Decided to use 1rem instead of 1.5rem to match Mock document*/
+    padding: 1rem 1.125rem;
     border-bottom: 0.0625rem solid $Mercury;
 }
