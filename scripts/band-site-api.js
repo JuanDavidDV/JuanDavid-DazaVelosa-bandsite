@@ -68,4 +68,4 @@ export default class BandSiteApi {
             console.error(error);
         }
     };
-};
+}; 
