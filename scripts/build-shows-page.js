@@ -100,7 +100,7 @@ const showTickets = ( {date, place, location} ) => {
 };
 
 const displayCurrentShows = async () => {
-    const defaultShows = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const defaultShows = new BandSiteApi("67b5c21e-c789-4b4f-8213-c3c8ff8da2f2");
     const shows = await defaultShows.getShows();
     shows.forEach((ticketsDisplayed) => showTickets(ticketsDisplayed));
 

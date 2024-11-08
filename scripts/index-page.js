@@ -46,7 +46,7 @@ commentForm.addEventListener("submit", async (event) => {
     }
 
     if(newUserName !== "" && newContentComment !== "") {    //Prevents to upload content that do not have a name and a comment
-        const newComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+        const newComment = new BandSiteApi("67b5c21e-c789-4b4f-8213-c3c8ff8da2f2");
         const newCommentPost = await newComment.postComment(newCommentContent);
         buildComment(newCommentPost);   //Builds comment   
         displayCurrentComments();   //Re-renders all comments to the page
@@ -120,7 +120,7 @@ const buildComment = ( {name, timestamp, comment, id, likes} ) => {
 
 const displayCurrentComments = async () => {
     clearComments();
-    const defaultComments = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4"); 
+    const defaultComments = new BandSiteApi("67b5c21e-c789-4b4f-8213-c3c8ff8da2f2"); 
     const comments = await defaultComments.getComments(); 
     comments.forEach((commentsDisplayed) => buildComment(commentsDisplayed));
     return comments;
@@ -130,14 +130,14 @@ const clearComments = () => {
     dynamicContent.innerHTML = "";
 }
 const deleteComment = async (id) => {
-    const selectDeleteComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const selectDeleteComment = new BandSiteApi("67b5c21e-c789-4b4f-8213-c3c8ff8da2f2");
     const deleteCommentById = await selectDeleteComment.deleteComment(id); //deletes comment from API
     const parent = document.getElementById(id); //Selects parent comment by ID to be deleted in the UI
     return parent.remove(); //Removes comment from the HTML display
 }
 
 const likeComment = async (id) => {
-    const selectLikedComment = new BandSiteApi("e0eea5f0-0f8c-4b54-9fc4-ff50843766d4");
+    const selectLikedComment = new BandSiteApi("67b5c21e-c789-4b4f-8213-c3c8ff8da2f2");
     const likedComment = await selectLikedComment.likeComment(id);
     const likedCommentCount = likedComment.likes;
 
