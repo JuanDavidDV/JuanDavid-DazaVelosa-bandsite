@@ -1,7 +1,11 @@
-BrainStation Bandsite:
+## Bandsite:
 
-This website is designed for a music band. It is developed in 3 different parts:
+A responsive website developed for a musician band. This project includes DOM manipulation, APIs calls, and BEM principles.
 
-1. Layout interface, making website responisve for mobiles, tablets and deskopt by using HTML, CSS, and SASS.
+## Technologies used to develop this project:
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=js,html,sass" />
+  </a>
+</p>
 
-Next parts descriptions will be provided and updated as the project moves forward...
