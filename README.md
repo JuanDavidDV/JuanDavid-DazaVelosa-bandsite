@@ -4,7 +4,7 @@ A responsive website developed for a musician band. This project includes DOM ma
 
 API instructions: <a href="https://unit-2-project-api-25c1595833b2.herokuapp.com/" target="_blank">Bandsite API</a>
 <br/>
-This API instructions was created by: [BrainStation] (https://brainstation.io/)
+These API instructions were created by: <a href="https://brainstation.io/" targte="_blank">BrainStation</a>
 
 ## Technologies used to develop this project:
 <p align="center">
