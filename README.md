@@ -14,4 +14,4 @@ These API instructions were created by: <a href="https://brainstation.io/" targt
 </p>
 
 # Website 
-Click the following link to access the website: [https://brainflix-juandavid.netlify.app/](https://juandavid-bandsite.netlify.app/)
+Click the following link to access the website: https://juandavid-bandsite.netlify.app/
